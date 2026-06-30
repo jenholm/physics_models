@@ -92,8 +92,9 @@ different basins---which is captured by our diagnostics.
 
 \subsection{Claim 5: Kernel-weighted sector averaging}
 
-Table~\ref{tab:effective_coefficients} shows the aggregate coefficients
-as a function of $\ell$.
+The kernel-weighted sector averaging (Table~\ref{tab:effective_coefficients}
+in Appendix~\ref{app:supplementary}) shows aggregate coefficients as a
+function of $\ell$.
 At $\ell = 0.1$, the aggregate $\Lambda_{\rm eff} = 2.0$,
 reflecting near-pure $x_0$ basin.
 At $\ell = 2.0$, $\Lambda_{\rm eff} = 1.44$, shifted by mixing with
@@ -103,23 +104,11 @@ $\boldsymbol{\theta}(v)$ and the kernel weighting; it is illustrative
 of how sector weighting changes aggregate toy parameters in a
 controlled toy setting, not a derivation of physical running couplings.
 
-\input{tables/table_06_effective_coefficients}
-
-Fig.~\ref{fig:coeff_flow} visualizes the averaging.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\columnwidth]{figures/fig_06_effective_coefficient_flow.png}
-  \caption{Kernel-weighted sector averaging under unobserved-sector mixing.
-  As $\ell$ increases, aggregate parameters interpolate between the
-  $x_0$ basin values and the global average.}
-  \label{fig:coeff_flow}
-\end{figure}
-
 \subsection{Claim 6: Ell sensitivity reveals a sweet spot}
 
-Table~\ref{tab:ell_sensitivity} and Fig.~\ref{fig:ell_sensitivity_kl} show the
-evolution of ISR stability metrics across $\ell$.
+Fig.~\ref{fig:ell_sensitivity_kl} shows the evolution of ISR stability
+metrics across $\ell$ (see Table~\ref{tab:ell_sensitivity} in
+Appendix~\ref{app:supplementary} for the full data).
 We define $N_{\rm eff} = (\sum_i w_i)^2 / \sum_i w_i^2$,
 where $w_i = K_\ell[d(x_i, x_0)]$; $N_{\rm eff} \approx N$ when the kernel
 weights all sectors equally and $N_{\rm eff} \ll N$ when only a few sectors
@@ -151,25 +140,16 @@ This shows that the improvement is not a generic artifact of kernel smoothing;
 it depends on preserving the field-space distance structure encoded by the
 toy landscape.
 
-\input{tables/table_08_ell_sensitivity}
-
-\begin{figure}[t]
+\begin{figure*}[t]
   \centering
-  \includegraphics[width=\columnwidth]{figures/fig_11_ell_sensitivity_kl.png}
+  \includegraphics[width=\textwidth]{figures/fig_11_ell_sensitivity_kl.png}
   \caption{KL drift and Wasserstein distance vs.\ kernel scale $\ell$.
   The black dotted line is the global-census baseline; the gray dashed
   line is the shuffled null control.}
   \label{fig:ell_sensitivity_kl}
-\end{figure}
+\end{figure*}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\columnwidth]{figures/fig_12_ell_sensitivity_neff.png}
-  \caption{Effective sample size $N_{\rm eff}$ and basin exception rate
-  vs.\ $\ell$. The sweet spot lies where $N_{\rm eff}$ is large enough
-  for statistical power but basin exceptions remain below 30\%.}
-  \label{fig:ell_sensitivity_neff}
-\end{figure}
+\FloatBarrier
 
 \subsection{Claim 7: ISR remains favorable in the non-degenerate sigma--ell region}
 
@@ -196,6 +176,8 @@ Appendix~\ref{app:degenerate}.
   grid. All non-degenerate cells ($\ell \ge 0.50$) exceed 1.}
   \label{fig:sigma_ell_boundary}
 \end{figure}
+
+\FloatBarrier
 
 \subsection{Claim 8: ISR improvement is robust to landscape perturbation}
 
