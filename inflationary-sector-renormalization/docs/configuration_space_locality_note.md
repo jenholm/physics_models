@@ -2,7 +2,7 @@
 
 ## What ISR uses
 
-Bell locality is used as a **constraint/prior on measure construction**.
+Configuration-space locality is used as a **constraint/prior on measure construction**.
 
 Sectors receive weight based on:
 - Shared local ancestry
@@ -12,8 +12,8 @@ Sectors receive weight based on:
 
 ## What ISR does **not** claim
 
-- Bell's theorem does **not** prove that local hidden variables are true.
-- Bell's theorem is a warning that local hidden-variable theories cannot reproduce all quantum predictions under Bell-style assumptions.
+- This is **not** a claim about Bell-style local hidden variables.
+- Configuration-space locality is a modeling prior, not an assertion about hidden variables.
 
 ## Safe language for the manuscript
 
