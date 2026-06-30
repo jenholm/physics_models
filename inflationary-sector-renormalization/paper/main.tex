@@ -1,0 +1,80 @@
+\documentclass[twocolumn,prd,superscriptaddress,floatfix]{revtex4-2}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+
+% macros
+\newcommand{\isr}{Inflationary Sector Renormalization\xspace}
+\newcommand{\ISR}{ISR\xspace}
+\newcommand{\kl}{KL\xspace}
+\newcommand{\xzero}{$x_0$\xspace}
+\newcommand{\lsim}{\mathrel{\mathchoice{\vcenter{\offinterlineskip
+  \hbox{$\sim$}\vskip-0.5ex\hbox{$<$}}}{\vcenter{\offinterlineskip
+  \hbox{$\sim$}\vskip-0.5ex\hbox{$<$}}}{\vcenter{\offinterlineskip
+  \hbox{$\scriptstyle\sim$}\vskip-0.3ex\hbox{$\scriptstyle<$}}}
+  {\vcenter{\offinterlineskip\hbox{$\scriptscriptstyle\sim$}
+  \vskip-0.2ex\hbox{$\scriptscriptstyle<$}}}}}
+
+\begin{document}
+
+\title{Inflationary Sector Renormalization in a Stochastic Toy Landscape}
+
+\author{Jake Enholm}
+
+\date{\today}
+
+\begin{abstract}
+Eternal inflation motivates ensembles of causally disconnected or weakly related
+inflationary domains, but extracting probabilities from such ensembles requires a
+measure over an infinite or cutoff-dependent population.
+We propose \isr (\ISR), a configuration-space locality-weighted sector framework in which
+unobserved simulated sectors are conditionally reweighted within a finite stochastic ensemble.
+Rather than treating all sectors as equally countable, \ISR weights sectors by
+field-space proximity, basin structure, and local ancestry proxies.
+We implement a stochastic toy landscape with multiple vacuum basins and compare
+\ISR against a naive global census measure under increasing trajectory cutoffs.
+The cutoff studied here is the trajectory-sampling cutoff (number of simulated
+sectors), not a cosmological volume cutoff.
+In a 10,000-trajectory run, the global census favors the most common basin, while
+\ISR shifts weight toward the basin local to the observable patch and reduces
+mean KL drift by approximately a factor of two in the physically meaningful
+kernel regime.
+Across 100 sigma-by-seed stress tests, \ISR improves final KL stability in 98
+cases, with failures concentrated at broad initial-condition spread.
+A simple shifted-well perturbation test suggests that the improvement is not
+solely an artifact of the original well placement.
+We also examine basin-boundary exceptions, kernel-weighted sector averaging under
+unobserved-sector mixing, and ell sensitivity showing a sweet spot near $\ell\sim1$.
+These results do not solve the eternal-inflation measure problem, but demonstrate
+a reproducible toy framework for testing locality-weighted measures against
+global census baselines.
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_background}
+\input{sections/03_isr_framework}
+\input{sections/04_toy_model}
+\input{sections/05_experiments}
+\input{sections/06_results}
+\input{sections/07_discussion}
+\input{sections/08_limitations}
+\input{sections/09_conclusion}
+
+\bibliographystyle{apsrev4-2}
+\bibliography{bib/references}
+
+\newpage
+\appendix
+\input{sections/10_appendix_simulation}
+\input{sections/11_appendix_failures}
+\input{sections/12_appendix_reproducibility}
+\input{sections/13_appendix_degenerate}
+
+\end{document}

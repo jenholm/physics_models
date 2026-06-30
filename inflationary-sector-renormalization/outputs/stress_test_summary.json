@@ -1,0 +1,52 @@
+{
+  "0.5": {
+    "global_mean_kl": 0.000811823905083274,
+    "global_mean_wasserstein": 0.01205000000000001,
+    "isr_mean_kl": 0.0002964184931836645,
+    "isr_mean_wasserstein": 0.006302343315848391,
+    "mean_improvement_ratio": 2.6560039406612765,
+    "mean_alpha": 1.8712507345868445,
+    "multi_basin_frac": 1.0,
+    "mean_n_vacua": 3.0
+  },
+  "1.0": {
+    "global_mean_kl": 0.0012606890631951268,
+    "global_mean_wasserstein": 0.01690000000000009,
+    "isr_mean_kl": 0.00031907821584587604,
+    "isr_mean_wasserstein": 0.008550616372861987,
+    "mean_improvement_ratio": 7.924139809434334,
+    "mean_alpha": 1.762989665103462,
+    "multi_basin_frac": 1.0,
+    "mean_n_vacua": 4.7
+  },
+  "1.5": {
+    "global_mean_kl": 0.0012452960539362464,
+    "global_mean_wasserstein": 0.020600000000000084,
+    "isr_mean_kl": 0.0002842247336873433,
+    "isr_mean_wasserstein": 0.009033400738498752,
+    "mean_improvement_ratio": 15.869962838640173,
+    "mean_alpha": 1.6752129682048416,
+    "multi_basin_frac": 1.0,
+    "mean_n_vacua": 5.95
+  },
+  "2.0": {
+    "global_mean_kl": 0.0011162202381947706,
+    "global_mean_wasserstein": 0.025125000000000102,
+    "isr_mean_kl": 0.0003294118526863082,
+    "isr_mean_wasserstein": 0.010229014029764866,
+    "mean_improvement_ratio": 20.210807579689124,
+    "mean_alpha": 1.622427367838745,
+    "multi_basin_frac": 1.0,
+    "mean_n_vacua": 6.0
+  },
+  "3.0": {
+    "global_mean_kl": 0.0010401430567801664,
+    "global_mean_wasserstein": 0.03125000000000007,
+    "isr_mean_kl": 0.0003724512983343154,
+    "isr_mean_wasserstein": 0.012615833128107315,
+    "mean_improvement_ratio": 3.807173700886895,
+    "mean_alpha": 1.5703733520424663,
+    "multi_basin_frac": 1.0,
+    "mean_n_vacua": 6.0
+  }
+}

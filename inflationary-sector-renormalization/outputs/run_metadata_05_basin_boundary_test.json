@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "n_trajectories": 10000,
+  "n_efolds": 80,
+  "landscape_config_hash": "17422568b638",
+  "phi0": 2.0,
+  "experiment": "05_basin_boundary_test"
+}

@@ -1,0 +1,31 @@
+% Conclusion
+\section{Conclusion}
+\label{sec:conclusion}
+
+We proposed \isr (\ISR), a configuration-space locality-weighted sector framework for
+regulating toy eternal-inflation ensembles.
+In a stochastic landscape simulation with 10,000 trajectories and six
+vacuum basins, \ISR shifts probability mass toward the basin local to the
+observable patch and improves trajectory-cutoff stability relative to a naive
+global census by approximately a factor of two in KL divergence.
+Across 100 sigma-by-seed stress tests, \ISR outperforms global census in
+98 cases.
+A shifted-well landscape perturbation suggests that the improvement is not
+solely an artifact of the original well placement.
+
+An ell-sensitivity scan (15 values from 0.05 to 10.0) reveals a sweet spot at
+$\ell \approx 0.5$--$1.5$ where $N_{\rm eff}$ is large enough for statistical
+power and basin-exception rates remain below 30\%.
+A randomized-distance null control shows that the improvement is not a generic
+artifact of kernel smoothing; it depends on preserving the field-space distance
+structure encoded by the toy landscape.
+In the non-degenerate region of the sigma-by-ell grid, ISR improves over global
+census across every tested cell. Degenerate small-ell cells are excluded from
+this evidence claim and reported separately in Appendix~\ref{app:degenerate}.
+
+These results do not solve the eternal-inflation measure problem.
+They demonstrate a reproducible toy framework for testing locality-weighted
+measures, with built-in diagnostics that expose when and why the weighting
+succeeds or fails.
+The code, data, and paper source are available at
+\url{https://github.com/jenholm/inflationary-sector-renormalization}.

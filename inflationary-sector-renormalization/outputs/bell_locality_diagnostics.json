@@ -1,0 +1,188 @@
+{
+  "phi": {
+    "thr_0.1": {
+      "continuity_success": 10050,
+      "basin_exception": 0,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 10050,
+      "near_diff_basin_pairs": 0,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.0,
+      "locality_failure_rate": 0.0
+    },
+    "thr_0.25": {
+      "continuity_success": 15390,
+      "basin_exception": 0,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15390,
+      "near_diff_basin_pairs": 0,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.0,
+      "locality_failure_rate": 0.0
+    },
+    "thr_0.5": {
+      "continuity_success": 15906,
+      "basin_exception": 0,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15906,
+      "near_diff_basin_pairs": 0,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.0,
+      "locality_failure_rate": 0.0
+    },
+    "thr_1.0": {
+      "continuity_success": 15935,
+      "basin_exception": 112,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15935,
+      "near_diff_basin_pairs": 112,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.006979497725431545,
+      "locality_failure_rate": 0.0
+    },
+    "thr_1.5": {
+      "continuity_success": 15935,
+      "basin_exception": 5692,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15935,
+      "near_diff_basin_pairs": 5692,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.2631895316040135,
+      "locality_failure_rate": 0.0
+    },
+    "thr_2.0": {
+      "continuity_success": 15935,
+      "basin_exception": 14911,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15935,
+      "near_diff_basin_pairs": 14911,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.4834014134733839,
+      "locality_failure_rate": 0.0
+    }
+  },
+  "phi_initial": {
+    "thr_0.1": {
+      "continuity_success": 1732,
+      "basin_exception": 98,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 1732,
+      "near_diff_basin_pairs": 98,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.053551912568306013,
+      "locality_failure_rate": 0.0
+    },
+    "thr_0.25": {
+      "continuity_success": 4196,
+      "basin_exception": 414,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 4196,
+      "near_diff_basin_pairs": 414,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.08980477223427331,
+      "locality_failure_rate": 0.0
+    },
+    "thr_0.5": {
+      "continuity_success": 7778,
+      "basin_exception": 1496,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 7778,
+      "near_diff_basin_pairs": 1496,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.16131119258141038,
+      "locality_failure_rate": 0.0
+    },
+    "thr_1.0": {
+      "continuity_success": 12735,
+      "basin_exception": 5385,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 12735,
+      "near_diff_basin_pairs": 5385,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.29718543046357615,
+      "locality_failure_rate": 0.0
+    },
+    "thr_1.5": {
+      "continuity_success": 14980,
+      "basin_exception": 11017,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 14980,
+      "near_diff_basin_pairs": 11017,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.4237796668846405,
+      "locality_failure_rate": 0.0
+    },
+    "thr_2.0": {
+      "continuity_success": 15748,
+      "basin_exception": 16965,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15748,
+      "near_diff_basin_pairs": 16965,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.5186011677314829,
+      "locality_failure_rate": 0.0
+    }
+  },
+  "basin_transition": {
+    "thr_0.1": {
+      "continuity_success": 15935,
+      "basin_exception": 0,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15935,
+      "near_diff_basin_pairs": 0,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.0,
+      "locality_failure_rate": 0.0
+    },
+    "thr_0.25": {
+      "continuity_success": 15935,
+      "basin_exception": 0,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15935,
+      "near_diff_basin_pairs": 0,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.0,
+      "locality_failure_rate": 0.0
+    },
+    "thr_0.5": {
+      "continuity_success": 15935,
+      "basin_exception": 0,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15935,
+      "near_diff_basin_pairs": 0,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.0,
+      "locality_failure_rate": 0.0
+    },
+    "thr_1.0": {
+      "continuity_success": 15935,
+      "basin_exception": 0,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15935,
+      "near_diff_basin_pairs": 0,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.0,
+      "locality_failure_rate": 0.0
+    },
+    "thr_1.5": {
+      "continuity_success": 15935,
+      "basin_exception": 34060,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15935,
+      "near_diff_basin_pairs": 34060,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.6812681268126812,
+      "locality_failure_rate": 0.0
+    },
+    "thr_2.0": {
+      "continuity_success": 15935,
+      "basin_exception": 34060,
+      "locality_failure": 0,
+      "near_same_basin_pairs": 15935,
+      "near_diff_basin_pairs": 34060,
+      "continuity_score": 1.0,
+      "basin_exception_rate": 0.6812681268126812,
+      "locality_failure_rate": 0.0
+    }
+  }
+}

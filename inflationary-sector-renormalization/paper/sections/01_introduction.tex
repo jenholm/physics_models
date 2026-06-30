@@ -1,0 +1,66 @@
+% Introduction
+\section{Introduction}
+\label{sec:introduction}
+
+Eternal inflation \cite{guth_eternal} produces an ensemble of causally disconnected
+or weakly related inflationary domains---a multiverse---for which standard
+quantum-field-theory calculations do not prescribe how to compute probabilities.
+The central difficulty, known as the measure problem
+\cite{freivogel_measure}, is that any enumeration over an infinite population
+requires a regularization scheme (a ``measure''), and different schemes yield
+different answers.
+
+The simplest regularization---a global census that counts each trajectory
+equally---is trajectory-cutoff dependent and generically favors the most
+numerous basin rather than any physically motivated reference point.
+This is not a prediction; it is an artifact of the counting rule.
+
+We propose \isr (\ISR), a configuration-space locality-weighted unobserved-sector
+framework that conditions the ensemble on an observable patch $x_0$ and
+weights sectors by their distance to $x_0$ in field space and basin structure.
+The weighting uses a kernel $K_\ell[d(x, x_0)]$ that decays with increasing
+sector distance, controlled by a scale parameter $\ell$.
+ISR is a measure-construction proposal, not a local hidden-variable model.
+
+\subsection{Scope of the proposal}
+\label{sec:scope}
+
+It is important to state what ISR does not claim:
+
+\begin{itemize}
+  \item ISR does \textbf{not} solve the full eternal-inflation measure problem.
+        Volume divergences in an infinite multiverse are not regulated here.
+  \item ISR does \textbf{not} regulate spacetime volume divergences.
+        It operates on a finite ensemble of stochastically generated trajectories.
+  \item The cutoff studied here is a \textbf{trajectory-sampling cutoff},
+        not a cosmological volume cutoff.
+        It tests whether probability estimates stabilize as more samples are
+        drawn from a given stochastic process.
+  \item The locality kernel is a \textbf{prior over configuration-space relevance},
+        not a claim about causal contact between bubbles.
+\end{itemize}
+
+ISR is a conditional weighting scheme inside a generated sector ensemble.
+In future work it could be composed with an existing cosmological measure
+rather than replacing one.
+
+We implement a stochastic toy landscape with multiple vacuum basins and
+simulate 10,000 trajectories, comparing ISR against a naive global census.
+We also run 100 sigma-by-seed stress tests to assess robustness, plus
+landscape-perturbation tests to verify that results are not an artifact of
+the specific well placement.
+
+\begin{quote}
+\textbf{Central claim.}
+\ISR does not count all inflationary domains as equally relevant.
+It conditions the ensemble on an observable patch and weights unobserved sectors
+by locality in field space and basin structure.
+The proposal succeeds in a toy model only if the resulting measure is more
+stable under finite-sample cutoff expansion than a naive global census and
+remains robust across reasonable kernels, seeds, and initial-condition spreads.
+\end{quote}
+
+\ISR should be judged by stability, robustness, and transparency about
+failure cases, not by whether it can be tuned to prefer a desired vacuum.
+The toy model demonstrates a computational behavior, not a direct physical
+derivation from quantum gravity.

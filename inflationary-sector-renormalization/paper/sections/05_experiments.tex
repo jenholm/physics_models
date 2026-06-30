@@ -1,0 +1,122 @@
+% Experiments
+\section{Experiments and diagnostics}
+\label{sec:experiments}
+
+We run twelve experiments to test \ISR against the global census baseline.
+Table~\ref{tab:kernel_roles} summarizes kernel roles.
+
+\input{tables/table_03_kernel_roles}
+
+\subsection{Experiment 1: Global census baseline}
+\label{exp:1}
+
+Compute $P_{\rm global}(v)$ at each cutoff $N_k$.
+\emph{Purpose}: quantify cutoff dependence of naive counting.
+\emph{Expected failure}: distribution shifts toward the largest basin as $N$ increases.
+
+The global census is the natural null hypothesis: it treats all generated sectors
+as equally relevant regardless of their field-space location.
+A measure must justify why some sectors count more than others, and \ISR provides
+a specific locality-based answer.
+The global census is therefore the correct baseline---not because it is expected
+to work well (it is not), but because it represents the simplest possible measure
+that makes no distinction between sectors.
+If \ISR does not improve upon it, the locality proposal adds no value.
+
+\subsection{Experiment 2: ISR locality-weighted measure}
+\label{exp:2}
+
+Compute $P_{\rm ISR}(v \mid x_0)$ using a Gaussian kernel ($\ell = 1$)
+with field-space distance.
+\emph{Purpose}: test whether locality weighting shifts probability toward the
+$x_0$ basin and improves stability.
+
+\subsection{Experiment 3: Cutoff stability}
+\label{exp:3}
+
+Compare $D_{\rm KL}$ and Wasserstein distances across all cutoffs
+for both measures, and for multiple kernels.
+\emph{Purpose}: identify which kernel---measure combinations converge.
+
+\subsection{Experiment 4: Kernel sensitivity}
+\label{exp:4}
+
+Vary $\ell$ and kernel functional form to check sensitivity.
+\emph{Purpose}: ensure results are not an artifact of one kernel choice.
+
+\subsection{Experiment 5: Basin-boundary diagnostics}
+\label{exp:5}
+
+At fixed distance thresholds, compute the fraction of ``nearby'' sectors
+($d < d_{\rm thr}$) that lie in a different basin from $x_0$.
+\emph{Purpose}: measure how often the locality assumption fails.
+
+\subsection{Experiment 6: Configuration-space locality diagnostics}
+\label{exp:6}
+
+For three distance metrics (field-space, initial-field, basin-transition),
+evaluate continuity score, basin-exception rate, and locality-failure rate.
+\emph{Purpose}: characterize the structure of locality violations.
+
+\subsection{Experiment 7: Kernel-weighted sector averaging}
+\label{exp:7}
+
+Compute $c_{\rm eff}(\ell)$ at varying $\ell$ to show unobserved-sector mixing.
+\emph{Purpose}: illustrate kernel-weighted sector averaging.
+
+\subsection{Experiment 8: Stress test}
+\label{exp:8}
+
+Repeat experiments~1 and~2 for $\sigma \in \{0.5, 1.0, 1.5, 2.0, 3.0\}$ with
+seeds $1$ through $20$ ($100$ total runs), $N = 2,\!000$ per run.
+\emph{Purpose}: test robustness across random and systematic variation.
+
+\subsection{Experiment 9: Ell sensitivity scan}
+\label{exp:9}
+
+Vary $\ell$ across 15 values in logspace from 0.05 to 10.0 with Gaussian and
+exponential kernels.
+For each $\ell$, record final KL drift, effective sample size $N_{\rm eff}$,
+basin exception rate, effective coefficient $\Lambda_{\rm eff}$, and
+convergence rate.
+The convergence rate is defined as the slope of log KL drift versus log cutoff,
+$d(\log{\rm KL}) / d(\log N)$, estimated by linear regression over the
+log--log curve.
+A convergence rate of $-1$ indicates ${\rm KL} \propto 1/N$, matching the
+parametric rate of a well-behaved Monte Carlo estimator; rates approaching $0$
+indicate that additional samples do not improve the estimate.
+Also run a randomized-distance null control (shuffled sector--distance
+pairings) to verify that the improvement is not an artifact of the kernel
+smoothing.
+\emph{Purpose}: map the sweet spot of $\ell$ where ISR provides meaningful
+improvement without being trivially narrow or approaching global census.
+
+\subsection{Experiment 10: Sigma--ell boundary}
+\label{exp:10}
+
+Grid over $\sigma \in \{0.5, 1.0, 1.5, 2.0, 3.0\}$ and
+$\ell \in \{0.1, 0.25, 0.5, 1.0, 2.0\}$, 5 seeds per cell
+($125$ total runs), $N = 2,\!000$ per run.
+\emph{Purpose}: identify any $(\sigma, \ell)$ region where ISR underperforms
+the global census.
+
+\subsection{Experiment 11: Flat-parent composition sanity check}
+\label{exp:11}
+
+For each cutoff, compose the \ISR weighting with a flat parent measure
+(equal weight to all sectors). The composition applies \ISR re-weighting
+on top of the parent baseline and checks that the resulting
+cutoff-stability trend is consistent with the standalone \ISR result.
+\emph{Purpose}: sanity check that \ISR can be stacked with a trivial
+parent measure without introducing numerical inconsistencies.
+
+\subsection{Experiment 12: Landscape perturbation robustness}
+\label{exp:12}
+
+Shift all well centers $\mu \to \mu + 0.5$ in the toy landscape and repeat
+Experiments~1 and~2 at $\sigma \in \{1.5, 3.0\}$, 5 seeds per cell.
+The perturbed landscape preserves the same number of basins and the same 
+basin physics vectors $\boldsymbol{\theta}$, but shifts basin boundaries
+relative to $\phi_0$.
+\emph{Purpose}: verify that \ISR improvement is not an artifact of the
+specific well placement in the unperturbed landscape.

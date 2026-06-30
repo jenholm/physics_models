@@ -1,0 +1,39 @@
+% Discussion
+\section{Discussion}
+\label{sec:discussion}
+
+Locality weighting changes the measure by suppressing the contribution of
+sectors far from the observable patch in field space.
+This differs from global counting, where the most populous basin dominates
+regardless of locality.
+
+Cutoff stability matters because a measure with uncontrolled cutoff dependence
+does not produce well-defined predictions.
+The improvement of \ISR over global census is numerical and empirical, not a
+theorem, but it demonstrates that locality weighting is a viable direction
+for measure construction.
+
+Basin boundaries limit locality continuity.
+As the initial-condition spread $\sigma$ increases, more trajectories land in
+distant basins, diluting the locality signal.
+This is physical---there is no locality principle that guarantees nearby
+field values share the same vacuum---and it motivates the diagnostics we
+introduce.
+
+The kernel-weighted sector averaging (Sec.~\ref{sec:results}) loosely echoes
+the bookkeeping role of coarse-graining in effective field theory, but no
+physical running-coupling interpretation is implied.
+
+Several directions for future work are natural:
+\begin{itemize}
+  \item Replacing the ancestry proxy with a true causal ancestry graph
+        based on branching history.
+  \item Extending to multi-field landscapes with more realistic potentials.
+  \item Incorporating Coleman--De Luccia transition rates between basins.
+  \item Adding explicit decoherence or an open-system treatment of the
+        environment.
+  \item Bayesian model comparison against other measure proposals using
+        synthetic observations.
+  \item Analytic investigation of convergence conditions for different
+        kernel families.
+\end{itemize}

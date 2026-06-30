@@ -1,0 +1,17 @@
+\begin{table}[t]
+  \centering
+  \caption{Probability distribution over vacuum basins at final cutoff $N=10000$. ISR uses a Gaussian kernel with $\ell=1$. Metrics: KL drift $=3.58\times10^{-4}$ (global) vs $1.27\times10^{-4}$ (ISR); Wasserstein $=9.30\times10^{-3}$ vs $6.41\times10^{-3}$; both measures are stable under cutoff extension.}
+  \label{tab:main_distribution}
+  \begin{tabular}{lccc}
+    \toprule
+    Vacuum & Global census & ISR Gaussian $\ell=1$ & Difference \\
+    \midrule
+    0 & 0.000700 & 0.000000 & -0.000700 \\
+    1 & 0.044000 & 0.000207 & -0.043793 \\
+    2 & 0.396000 & 0.264742 & -0.131258 \\
+    3 & 0.358600 & 0.661812 & +0.303212 \\
+    4 & 0.186600 & 0.073217 & -0.113383 \\
+    5 & 0.014100 & 0.000023 & -0.014077 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,20 @@
+{
+  "perturbed_sigma1.5": {
+    "final_global_kl": 0.0007451621236507371,
+    "final_isr_kl": 0.0002658403723995984,
+    "improvement_ratio": 2.8030434840447986,
+    "n_vacua": 6
+  },
+  "perturbed_sigma3.0": {
+    "final_global_kl": 0.0009962456573594358,
+    "final_isr_kl": 4.830503948125625e-05,
+    "improvement_ratio": 20.624052232604175,
+    "n_vacua": 6
+  },
+  "original_sigma1.5": {
+    "final_global_kl": 0.0006477659605780715,
+    "final_isr_kl": 8.495673380478384e-05,
+    "improvement_ratio": 7.6246570644597496,
+    "n_vacua": 6
+  }
+}

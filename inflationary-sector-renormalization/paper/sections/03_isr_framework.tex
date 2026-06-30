@@ -1,0 +1,124 @@
+% ISR Framework
+\section{Inflationary Sector Renormalization}
+\label{sec:framework}
+
+\subsection{Sector state and observable patch}
+
+Let $x_i$ denote the state of the $i$th inflationary sector, described by
+\begin{itemize}
+  \item $\phi_i$ --- the final field value,
+  \item $v_i$ --- the vacuum basin label,
+  \item $\boldsymbol{\theta}(x_i) = (\Lambda_{\rm eff}, G_{\rm eff}, Q_{\rm fluct}, T_{\rm reh})_i$
+        --- a vector of effective physics parameters assigned to the basin.
+\end{itemize}
+The observable patch $x_0$ is anchored at $\phi_0 = 2.0$ and its basin is
+identified from the landscape potential, not from the first sampled trajectory.
+
+\subsection{Locality kernels}
+
+A kernel $K_\ell[d(x_i, x_0)]$ weights sectors by their distance to $x_0$.
+We define three distance types:
+
+\begin{itemize}
+  \item \textbf{Field-space distance}: $d_\phi(x_i, x_0) = |\phi_i - \phi_0|$.
+  \item \textbf{Initial-field distance}: $d_{\phi_{\rm init}}(x_i, x_0) = |\phi_{{\rm init},i} - \phi_0|$.
+  \item \textbf{Basin-transition distance}: $d_{\rm basin}(x_i, x_0) = 0$ if
+        $v_i = v_0$, and $1$ otherwise.
+\end{itemize}
+
+We use two evidence kernels:
+
+\begin{itemize}
+  \item Gaussian: $K_\ell(d) = \exp(-d^2 / 2\ell^2)$.
+  \item Exponential: $K_\ell(d) = \exp(-|d| / \ell)$.
+\end{itemize}
+
+The scale parameter $\ell$ controls how quickly weight decays:
+small $\ell$ isolates the local basin; large $\ell$ admits broader
+unobserved-sector mixing.
+
+\subsection{ISR measure}
+
+The \ISR probability of observing effective physics $\boldsymbol{\theta}$ is
+
+\begin{equation}
+\label{eq:isr_measure}
+P_{\rm ISR}(\boldsymbol{\theta} \mid x_0)
+= \frac{\sum_i K_\ell[d(x_i,x_0)] \; \mathbb{1}[\boldsymbol{\theta}_i = \boldsymbol{\theta}]}
+        {\sum_i K_\ell[d(x_i,x_0)]}.
+\end{equation}
+
+For comparison, the global census measure is
+
+\begin{equation}
+\label{eq:global_measure}
+P_{\rm global}(\boldsymbol{\theta})
+= \frac{1}{N} \sum_i \mathbb{1}[\boldsymbol{\theta}_i = \boldsymbol{\theta}].
+\end{equation}
+
+\subsection{Phenomenological status}
+\label{sec:phenomenological_status}
+
+\ISR is a conditional weighting scheme on a generated sector ensemble.
+It does not regulate spacetime volume divergences and does not provide a
+first-principles probability measure over vacua in an eternally inflating
+multiverse.
+Its purpose is to test whether a locality prior over unobserved
+sectors---weighting field-space-nearby sectors more heavily---produces a
+more cutoff-stable probability estimate within a finite trajectory sample
+than naive equal weighting.
+
+The toy model in this paper is a numerical testbed, not a realistic cosmology.
+\ISR should be judged by stability, robustness, and explicit failure reporting,
+not by whether it can be tuned to prefer a particular vacuum.
+A measure that requires fine-tuned kernels and yields brittle results would be
+uninteresting; a measure that transparently reports when and why it fails is
+valuable even if imperfect.
+
+\subsection{Kernel-scale selection rule}
+\label{sec:kernel_scale_rule}
+
+The kernel scale $\ell$ must be chosen large enough that the kernel
+admits sectors from multiple basins.
+If $\ell$ is much smaller than the inter-vacuum spacing in field space,
+$N_{\rm eff} \ll N$ and the ISR distribution is effectively a delta function
+on the $x_0$ basin, trivially suppressing KL drift.
+This regime is a diagnostic artifact, not evidence of physical stability.
+We do not require $\ell$ to exceed the full inter-vacuum spacing.
+Instead, we define the non-degenerate regime empirically by requiring
+$N_{\rm eff}/N \ge 0.3$, basin-exception rate $\le 0.3$, and performance
+better than the shuffled-distance null.
+In this landscape that selects approximately $0.5 \le \ell \le 1.5$,
+with $\ell = 1.0$ used as the representative value.
+
+\subsection{Cutoff stability diagnostic}
+
+We assess measure stability by computing the KL divergence between
+distributions at successive cutoffs $N_k$:
+
+\begin{equation}
+\label{eq:kl_diagnostic}
+D_{\rm KL}(P_{N_k} \parallel P_{N_{k-1}})
+= \sum_v P_{N_k}(v) \log\frac{P_{N_k}(v)}{P_{N_{k-1}}(v)}.
+\end{equation}
+
+We also compute the 1-Wasserstein distance over the cumulative
+distribution function of vacuum probabilities.
+
+A measure is considered stable if these divergences approach zero
+as the cutoff increases.
+
+\subsection{Kernel-weighted sector averaging}
+
+Kernel-weighted averaging over unobserved sectors defines illustrative
+aggregate coefficients for the observable patch:
+
+\begin{equation}
+\label{eq:effective_flow}
+c_{\rm eff}(\ell) = \frac{\sum_i K_\ell[d(x_i,x_0)] \; c_i}
+                         {\sum_i K_\ell[d(x_i,x_0)]},
+\end{equation}
+
+where $c_i$ is any component of $\boldsymbol{\theta}(x_i)$.
+This mirrors a kernel-weighted coarse-graining: the weighting averages
+over unobserved inflationary sectors rather than high-momentum modes.

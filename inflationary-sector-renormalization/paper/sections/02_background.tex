@@ -1,0 +1,75 @@
+% Background
+\section{Background}
+\label{sec:background}
+
+\subsection{Eternal inflation and pocket-domain counting}
+
+In slow-roll inflation, quantum fluctuations of the inflaton field can cause
+different spatial regions to undergo different numbers of $e$-folds, producing
+a fractal-like structure of pocket domains \cite{guth_eternal}.
+Because the overall volume grows without bound, any counting over pocket
+domains requires a regularization---a measure---to obtain finite
+probabilities \cite{freivogel_measure}.
+
+\subsection{The measure problem}
+
+A global census that simply counts trajectories (or pocket domains) equally
+suffers from severe trajectory-cutoff dependence. As the number of sampled
+trajectories increases, the distribution shifts toward whichever basin has the
+largest population. Different cutoff choices produce different answers, and
+there is no natural stopping point.
+
+This problem is well known in the literature \cite{freivogel_measure} and
+motivates proposals such as the causal diamond measure, the scale-factor
+cutoff, and the light-cone cutoff \cite{winitzki_measure,garriga_vilenkin,bousso_causal}.
+
+\subsection{Coarse-graining analogy}
+
+The situation is structurally reminiscent of renormalization in quantum field
+theory: a cutoff is introduced to regularize divergences, and physical
+predictions must be insensitive to the cutoff scale.
+In the eternal-inflation context, a good measure should be stable under
+increases in the trajectory cutoff $N$.
+\ISR draws on the coarse-graining intuition that unobserved degrees
+of freedom can be averaged over, producing effective weights for
+the observed sector.
+This is a structural analogy, not a Wilsonian RG derivation: the
+scale $\ell$ is a locality scale in sector space, not a momentum scale,
+and no decoupling theorem is assumed.
+
+\subsection{Configuration-space locality prior}\label{sec:locality_prior}
+
+Locality here does not mean causal signaling between bubbles.
+It means proximity in the shared stochastic landscape used to generate
+sectors. The prior is justified only inside a model where sectors arise
+from common inflaton dynamics.
+
+ISR assumes that, conditional on a shared inflationary landscape, sectors
+near the observable patch in configuration space are more relevant to the
+local effective ensemble than sectors arbitrarily far away.
+This is a modeling prior, not an observable causal relation.
+
+Basin boundaries are exactly where this prior is expected to fail.
+ISR is valuable only if it exposes those failures, not if it hides them.
+
+Throughout this work, ``locality'' denotes proximity in the configuration space
+of a specified stochastic landscape. It does not denote causal contact, signal
+propagation.
+
+\subsection{Relation to stochastic inflation and open-system thinking}
+
+Stochastic inflation \cite{starobinsky_stochastic,burgess_stochastic} treats the inflaton as
+a classical field driven by quantum noise.
+Our simulation uses a Langevin-like evolution in a multi-well potential,
+similar in spirit to open-system treatments where the environment
+(short-wavelength modes) affects the long-wavelength field.
+The unobserved-sector perspective extends this by treating entire unobserved
+inflationary domains as an effective environment.
+
+\subsection{Relation to existing measure proposals}
+
+Table~\ref{tab:measure_comparison} situates ISR among existing cosmological
+measure proposals. ISR is not a replacement for spacetime-volume measures;
+it is a conditional weighting scheme inside a generated sector ensemble.
+
+\input{tables/table_07_measure_comparison}

@@ -1,0 +1,38 @@
+% Limitations
+\section{Limitations}
+\label{sec:limitations}
+
+This work is a numerical toy demonstration with specific limitations:
+
+\begin{itemize}
+  \item \textbf{Toy landscape.} The potential is one-dimensional with six
+        wells. Realistic inflationary landscapes involve many fields and
+        complex tunneling dynamics.
+  \item \textbf{Assigned physics.} Vacuum physics vectors
+        $\boldsymbol{\theta}(v)$ are assigned, not derived from quantum
+        gravity or even from the potential shape.
+  \item \textbf{Simplified $\theta$ vectors.} Each basin has exactly one
+        physics vector; there is no intra-basin variation.
+  \item \textbf{Ancestry proxy.} The \texttt{ancestry\_proxy} kernel uses
+        trajectory index as a proxy for causal ancestry. This is not true
+        branch ancestry and should be treated as diagnostic only.
+  \item \textbf{Diagnostic-only kernels.} \texttt{same\_basin} is
+        diagnostic-only because it trivially conditions on $x_0$ basin
+        membership.
+  \item \textbf{Kernel and $\ell$ dependence.} Results depend on the choice
+        of kernel and scale parameter $\ell$. We report sensitivity
+        (Experiment~\ref{exp:4}) but do not provide a first-principles derivation
+        of the optimal kernel.
+  \item \textbf{Numerical, not analytic.} The observed stability improvement
+        is an empirical property of this simulation, not a proven theorem
+        about locality-weighted measures.
+  \item \textbf{No physical claim about multiverse reality.} This simulation
+        does not establish the existence or detectability of pocket universes.
+  \item \textbf{Configuration-space locality as a modeling prior.} The locality
+        assumption (sectors near $x_0$ in field space are more relevant) is a
+        modeling prior, not an observable causal relation. It is justified only
+        inside a shared-landscape model.
+\end{itemize}
+
+\ISR should be judged by stability, robustness, and failure transparency,
+not by whether it can be tuned to prefer a desired vacuum.

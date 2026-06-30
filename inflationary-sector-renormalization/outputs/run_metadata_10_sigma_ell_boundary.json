@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "n_trajectories": 2000,
+  "n_efolds": 80,
+  "landscape_config_hash": "17422568b638",
+  "phi0": 2.0,
+  "experiment": "10_sigma_ell_boundary",
+  "sigma_values": [
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    3.0
+  ],
+  "ell_values": [
+    0.1,
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}

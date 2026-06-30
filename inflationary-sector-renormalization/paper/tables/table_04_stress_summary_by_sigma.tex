@@ -1,0 +1,17 @@
+\begin{table*}[t]
+  \centering
+  \caption{Stress test summary by $\sigma$. Each row aggregates 20 random seeds with $N=2000$ trajectories per run.}
+  \label{tab:stress_summary}
+  \small
+  \begin{tabular}{lcccccc}
+    \toprule
+    $\sigma$ & Global mean KL & ISR mean KL & Median improv. & ISR wins / total & Mean $n_{\rm vacua}$ \\
+    \midrule
+    0.5 & 0.0008 & 0.0003 & 2.1$\times$ & 20/20 & 3.0 \\
+    1.0 & 0.0013 & 0.0003 & 3.9$\times$ & 20/20 & 4.7 \\
+    1.5 & 0.0012 & 0.0003 & 4.7$\times$ & 20/20 & 6.0 \\
+    2.0 & 0.0011 & 0.0003 & 3.7$\times$ & 20/20 & 6.0 \\
+    3.0 & 0.0010 & 0.0004 & 3.4$\times$ & 18/20 & 6.0 \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

@@ -1,0 +1,19 @@
+\begin{table*}[t]
+  \centering
+  \caption{Ell sensitivity: ISR (Gaussian kernel) stability metrics across kernel scale $\ell$ (non-degenerate regime, $\ell \ge 0.48$). The physically meaningful regime begins at $\ell \approx 0.5$, where $N_{\rm eff}$ exceeds $\sim 30\%$ of $N$. Small-$\ell$ and boundary values are diagnostic artifacts reported in Appendix~\ref{app:degenerate}. The baseline global-census KL is $3.58\times10^{-4}$.}
+  \label{tab:ell_sensitivity}
+  \small
+  \begin{tabular}{lcccccc}
+    \toprule
+    $\ell$ & $N_{\rm eff}$ & KL drift & Wasserstein & Basin exc. rate & $\Lambda_{\rm eff}$ & Conv. rate \\
+    \midrule
+    0.48 & 3629 & $1.8\times10^{-6}$ & $2.4\times10^{-4}$ & 0.00 & 1.986 & $-1.22$ \\
+    0.71 & 4793 & $4.3\times10^{-5}$ & $2.9\times10^{-3}$ & 0.00 & 1.868 & $-1.07$ \\
+    1.00 & 7176 & $1.3\times10^{-4}$ & $6.6\times10^{-3}$ & 0.01 & 1.662 & $-0.93$ \\
+    1.51 & 8841 & $1.9\times10^{-4}$ & $8.1\times10^{-3}$ & 0.27 & 1.511 & $-0.87$ \\
+    2.20 & 9563 & $2.3\times10^{-4}$ & $8.6\times10^{-3}$ & 0.59 & 1.427 & $-0.91$ \\
+    3.21 & 9860 & $2.7\times10^{-4}$ & $8.9\times10^{-3}$ & 0.61 & 1.384 & $-0.95$ \\
+    10.00 & 9998 & $3.4\times10^{-4}$ & $9.2\times10^{-3}$ & 0.67 & 1.347 & $-0.98$ \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

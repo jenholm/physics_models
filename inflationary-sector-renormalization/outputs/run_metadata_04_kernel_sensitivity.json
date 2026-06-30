@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "n_trajectories": 10000,
+  "n_efolds": 80,
+  "landscape_config_hash": "17422568b638",
+  "phi0": 2.0,
+  "experiment": "04_kernel_sensitivity",
+  "evidence_kernels": [
+    "gaussian",
+    "exponential"
+  ],
+  "diagnostic_kernels": [
+    "ancestry_proxy",
+    "same_basin"
+  ],
+  "cutoffs": [
+    100,
+    250,
+    500,
+    1000,
+    2500,
+    5000,
+    10000
+  ]
+}

@@ -1,0 +1,43 @@
+% Appendix A: Simulation details
+\section{Simulation details}
+\label{app:simulation}
+
+\subsection{Configuration}
+
+The simulation is configured via YAML files in \texttt{configs/}:
+\begin{itemize}
+  \item \texttt{base.yaml}: simulation parameters, kernel choices, cutoffs,
+        initial conditions.
+  \item \texttt{landscapes.yaml}: well positions $(\mu, V_0)$, basin physics
+        vectors $\boldsymbol{\theta}$.
+  \item \texttt{kernels.yaml}: kernel names, $\ell$ values, distance types.
+\end{itemize}
+
+\subsection{Numerical parameters}
+
+\begin{itemize}
+  \item $n_{\rm trajectories} = 10,\!000$ (main run).
+  \item Stress test: $100$ runs ($5 \times \sigma \times 20$ seeds),
+        $n_{\rm trajectories} = 2,\!000$ per run.
+  \item $\sigma_{\rm initial} = 0.5, 1.0, 1.5, 2.0, 3.0$.
+  \item Seeds: $1$--$20$.
+  \item Observable $\phi_0 = 2.0$.
+  \item Primary kernel: Gaussian $\ell = 1.0$.
+  \item $e$-folds: $80$, time step $\Delta t = 0.1$.
+\end{itemize}
+
+\subsection{Measure computation}
+
+The global census and \ISR measures are computed at each cutoff $N_k$.
+KL divergence uses the union of support labels (vacua appearing in either
+distribution), with zero probability treated as $10^{-12}$ for
+logarithmic stability.
+The 1-Wasserstein distance is computed over the cumulative distribution
+function of vacuum probabilities.
+
+\subsection{Kernel-weighted sector averaging}
+
+For each $\ell \in \{0.1, 0.25, 0.5, 1.0, 2.0\}$, the aggregate effective
+coefficient $c_{\rm eff}(\ell)$ is computed at the final cutoff using
+Eq.~\eqref{eq:effective_flow}.
+Per-vacuum coefficients are also reported in the output data.

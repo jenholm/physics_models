@@ -1,0 +1,13 @@
+\begin{table*}[t]
+  \centering
+  \caption{Failure cases: ISR underperforms global census. Both cases occur at $\sigma=3.0$, the broadest initial-condition spread.}
+  \label{tab:failure_cases}
+  \begin{tabular}{lccccc}
+    \toprule
+    $\sigma$ & Seed & ISR KL & Global KL & Ratio & Possible cause \\
+    \midrule
+    3.0 & 13 & 0.0007 & 0.0005 & 0.68 & Broad initial spread samples vacua far from $x_0$; kernel overlap is thin. \\
+    3.0 & 14 & 0.0012 & 0.0010 & 0.89 & Broad initial spread samples vacua far from $x_0$; kernel overlap is thin. \\
+    \bottomrule
+  \end{tabular}
+\end{table*}
