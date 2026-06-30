@@ -1,0 +1,38 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.env
+
+# Jupyter / caches
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ISR generated heavy outputs
+inflationary-sector-renormalization/outputs/runs/
+inflationary-sector-renormalization/outputs/logs/
+inflationary-sector-renormalization/outputs/raw/
+inflationary-sector-renormalization/outputs/tmp/
+
+# LaTeX build junk
+inflationary-sector-renormalization/paper/build/
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*~
+*.swp

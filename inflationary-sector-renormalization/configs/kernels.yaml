@@ -1,0 +1,41 @@
+# Kernel configurations for ISR locality-weighted measure
+# K[d] = exp(-d / ell) or exp(-d^2 / 2*ell^2)
+
+kernels:
+  gaussian:
+    description: "Gaussian field-distance kernel: exp(-d^2 / 2*ell^2)"
+    type: "gaussian_field"
+    ell_values: [0.1, 0.25, 0.5, 1.0, 2.0]
+
+  exponential:
+    description: "Exponential field-distance kernel: exp(-d / ell)"
+    type: "exponential_field"
+    ell_values: [0.1, 0.25, 0.5, 1.0, 2.0]
+
+  graph:
+    description: "Graph ancestry kernel: exp(-d / ell) where d is number of steps to common ancestor"
+    type: "graph_ancestry"
+    ell_values: [1, 2, 3, 5, 10]
+
+  causal_cone:
+    description: "Causal-cone kernel: weighted by e-fold proximity and causal adjacency"
+    type: "causal_cone"
+    ell_values: [5, 10, 20, 50]
+
+  same_basin:
+    description: "Binary kernel: 1 only if same basin as observable patch, 0 otherwise"
+    type: "same_basin"
+    ell_values: [1]  # not tunable, binary weight
+
+distance_metrics:
+  field_distance:
+    description: "Euclidean distance in field coordinate space"
+    type: "euclidean"
+
+  ancestry_distance:
+    description: "Graph distance through parent sectors"
+    type: "graph_steps"
+
+  causal_distance:
+    description: "Minimum e-fold separation to establish causal contact"
+    type: "efold_separation"

@@ -2,7 +2,8 @@
 \section{Code and reproducibility}
 \label{app:reproducibility}
 
-The full codebase is available in the repository accompanying this paper.
+The full codebase is available at
+\url{https://github.com/jenholm/physics_models/tree/main/inflationary-sector-renormalization}.
 All results in this paper were produced with the following software versions:
 
 \begin{itemize}
@@ -11,15 +12,18 @@ All results in this paper were produced with the following software versions:
         matplotlib 3.10.9, PyYAML 6.0.1.
   \item Config hashes: base.yaml \texttt{1fcc4c5c9ac7},
         landscapes.yaml \texttt{ef664ae36835}.
-  \item A working \LaTeX\ distribution with revtex4-2, bibtex, and
+  \item A working \LaTeX\ distribution with revtex4-2, bibtex and
         standard packages.
 \end{itemize}
 
 \subsection{Running experiments}
 
 \begin{verbatim}
-cd /home/jenholm/workspace/inflationary-sector-renormalization
+git clone https://github.com/jenholm/physics_models.git
+cd physics_models/inflationary-sector-renormalization
+python -m venv .venv
 source .venv/bin/activate
+pip install -r requirements.txt
 python -m compileall isr experiments
 python run_all.py
 \end{verbatim}

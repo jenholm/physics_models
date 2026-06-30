@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inflationary-sector-renormalization"
+version = "0.1.0"
+description = "Toy framework for studying locality-weighted hidden-sector measures in eternal inflation."
+authors = [{name = "Jake Enholm", email = "jake@example.com"}]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib",
+    "pydantic",
+    "pyyaml",
+    "tqdm",
+    "scikit-learn",
+    "networkx",
+]
+
+[tool.setuptools.packages]
+find = { include = ["isr*"] }
+
+[project.optional-dependencies]
+dev = ["pytest", "jupyter"]

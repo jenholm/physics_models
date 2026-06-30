@@ -1,0 +1,74 @@
+# Toy inflationary landscape configuration
+# V(phi) = base slow-roll potential + Gaussian well perturbations
+
+base_potential:
+  type: "quadratic"
+  mass_squared: 0.1
+
+perturbations:
+  # Each well creates a vacuum basin
+  n_wells: 6
+  # Well parameters: [amplitude, mu, sigma]
+  # High amplitude = deep well = attractive vacuum
+  wells:
+    - [2.0, -4.0, 0.4]
+    - [1.8, -1.5, 0.35]
+    - [2.2, 0.5, 0.5]
+    - [1.5, 2.5, 0.3]
+    - [1.0, 4.0, 0.6]
+    - [0.8, 6.0, 0.4]
+
+  # Bumps (repulsive regions)
+  bumps: []
+
+field_range:
+  min: -8.0
+  max: 8.0
+  resolution: 2000
+
+vacuum_assignment:
+  # Map basin_id to effective physics vector theta
+  # theta = {Lambda_eff, G_eff, Q_fluctuation, reheating_temp, vacuum_id, spectrum_class}
+  basins:
+    # basin 0 = false vacuum / unbroken phase
+    0:
+      Lambda_eff: 1.0
+      G_eff: 1.0
+      Q_fluctuation: 0.2
+      reheating_temp: 100.0
+      spectrum_class: "scale_invariant"
+    # basin 1 = broken phase vacuum A
+    1:
+      Lambda_eff: 0.8
+      G_eff: 0.9
+      Q_fluctuation: 0.8
+      reheating_temp: 80.0
+      spectrum_class: "blue_tilted"
+    # basin 2 = broken phase vacuum B
+    2:
+      Lambda_eff: 1.2
+      G_eff: 1.1
+      Q_fluctuation: 0.4
+      reheating_temp: 120.0
+      spectrum_class: "red_tilted"
+    # basin 3 = high-scale vacuum
+    3:
+      Lambda_eff: 2.0
+      G_eff: 0.7
+      Q_fluctuation: 0.1
+      reheating_temp: 200.0
+      spectrum_class: "large_r"
+    # basin 4 = low-scale vacuum
+    4:
+      Lambda_eff: 0.5
+      G_eff: 1.3
+      Q_fluctuation: 0.9
+      reheating_temp: 50.0
+      spectrum_class: "running"
+    # basin 5 = mid-scale vacuum
+    5:
+      Lambda_eff: 1.5
+      G_eff: 0.85
+      Q_fluctuation: 0.5
+      reheating_temp: 140.0
+      spectrum_class: "broken_scale_inv"
