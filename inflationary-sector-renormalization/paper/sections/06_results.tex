@@ -106,6 +106,15 @@ controlled toy setting, not a derivation of physical running couplings.
 
 \subsection{Claim 6: Ell sensitivity reveals a sweet spot}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/fig_11_ell_sensitivity_kl.png}
+  \caption{KL drift and Wasserstein distance vs.\ kernel scale $\ell$.
+  The black dotted line is the global-census baseline; the gray dashed
+  line is the shuffled null control.}
+  \label{fig:ell_sensitivity_kl}
+\end{figure}
+
 Fig.~\ref{fig:ell_sensitivity_kl} shows the evolution of ISR stability
 metrics across $\ell$ (see Table~\ref{tab:ell_sensitivity} in
 Appendix~\ref{app:supplementary} for the full data).
@@ -140,18 +149,17 @@ This shows that the improvement is not a generic artifact of kernel smoothing;
 it depends on preserving the field-space distance structure encoded by the
 toy landscape.
 
-\begin{figure*}[t]
-  \centering
-  \includegraphics[width=\textwidth]{figures/fig_11_ell_sensitivity_kl.png}
-  \caption{KL drift and Wasserstein distance vs.\ kernel scale $\ell$.
-  The black dotted line is the global-census baseline; the gray dashed
-  line is the shuffled null control.}
-  \label{fig:ell_sensitivity_kl}
-\end{figure*}
-
-\FloatBarrier
-
 \subsection{Claim 7: ISR remains favorable in the non-degenerate sigma--ell region}
+
+\input{tables/table_09_sigma_ell_boundary}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/fig_13_sigma_ell_mean_improvement.png}
+  \caption{Mean improvement ratio (global KL / ISR KL) across the sigma--ell
+  grid. All non-degenerate cells ($\ell \ge 0.50$) exceed 1.}
+  \label{fig:sigma_ell_boundary}
+\end{figure}
 
 The sigma--ell boundary experiment (Experiment~\ref{exp:10}) is a separate
 scan from the 100-run stress test (Experiment~\ref{exp:8}).
@@ -166,18 +174,6 @@ The improvement is strongest at large $\sigma$ (broad initial-condition spreads)
 where the global census is most cutoff-dependent.
 Degenerate small-$\ell$ results ($\ell=0.10, 0.25$) are reported in
 Appendix~\ref{app:degenerate}.
-
-\input{tables/table_09_sigma_ell_boundary}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\columnwidth]{figures/fig_13_sigma_ell_mean_improvement.png}
-  \caption{Mean improvement ratio (global KL / ISR KL) across the sigma--ell
-  grid. All non-degenerate cells ($\ell \ge 0.50$) exceed 1.}
-  \label{fig:sigma_ell_boundary}
-\end{figure}
-
-\FloatBarrier
 
 \subsection{Claim 8: ISR improvement is robust to landscape perturbation}
 

@@ -49,7 +49,7 @@ the apparent improvement ratio.
 Tables~\ref{tab:degenerate_ell_sensitivity}~and~\ref{tab:degenerate_sigma_ell}
 show the degenerate and boundary rows.
 
-\begin{table*}[htbp!]
+\begin{table}[!htbp]
   \centering
   \caption{Degenerate and boundary rows from the ell sensitivity scan
   (Gaussian kernel). Rows with $\ell \lesssim 0.25$ are degenerate:
@@ -57,29 +57,29 @@ show the degenerate and boundary rows.
   The $\ell = 0.23$ row ($N_{\rm eff}/N = 0.25$) is a boundary case
   that narrowly fails the $N_{\rm eff}/N \ge 0.3$ threshold.}
   \label{tab:degenerate_ell_sensitivity}
-  \small
+  \scriptsize
   \begin{tabular}{lcccccc}
     \toprule
-    $\ell$ & $N_{\rm eff}$ & KL drift & Wasserstein & Basin exc. rate & $\Lambda_{\rm eff}$ & Conv. rate \\
+    $\ell$ & $N_{\rm eff}$ & KL drift & Wasserstein & Basin exc. & $\Lambda_{\rm eff}$ & Conv. \\
     \midrule
     0.05 & 1.0 & $<10^{-25}$ & $<10^{-125}$ & 0.00 & 2.000 & --- \\
     0.10 & 49.6 & $<10^{-29}$ & $<10^{-29}$ & 0.00 & 2.000 & --- \\
     0.23 & 2523 & $2.0\times10^{-10}$ & $1.6\times10^{-9}$ & 0.00 & 2.000 & $-0.07$ \\
     \bottomrule
   \end{tabular}
-\end{table*}
+\end{table}
 
-\begin{table*}[htbp!]
+\begin{table}[!htbp]
   \centering
   \caption{Full sigma--ell boundary grid including degenerate small-$\ell$
   columns. Values at $\ell=0.10$ and $\ell=0.25$ are diagnostic artifacts:
   the narrow kernel forces $N_{\rm eff} \ll N$, producing trivially large
   improvement ratios.}
   \label{tab:degenerate_sigma_ell}
-  \small
+  \scriptsize
   \begin{tabular}{lccccc}
     \toprule
-    $\sigma$ $\backslash$ $\ell$ & 0.10 & 0.25 & 0.50 & 1.00 & 2.00 \\
+    $\sigma \backslash \ell$ & 0.10 & 0.25 & 0.50 & 1.00 & 2.00 \\
     \midrule
     0.5 & $2.0\times10^{21}$ & $5.6\times10^{6}$ & 68.5 & 3.12 & 1.28 \\
     1.0 & $9.6\times10^{20}$ & $2.9\times10^{5}$ & 142.5 & 5.97 & 1.86 \\
@@ -88,4 +88,4 @@ show the degenerate and boundary rows.
     3.0 & --- & $9.5\times10^{5}$ & 58.5 & 6.27 & 2.46 \\
     \bottomrule
   \end{tabular}
-\end{table*}
+\end{table}
