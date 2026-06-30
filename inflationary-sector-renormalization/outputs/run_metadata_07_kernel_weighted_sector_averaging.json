@@ -4,7 +4,7 @@
   "n_efolds": 80,
   "landscape_config_hash": "17422568b638",
   "phi0": 2.0,
-  "experiment": "07_effective_action_coefficients",
+  "experiment": "07_kernel_weighted_sector_averaging",
   "kernel": "gaussian",
   "ell_values": [
     0.1,

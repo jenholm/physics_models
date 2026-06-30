@@ -1,4 +1,4 @@
-"""Experiment 6: Bell locality diagnostic.
+"""Experiment 6: Configuration-space locality diagnostics.
 
 Tests whether same-ancestry sectors produce correlated effective physics
 more often than arbitrary sectors at varying distance thresholds.
@@ -11,7 +11,7 @@ import numpy as np
 from pathlib import Path
 import pandas as pd
 
-from isr.bell_locality import locality_diagnostics
+from isr.configuration_space_locality import locality_diagnostics
 from isr.experiment_utils import build_simulation_context, save_run_metadata
 
 logging.basicConfig(level=logging.WARNING, format="%(levelname)s:%(name)s:%(message)s")
@@ -27,7 +27,7 @@ def run(output_dir: str = "outputs"):
     output_path.mkdir(parents=True, exist_ok=True)
 
     save_run_metadata(output_dir, ctx, {
-        "experiment": "06_bell_locality_diagnostic",
+        "experiment": "06_configuration_space_locality_diagnostic",
         "distance_keys": DISTANCE_KEYS,
     })
 
@@ -44,7 +44,7 @@ def run(output_dir: str = "outputs"):
             results[f"thr_{threshold}"] = diag
         all_results[dkey] = results
 
-    with open(output_path / "bell_locality_diagnostics.json", "w") as f:
+    with open(output_path / "configuration_space_locality_diagnostics.json", "w") as f:
         json.dump(all_results, f, indent=2)
 
     rows = []
@@ -64,7 +64,7 @@ def run(output_dir: str = "outputs"):
                 "locality_failure_rate": d.get("locality_failure_rate", 0.0),
             })
     df = pd.DataFrame(rows)
-    df.to_csv(output_path / "bell_locality_summary.csv", index=False)
+    df.to_csv(output_path / "configuration_space_locality_summary.csv", index=False)
 
     logger.info("Experiment 06 complete — distance_keys=%s", DISTANCE_KEYS)
     return df

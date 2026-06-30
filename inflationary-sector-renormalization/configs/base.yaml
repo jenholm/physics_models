@@ -30,7 +30,7 @@ renormalization:
     distance_max: [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
     ancestry_depth: [1, 2, 3, 5, 10]
 
-bell_locality:
+configuration_space_locality:
   distance_bins: 20
   n_samples: 5000
 

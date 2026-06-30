@@ -224,9 +224,9 @@ def table_failure_cases():
 
 # ─── Table 6: effective coefficients ──────────────────────────────
 def table_effective_coefficients():
-    wc = load_csv("wilson_coefficients.csv")
+    wc = load_csv("kernel_weighted_sector_averaging.csv")
     if wc is None:
-        print("  SKIP table_06: no wilson_coefficients.csv")
+        print("  SKIP table_06: no kernel_weighted_sector_averaging.csv")
         return
     ells = sorted(wc["ell"].unique())
     params = [c for c in wc.columns if c not in ("ell", "n_sectors") and "aggregate" in c]

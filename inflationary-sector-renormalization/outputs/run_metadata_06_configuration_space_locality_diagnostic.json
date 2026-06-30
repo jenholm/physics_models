@@ -4,7 +4,7 @@
   "n_efolds": 80,
   "landscape_config_hash": "17422568b638",
   "phi0": 2.0,
-  "experiment": "06_bell_locality_diagnostic",
+  "experiment": "06_configuration_space_locality_diagnostic",
   "distance_keys": [
     "phi",
     "phi_initial",

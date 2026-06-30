@@ -29,7 +29,7 @@ def run(output_dir: str = "outputs"):
     cutoffs = compute_cutoffs(raw_cutoffs, len(sectors))
 
     save_run_metadata(output_dir, ctx, {
-        "experiment": "07_effective_action_coefficients",
+        "experiment": "07_kernel_weighted_sector_averaging",
         "kernel": "gaussian",
         "ell_values": ell_values,
         "cutoffs": cutoffs,
@@ -48,7 +48,7 @@ def run(output_dir: str = "outputs"):
             eff_history.append(entry)
         results[f"ell_{ell}"] = eff_history
 
-    with open(output_path / "wilson_coefficients.json", "w") as f:
+    with open(output_path / "kernel_weighted_sector_averaging.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
 
     rows = []
@@ -62,7 +62,7 @@ def run(output_dir: str = "outputs"):
                 row[param] = val
             rows.append(row)
     df = pd.DataFrame(rows)
-    df.to_csv(output_path / "wilson_coefficients.csv", index=False)
+    df.to_csv(output_path / "kernel_weighted_sector_averaging.csv", index=False)
 
     logger.info("Experiment 07 complete — ell_values=%s cutoffs=%s", ell_values, cutoffs)
     return results

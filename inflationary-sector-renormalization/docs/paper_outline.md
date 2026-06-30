@@ -13,7 +13,7 @@ Inflationary Sector Renormalization: A Locality-Weighted Hidden-Sector Measure f
 - Observable patch as conditioned sector
 - Integration over unobserved inflationary degrees of freedom
 
-## 3. Bell Locality Caution
+## 3. Configuration-Space Locality Caution
 - Bell does not prove local hidden variables
 - Locality used as measure prior
 - Common ancestry and field proximity

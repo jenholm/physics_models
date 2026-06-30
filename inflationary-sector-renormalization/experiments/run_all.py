@@ -13,9 +13,13 @@ EXPERIMENTS = [
     ("03 — Cutoff Stability (with global baseline)", "experiments/03_cutoff_stability"),
     ("04 — Kernel Sensitivity", "experiments/04_kernel_sensitivity"),
     ("05 — Basin Boundary Test", "experiments/05_basin_boundary_test"),
-    ("06 — Bell Locality Diagnostic", "experiments/06_bell_locality_diagnostic"),
-    ("07 — Effective Action Coefficients", "experiments/07_effective_action_coefficients"),
+    ("06 — Configuration-Space Locality Diagnostics", "experiments/06_configuration_space_locality_diagnostic"),
+    ("07 — Kernel-Weighted Sector Averaging", "experiments/07_kernel_weighted_sector_averaging"),
     ("08 — Stress Test (sigma×seed)", "experiments/08_stress_test"),
+    ("09 — Ell Sensitivity", "experiments/09_ell_sensitivity"),
+    ("10 — Sigma-Ell Boundary", "experiments/10_sigma_ell_boundary"),
+    ("11 — Flat-Parent Composition Sanity Check", "experiments/11_flat_parent_composition"),
+    ("12 — Landscape Perturbation Robustness", "experiments/12_landscape_perturbation"),
 ]
 
 

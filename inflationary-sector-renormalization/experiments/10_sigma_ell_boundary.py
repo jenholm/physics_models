@@ -9,7 +9,7 @@ import pandas as pd
 from isr.measures import global_census_measure, isr_locality_measure, effective_sector_renormalization
 from isr.renormalization import cutoff_stability_analysis
 from isr.experiment_utils import build_simulation_context, compute_cutoffs, save_run_metadata
-from isr.bell_locality import locality_diagnostics
+from isr.configuration_space_locality import locality_diagnostics
 
 logging.basicConfig(level=logging.WARNING, format="%(levelname)s:%(name)s:%(message)s")
 logger = logging.getLogger("exp10")

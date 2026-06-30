@@ -1,4 +1,4 @@
-# Bell Locality Note
+# Configuration-Space Locality Note
 
 ## What ISR uses
 

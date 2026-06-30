@@ -10,7 +10,7 @@ import numpy as np
 from pathlib import Path
 import pandas as pd
 
-from isr.bell_locality import effective_physics_distance
+from isr.configuration_space_locality import effective_physics_distance
 from isr.experiment_utils import build_simulation_context, compute_cutoffs, save_run_metadata
 
 logging.basicConfig(level=logging.WARNING, format="%(levelname)s:%(name)s:%(message)s")

@@ -7,8 +7,8 @@
 - **03_cutoff_stability**: n_traj=10000, seed=42, phi0=2.0, landscape_hash=17422568b638
 - **04_kernel_sensitivity**: n_traj=10000, seed=42, phi0=2.0, landscape_hash=17422568b638
 - **05_basin_boundary_test**: n_traj=10000, seed=42, phi0=2.0, landscape_hash=17422568b638
-- **06_bell_locality_diagnostic**: n_traj=10000, seed=42, phi0=2.0, landscape_hash=17422568b638
-- **07_effective_action_coefficients**: n_traj=10000, seed=42, phi0=2.0, landscape_hash=17422568b638
+- **06_configuration_space_locality_diagnostic**: n_traj=10000, seed=42, phi0=2.0, landscape_hash=17422568b638
+- **07_kernel_weighted_sector_averaging**: n_traj=10000, seed=42, phi0=2.0, landscape_hash=17422568b638
 - **08_stress_test**: n_traj=2000, seed=[1..20], phi0=2.0, landscape_hash=17422568b638
 
 ## 01 — Global Census Baseline
@@ -118,7 +118,7 @@
 
   - Mean θ-to-x0 (diff): 102.4274
 
-## 06 — Bell Locality Diagnostic
+## 06 — Configuration-Space Locality Diagnostics
 
 | distance_key | threshold | continuity | basin_exception | locality_failure | near_same | near_diff |
 
@@ -160,7 +160,7 @@
 
 | phi_initial | thr_2.0 | 1.000 | 0.519 | 0.000 | 15748 | 16965 |
 
-## 07 — Effective Action Coefficients
+## 07 — Kernel-Weighted Sector Averaging
 
 ### ell_0.1
 

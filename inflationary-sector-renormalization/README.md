@@ -34,6 +34,12 @@ python experiments/run_all.py
 
 `paper/inflationary-sector-renormalization.pdf`
 
+To build the paper from source:
+
+```bash
+cd paper && make
+```
+
 ## Repository layout
 
 ```

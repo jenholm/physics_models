@@ -1,9 +1,9 @@
-"""Bell locality diagnostics for ISR.
+"""Configuration-space locality diagnostics for ISR.
 
 This module tests whether sectors that are locally adjacent in initial conditions
 share correlated effective physics. It does NOT assert Bell-style local hidden variables.
 
-Bell locality is used only as a constraint/prior on measure construction.
+Configuration-space locality is used only as a constraint/prior on measure construction.
 
 Metrics
 -------

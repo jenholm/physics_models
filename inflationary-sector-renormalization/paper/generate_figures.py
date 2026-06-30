@@ -172,9 +172,9 @@ def fig_kernel_sensitivity():
 
 # ─── Fig 5: basin exception rate ──────────────────────────────────
 def fig_basin_exception():
-    bell = load_json("bell_locality_diagnostics.json")
+    bell = load_json("configuration_space_locality_diagnostics.json")
     if bell is None:
-        print("  SKIP fig_05: no bell_locality_diagnostics.json")
+        print("  SKIP fig_05: no configuration_space_locality_diagnostics.json")
         return
 
     fig, ax = plt.subplots(figsize=(7, 4))
@@ -203,9 +203,9 @@ def fig_basin_exception():
 
 # ─── Fig 6: kernel-weighted sector averaging ──────────────────────
 def fig_effective_coefficient_flow():
-    wc = load_csv("wilson_coefficients.csv")
+    wc = load_csv("kernel_weighted_sector_averaging.csv")
     if wc is None:
-        print("  SKIP fig_06: no wilson_coefficients.csv")
+        print("  SKIP fig_06: no kernel_weighted_sector_averaging.csv")
         return
 
     ells = sorted(wc["ell"].unique())
