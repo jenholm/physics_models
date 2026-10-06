@@ -1,0 +1,16 @@
+\section{Results}
+
+The current results are fixture-backed smoke tests and are not evidence for a
+calibration-domain correction in real H0 data. All diagnostics run on a synthetic
+fixture table with pre-encoded method splits. The scientific gate reports
+\texttt{FIXTURE_ONLY}.
+
+A paper-grade result requires:
+\begin{itemize}
+  \item Real registered data with provenance-checked source files.
+  \item Candidate splits that beat fair nuisance baselines (global offset, method
+    offset, and candidate-specific nuisance twins).
+  \item Held-out method/anchor predictive improvement over baselines.
+  \item Propagation-null checks passing threshold.
+  \item Feature table locked before fitting.
+\end{itemize}

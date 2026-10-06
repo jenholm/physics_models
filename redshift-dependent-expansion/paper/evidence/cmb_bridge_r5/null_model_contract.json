@@ -1,0 +1,18 @@
+{
+ "baseline_endpoint": "bare LCDM (run_cmb_bridge_r3_field_derived.load_bare)",
+ "bridge_coordinates_fixed": [
+  "K_H (no deformation: H_dressed = bare H)",
+  "c0..cm-1 (all zero)"
+ ],
+ "bridge_coordinates_free": [],
+ "n_bridge_parameters": 0,
+ "K_H_free": false,
+ "epsilon_treatment": "not applicable (no deformation fitted)",
+ "sn_nuisance": "single common M profiled analytically per fold-train (profile_m_analytically)",
+ "fold_training_policy": "M-only profile on train rows; held-out conditional score on held rows; identical folds for null and bridge maps",
+ "folds": {
+  "sn_conditional_folds": 5,
+  "desi_leave_block_out": "blocks incl. 2.33 (full-domain R5 scoring)"
+ },
+ "implementation": "IdentityBridge in run_cmb_bridge_r5_null_cv.py (H_dressed=bare H, rdrag_dressed=bare rdrag)"
+}

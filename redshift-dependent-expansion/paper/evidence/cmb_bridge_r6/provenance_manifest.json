@@ -1,0 +1,93 @@
+{
+ "artifacts": {
+  "endpoint_redshift.json": {
+   "bytes": 476,
+   "generating_script": "scripts/run_cmb_bridge_r6_endpoints.py",
+   "sha256": "3b40a159e79185378883a2d0861419733e83f7d3909dc0e86a167611a14f37e9",
+   "source_artifact": "runs/cmb_bridge/r6/endpoint_redshift.json"
+  },
+  "endpoint_cmb_1.json": {
+   "bytes": 459,
+   "generating_script": "scripts/run_cmb_bridge_r6_endpoints.py",
+   "sha256": "24be32b2c5dfe46593aa4f898a03e9ea0fcc5f2263ffefe4a69d495d48a45b02",
+   "source_artifact": "runs/cmb_bridge/r6/endpoint_cmb_1.json"
+  },
+  "endpoint_cmb_2.json": {
+   "bytes": 476,
+   "generating_script": "scripts/run_cmb_bridge_r6_endpoints.py",
+   "sha256": "1d024635b61e642d6bf00aef0caab4ca919a4e0e6e5989ea23824445a2421a76",
+   "source_artifact": "runs/cmb_bridge/r6/endpoint_cmb_2.json"
+  },
+  "endpoint_manifest.json": {
+   "bytes": 558,
+   "generating_script": "scripts/run_cmb_bridge_r6_endpoints.py",
+   "sha256": "4902356dab89f84acbe725c5e279d363359d95f175f23d7646ba981843e5b268",
+   "source_artifact": "runs/cmb_bridge/r6/endpoint_manifest.json"
+  },
+  "difference_fields.npz": {
+   "bytes": 129916,
+   "generating_script": "scripts/run_cmb_bridge_r6_differences.py",
+   "sha256": "bc635ee5b12a20c3bb9355b1ca40632e456e1227dbff33f3d47a85d46405eb5b",
+   "source_artifact": "runs/cmb_bridge/r6/difference_fields.npz"
+  },
+  "scale_comparison.json": {
+   "bytes": 1696,
+   "generating_script": "scripts/run_cmb_bridge_r6_differences.py",
+   "sha256": "57fb19c3a9306496c5a1ee4206644713698a73e170393cf447e84bcf7833af64",
+   "source_artifact": "runs/cmb_bridge/r6/scale_comparison.json"
+  },
+  "common_mode.json": {
+   "bytes": 793,
+   "generating_script": "scripts/run_cmb_bridge_r6_differences.py",
+   "sha256": "409aa6416a93676cf170238696208ace086d9fda2db5583703674496776f8740",
+   "source_artifact": "runs/cmb_bridge/r6/common_mode.json"
+  },
+  "agreement_metrics.json": {
+   "bytes": 1225,
+   "generating_script": "scripts/run_cmb_bridge_r6_differences.py",
+   "sha256": "b524cd2b2e37d2d6c513b135eb09a6d9c5219ac54a2d0a35acc0a349a3472905",
+   "source_artifact": "runs/cmb_bridge/r6/agreement_metrics.json"
+  },
+  "domain_split.json": {
+   "bytes": 344,
+   "generating_script": "scripts/run_cmb_bridge_r6_differences.py",
+   "sha256": "347e6f6ef97b92b27d1adf9877fdd6aa19269f9dc5e6d44af030c49e0caa67db",
+   "source_artifact": "runs/cmb_bridge/r6/domain_split.json"
+  },
+  "transfer_results.json": {
+   "bytes": 1482,
+   "generating_script": "scripts/run_cmb_bridge_r6_transfer.py",
+   "sha256": "86bb341c87fd881ade1202955a1a70f289e5d7bda66d1f632a2dad5266866fe8",
+   "source_artifact": "runs/cmb_bridge/r6/transfer_results.json"
+  },
+  "overlay_curves.npz": {
+   "bytes": 81202,
+   "generating_script": "scripts/paper/generate_bridge_r6_figure.py",
+   "sha256": "26097f740e32b94f2033bb9703577cc366e6bdfc9c05aeb30fad71790043a5c6",
+   "source_artifact": "runs/cmb_bridge/r6/overlay_curves.npz"
+  },
+  "overlay_curves.json": {
+   "bytes": 114,
+   "generating_script": "scripts/paper/generate_bridge_r6_figure.py",
+   "sha256": "45c4489efcd2c6bfc46591ab374c5f0d53202bc4638a292e6793ae17e498908d",
+   "source_artifact": "runs/cmb_bridge/r6/overlay_curves.json"
+  },
+  "r6_vs_r5.json": {
+   "bytes": 1048,
+   "generating_script": "inline R6-006 comparison step",
+   "sha256": "6f89228c343e51d7f38d36486b0eee916f438c11d7e629c2337c2a6ad872035e",
+   "source_artifact": "runs/cmb_bridge/r6/r6_vs_r5.json"
+  },
+  "r6_disposition.json": {
+   "bytes": 744,
+   "generating_script": "scripts/run_cmb_bridge_r6_disposition.py",
+   "sha256": "c0ffb7b06ec8d1a82412b3879d60f5f80322547dce29888efd9fa1401593ef00",
+   "source_artifact": "runs/cmb_bridge/r6/r6_disposition.json"
+  }
+ },
+ "cycle": "CMB-BRIDGE-R6",
+ "git_commit": "f99ba0a245af7b623433cc86bd9f0ef4330f265f",
+ "numpy": "2.5.1",
+ "python": "3.12.3",
+ "scipy": "1.18.0"
+}

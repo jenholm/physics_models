@@ -1,0 +1,9 @@
+boundary,status
+compressed-cmb-only,"prior only, no spectra"
+fixed-zd-zstar,"z_d, z_star held fixed"
+fixed-radiation,Omega_r held fixed
+no-recombination-perturbation,background-level ruler ratio only
+best-fit-not-posterior,no intervals claimed
+declared-domain,"best fit within [0.20, 0.45], no extrapolation"
+calibrator-contract-scope,Delta mu_cal=0 under declared contract only
+no-significance-calibration,descriptive difference only

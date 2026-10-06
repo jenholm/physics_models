@@ -1,0 +1,26 @@
+{
+ "criteria": "predeclared in run_cmb_bridge_r6_disposition.py docstring before evaluation",
+ "checks": {
+  "a_scale": {
+   "(0.0, 0.4)": true,
+   "(0.4, 0.8)": true,
+   "(0.8, 1.2)": true,
+   "(1.2, 1.8)": true
+  },
+  "b_common": {
+   "(0.0, 0.4)": true,
+   "(0.4, 0.8)": true,
+   "(0.8, 1.2)": true,
+   "(1.2, 1.8)": true
+  },
+  "c_transfer_degradation": {
+   "C1_to_C2": 0.06793092645405707,
+   "C2_to_C1": 0.06778400271239438,
+   "pass": true
+  }
+ },
+ "disposition": "COMMON_REDSHIFT_CMB_GEOMETRY_SUPPORTED",
+ "FUNDAMENTAL_DYNAMICS_UNDEFINED": true,
+ "PHYSICAL_RECOMBINATION_INTERPRETATION_UNDEFINED": true,
+ "caveat": "point-estimate comparison; endpoint uncertainties not propagated; no parameter expansion follows any negative result"
+}

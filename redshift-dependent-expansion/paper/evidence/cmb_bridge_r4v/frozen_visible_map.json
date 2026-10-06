@@ -1,0 +1,35 @@
+{
+ "CV_DESI_sum": 70.9,
+ "CV_SN_sum": 8153.1,
+ "CV_rule": "smallest m within 2.0 of best combined held-out (m3=8224.0 best)",
+ "CV_score_combined": 8224.0,
+ "CV_selected": true,
+ "K_H": 0.9271626190250303,
+ "basis_SHA": "ceb1eab98a9ea5c882fec9dba43d64cb1145c030adf43bbf6926b46008bd09d2",
+ "basis_family": "shifted-legendre",
+ "coefficients": [
+  0.010909986179550845,
+  0.007519901701214576,
+  -0.010837979769649963
+ ],
+ "delta_chi2_eps0": 0.12415095933215525,
+ "delta_vs_control": 8.039916410850083,
+ "effective_observable_rank": 5,
+ "endpoint_hashes": {
+  "bare_endpoint": "c1b899c7ca879f1b7600ecc45f762fca03c0353f44276c52d36f95c8bb6a35d9",
+  "control_endpoint": "a94100ef5896b9eaae58c50e5f1dcd1125e96115529c7f813dabf275df5022ed"
+ },
+ "epsilon": -0.0034619713294071104,
+ "epsilon_profile_min": -0.0049999999999999975,
+ "full_data_chi2": 1459.9605367378347,
+ "full_data_chi2_desi": 8.117287055911012,
+ "full_data_chi2_sn": 1451.8432496819237,
+ "likelihood_hashes": {
+  "bridge_shape_basis": "1ad0c869a17fcea7a92705413acbe75f56ce78193fb8c81e4442e1951343edc5",
+  "dressed_likelihood": "50eaf41f99532b64756b92fdd8e2b688cd4e20a97803b6401b5e4145f6bf590b"
+ },
+ "min_boundary_fraction_shape": 0.48909001382044914,
+ "n_modes": 3,
+ "optimizer_spread": 1.3869794202037156e-11,
+ "status": "EMPIRICAL_BACKGROUND_MAP"
+}

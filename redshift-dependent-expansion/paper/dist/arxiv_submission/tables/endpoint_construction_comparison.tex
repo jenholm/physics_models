@@ -1,0 +1,33 @@
+\begin{table}[!htbp]
+  \centering
+  \caption{Endpoint construction comparison: C1 versus C2.}
+  \label{tab:endpoint-construction}
+  {\small
+  \begin{tabularx}{\linewidth}{lXX}
+    \toprule
+     & C1 & C2 \\
+    \midrule
+    Underlying CMB observations & Planck TT/TE/EE & Planck TT/TE/EE \\
+    Boltzmann code & CAMB 2.0.4 & CAMB (baseline pipeline) \\
+    Likelihood implementation & Planck TT/TE/EE likelihood (CAMB-based) &
+      stock baseline Planck likelihood \\
+    Cosmological parameterization & flat $\Lambda$CDM stage-0 &
+      flat $\Lambda$CDM \\
+    Primordial spectrum parameterization & power-law tilt &
+      power-law tilt, $n_{s}=0.965$ \\
+    Optimizer/sampler & background tuning (stage-0) &
+      fixed-parameter baseline with spectral parity \\
+    Background extraction & frozen CAMB table &
+      CAMB-sampled $H(z)$ table \\
+    $H_{0}$ [km\,s$^{-1}$\,Mpc$^{-1}$] & 67.99 & 67.4 \\
+    $\Omega_{m}$ & 0.3075 & 0.3134 \\
+    $r_{d}$ [Mpc] & 147.15 & 147.11 \\
+    $r_{s}$ [Mpc] & 144.50 & 144.45 \\
+    \bottomrule
+  \end{tabularx}
+  }
+\end{table}
+
+C1 and C2 are separately implemented in pipeline/model space,
+not statistically independent in data space; both use Planck
+information.

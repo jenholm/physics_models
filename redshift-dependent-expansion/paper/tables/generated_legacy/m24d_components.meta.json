@@ -1,0 +1,10 @@
+{
+  "binding": {
+    "replay_available": true
+  },
+  "generated_at": "2026-08-31T18:13:46.243682+00:00",
+  "sources": {
+    "paper/evidence/m24d_reference/likelihood_components.json": "c665941abaab84d0a13a7a2a0b28b40388aaed0d3da34a00107644e78e10345e"
+  },
+  "table": "m24d_components"
+}

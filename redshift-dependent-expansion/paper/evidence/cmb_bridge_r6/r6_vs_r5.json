@@ -1,0 +1,55 @@
+{
+ "comparison": [
+  {
+   "interval": [
+    0.0,
+    0.4
+   ],
+   "R6_rms_D1": 0.08482637959618752,
+   "R6_rms_D2": 0.09185667342533141,
+   "R5_SN_delta": 102.3,
+   "R5_DESI_delta": 0.47
+  },
+  {
+   "interval": [
+    0.4,
+    0.8
+   ],
+   "R6_rms_D1": 0.11227470124129986,
+   "R6_rms_D2": 0.1163260220900836,
+   "R5_SN_delta": 57.89,
+   "R5_DESI_delta": 6.292
+  },
+  {
+   "interval": [
+    0.8,
+    1.2
+   ],
+   "R6_rms_D1": 0.07691654291105245,
+   "R6_rms_D2": 0.07914185757298328,
+   "R5_SN_delta": -3.74,
+   "R5_DESI_delta": 2.577
+  },
+  {
+   "interval": [
+    1.2,
+    1.8
+   ],
+   "R6_rms_D1": 0.07533474209223735,
+   "R6_rms_D2": 0.07625049162923873,
+   "R5_SN_delta": -0.65,
+   "R5_DESI_delta": 0.658
+  },
+  {
+   "interval": [
+    1.8,
+    2.33
+   ],
+   "R6_rms_D1": 0.07678388527701661,
+   "R6_rms_D2": 0.07692773520035351,
+   "R5_SN_delta": -0.19,
+   "R5_DESI_delta": 0.0
+  }
+ ],
+ "reading": "R6 deformation RMS and R5 fit-improvement attribution peak in the same low/intermediate-redshift region; high-z behavior unconstrained in both."
+}

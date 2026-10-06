@@ -1,0 +1,17 @@
+{
+ "corrected": {
+  "delta_ladder_bug": -31.057734702782625,
+  "ladder": 300.1355987796632,
+  "r_d_mpc": 135.600620423054
+ },
+ "erroneous": {
+  "ladder": 331.19333348244584,
+  "note": "source-defined ladder evaluated at the wrong ruler",
+  "r_d_mpc": 147.05
+ },
+ "full_likelihood_unchanged": {
+  "original_total": 1450.8869406832043,
+  "replay_total": 1450.8869406832043
+ },
+ "verdict": "M28R1_REPORTED_LADDER_TRADEOFF_INVALIDATED_BY_RD_BUG"
+}

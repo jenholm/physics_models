@@ -1,0 +1,181 @@
+\section{Search parameterization and optimization}
+\label{app:search}
+
+The best fit is the constrained minimizer of the real-data objective
+over the M28 domain:
+\begin{equation}
+\boxed{\hat{\theta}
+  = \arg\min_{\theta \in \Theta_{M28}} \chi^{2}_{\mathrm{real}}(\theta)}
+\end{equation}
+\begin{equation}
+\boxed{\chi^{2}_{\mathrm{real}}
+  = \chi^{2}_{\mathrm{DESI}} + \chi^{2}_{\mathrm{CMB}}
+  + \chi^{2}_{P+\mathrm{SH0ES}}}
+\end{equation}
+with
+\begin{align}
+\chi^{2}_{\mathrm{DESI}}(\theta)
+  &= r_{D}(\theta)^{T} C_{D}^{-1} r_{D}(\theta), \\
+\chi^{2}_{\mathrm{CMB}}(\theta)
+  &= r_{C}(\theta)^{T} C_{C}^{-1} r_{C}(\theta), \\
+\chi^{2}_{P+\mathrm{SH0ES}}(\theta)
+  &= \min_{M}\,
+     (r_{0}(\theta) - M\mathbf{1})^{T} C_{\mathrm{SN}}^{-1}
+     (r_{0}(\theta) - M\mathbf{1}),
+\end{align}
+where $r_{0} = m_{B}^{\mathrm{corr}} - \mu_{\mathrm{no}\,M}$ and the
+profiled absolute magnitude is
+\begin{equation}
+\hat{M}(\theta)
+  = \frac{\mathbf{1}^{T} C_{\mathrm{SN}}^{-1} r_{0}(\theta)}
+         {\mathbf{1}^{T} C_{\mathrm{SN}}^{-1} \mathbf{1}}.
+\end{equation}
+The value $H_{0} = 73.04$ appears nowhere in the objective: there is no
+$H_{0}$ target, penalty, or reweighting. At $A_{E} = 0$ the model
+returns the late-time law exactly (same-domain null).
+
+The decision vector is
+\begin{equation}
+\theta = (t_{0},\dots,t_{9},\Omega_{m},h_{\mathrm{rd}},
+g_{0},g_{1},x_{1},x_{2},
+q_{l0},q_{l1},q_{l2},q_{\rho0},q_{\rho1},q_{\rho2},A_{E})^{T}.
+\end{equation}
+
+\begin{table}[!htbp]
+\centering
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llllll}
+\toprule
+Parameter & Role & Search representation & Bound & Units & Transform \\
+\midrule
+$t_{0}$--$t_{9}$ & temporal modes & Transformed & $[-0.15,0.15]$ & -- & identity \\
+$\Omega_{m}$ & matter & Direct & $[0.20,0.45]$ & -- & identity \\
+$h_{\mathrm{rd}}$ & $h\,r_{d}$ & Direct & $[70,120]$ & Mpc & identity \\
+$g_{0},g_{1}$ & backbone ampl.\ & Direct & $[-0.50,0.50]$ & dimensionless & identity \\
+$x_{1},x_{2}$ & backbone shift & Direct & $[-0.35,0.35]$ & dimensionless & identity \\
+$q_{l0},q_{l1},q_{l2}$ & duration logits & Transformed & $[-6,6]$ & -- & 4 lengths sum $\ln 11$ \\
+$q_{\rho0},q_{\rho1},q_{\rho2}$ & width logits & Transformed & $[-8,8]$ & -- & $\rho\in[0.005,0.95]$ \\
+$A_{E}$ & early ampl.\ & Direct & $[-0.35,0.35]$ & -- & identity \\
+\bottomrule
+\end{tabular}
+\caption{Final M28 domain $\Theta_{M28}$ (23-vector). $q_{l}$ maps to
+lengths $(l_{0},l_{1},l_{2},l_{3})$ via
+\texttt{duration\_logits\_to\_lengths}; $q_{\rho}$ maps via
+$\rho=\mathrm{RHO\_LO}+\mathrm{expit}(q)(\mathrm{RHO\_HI}-\mathrm{RHO\_LO})$.}
+\label{tab:m28-domain}
+\end{table}
+
+\paragraph{Epoch-duration map.}
+Let $U = \ln 11$ and $L_{\min} = 0.003$. With
+$\tilde{q}_{l} = (q_{l0},q_{l1},q_{l2},0)$,
+\begin{equation}
+f_{i} = \frac{e^{\tilde{q}_{li}}}{\sum_{j=0}^{3} e^{\tilde{q}_{lj}}},
+\qquad
+\boxed{l_{i} = L_{\min} + (U - 4L_{\min})\, f_{i}},
+\end{equation}
+so $\sum_{i=0}^{3} l_{i} = U$ with each $l_{i} \ge L_{\min} = 0.003$.
+
+\paragraph{Epoch-width map.}
+With $\rho_{\min} = 0.005$, $\rho_{\max} = 0.95$ and
+$\sigma(q) = 1/(1+e^{-q})$,
+\begin{equation}
+\rho_{i} = \rho_{\min}
+  + (\rho_{\max} - \rho_{\min})\,\sigma(q_{\rho i}),
+\qquad
+w_{i} = \rho_{i}\,\min(l_{i}, l_{i+1}),
+\end{equation}
+for $i = 0,1,2$. Epoch boundaries are
+\begin{equation}
+b_{1} = l_{0}, \quad b_{2} = l_{0} + l_{1}, \quad
+b_{3} = l_{0} + l_{1} + l_{2},
+\end{equation}
+and plateau lengths are
+\begin{align}
+p_{0} &= l_{0} - w_{0}/2 > 0, \\
+p_{1} &= l_{1} - (w_{0}+w_{1})/2 \ge l_{1}/2, \\
+p_{2} &= l_{2} - (w_{1}+w_{2})/2 \ge l_{2}/2, \\
+p_{3} &= l_{3} - w_{2}/2 > 0,
+\end{align}
+with $l_{3} \ge 0.003$.
+
+\paragraph{Hard gates.}
+Physical-validity gates over $0 \le u \le \ln 11$ are
+\begin{equation}
+\max |g_{\mathrm{late}}| \le 0.35, \quad
+\max |x| \le 0.30, \quad
+\min (1 - s) > 0.05,
+\end{equation}
+plus the early-only bound
+\begin{equation}
+|A_{E}| \le 0.35, \qquad 0 < W_{E} < 1,
+\end{equation}
+where $W_{E}$ is the fixed early window of the early-window paragraph
+below. The $|A_{E}|$ bound applies to the early field only; it does not
+impose the $g$-gate on the sum $g_{\mathrm{late}} + g_{E}$ at
+recombination. Redshift monotonicity is
+\begin{equation}
+\boxed{dz_{\mathrm{obs}}/dz_{\mathrm{bg}} > 0}.
+\end{equation}
+$H_{\mathrm{phys}} > 0$ is not an independent gate: it follows from a
+positive background expansion with the exponential lapse and
+$1 - s > 0.05$.
+
+\paragraph{G10 basis.}
+Let $B(u) = (B_{1}(u),\dots,B_{12}(u))$ be the cubic-spline basis
+\citep{deBoor1978} with $n_{\mathrm{fine}} = 12$, degree~3, and 16
+knots. Null restoration at $u_{\mathrm{anchor}} = \ln 11$ uses the
+null-space matrix $N$, giving $\Phi = B\,N$. Roughness
+\begin{equation}
+R = \int \Phi'(u)^{T} \Phi'(u)\,du
+\end{equation}
+is diagonalized as $R\,V = V\,\Lambda$; eigenvectors are ordered by
+ascending eigenvalue and the first 10 retained as $V_{10}$. With the
+rms normalization
+\begin{equation}
+S_{jj} = \left[\int (\Phi v_{j})^{2}\,du\right]^{1/2},
+\end{equation}
+the late perturbation in whitened coordinates $t = (t_{0},\dots,t_{9})$
+is
+\begin{equation}
+\boxed{\delta g = \Phi\,V_{10}\,S_{10}^{-1}\,t}.
+\end{equation}
+The basis is frozen under \texttt{configs/m28/} as
+\texttt{frozen\_g10\_basis.npz} (sha
+\texttt{frozen\_g10\_basis.sha256};
+$u_{\mathrm{anchor}} = \ln 11$, $n_{q} = 2000$).
+
+\paragraph{Optimizer.}
+Only box constraints are passed to the optimizers. All nonlinear gates
+above are fail-closed: any violation returns the sentinel $10^{12}$ and
+is never an analytic SLSQP constraint. Stage A/B engine: (A) global
+differential evolution \citep{Storn1997} with maxiter~50,
+tol~$10^{-4}$, polish off, workers~1, deferred updating,
+QMC multiplier~16 with a \citep{Sobol1967} sequence; (B) multistart
+bounded SLSQP \citep{Kraft1988} (maxiter~500, ftol~$10^{-7}$) from
+injected start + DE winner + random fills to 5 starts; full candidate
+bank retained. Campaigns: M28 early fit 3 starts (ceiling, 2 cold) all
+at $1450.887$; M28 rebase 3 starts all at $1450.558$; ruler ceiling 5
+starts. No wider ``all starts'' claim.
+
+\paragraph{Early window and rulers.}
+The early window is fixed, not fitted, with
+$u_{\mathrm{lo}} = 5.5$, $u_{\mathrm{hi}} = 8.5$, $w = 0.25$:
+\begin{equation}
+W_{E}(u) = S((u-u_{\mathrm{lo}})/w)\,S((u_{\mathrm{hi}}-u)/w),
+\quad S(y) = 1/(1+e^{-y}).
+\end{equation}
+Coverage is approximately unity over drag and recombination and vanishes
+into late-time restoration by $z = 10$. Ruler integrals use the physical
+photon-baryon sound speed with registered densities to
+$z_{\max} = 10^{7}$. At $A_{E} = 0$ ratios are unity, so
+$r_{d}(A_{E}=0)=147.05$~Mpc and $r_{s}(A_{E}=0)=144.43$~Mpc by
+construction for every $\Omega_{m}$: each denominator uses the current
+background $E_{\mathrm{bg}}(z;\Omega_{m})$ but the ratio renormalizes
+to the fixed Planck anchors, i.e.\ a fractional early-field
+modification $q_{d,s}=I_{E}/I_{0}$ applied to fixed
+$r_{d,0}$/$r_{s,0}$. The fixed early set is
+$z_{d}=1059.94$, $z_{*}=1089.92$,
+$\omega_{b}h^{2}\simeq0.02237$, $\Omega_{r}=9\times10^{-5}$ plus the
+baseline rulers; the early field changes these acoustic integrals
+only, with no recombination or drag-epoch recompute
+(code: \texttt{m28\_sound\_horizon.py}).

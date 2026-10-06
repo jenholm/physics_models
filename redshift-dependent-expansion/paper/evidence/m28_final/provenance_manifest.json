@@ -1,0 +1,83 @@
+{
+ "code_commit": "40b6f7be45c3b4fded0321555b65df9b1dbf1b14",
+ "data_hashes": {
+  "data/external/pantheon_plus_shoes_joint/Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+  "data/external/pantheon_plus_shoes_joint/Pantheon+SH0ES_STAT+SYS.cov": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc"
+ },
+ "dirty_at_freeze": true,
+ "dirty_waiver": true,
+ "files": {
+  "acoustic_rulers.json": {
+   "sha256": "d4a2bb2a8c645586b3e7826b7de9f253b35bd00020f503ac2d35c6447097cb7e",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  },
+  "calibrator_invariance.json": {
+   "sha256": "09598aebf2826373cbf1948d56aa7f54c03069763499b507eb8d45781118e1bb",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  },
+  "desi_rows.csv": {
+   "sha256": "f0f45111e775d77b3166b56faea0e6614445fee10e0edbbf036e3f5b68db24b4",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  },
+  "early_epoch.json": {
+   "sha256": "6c8d1edb5f72b86d1673aeb63040556266ed2177f152950856f8598679dfa084",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  },
+  "early_window.csv": {
+   "sha256": "eb7e5d49b7341c03fda06299cdf6b42235317c532b82ac191ee824179bfa4a73",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  },
+  "frozen_model.json": {
+   "sha256": "585dd78188b8fd491098881076a43c6b9acc347a8e8919128334e2a87bd0923e",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  },
+  "gamma_curve.csv": {
+   "sha256": "ca68b2c2bbf852fe62ab121ea3b91ab98e14693c0317622051066161d41ca2ac",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  },
+  "ladder_diagnostic.json": {
+   "sha256": "e60f3d5f81a4a43a993b063dbfdd4150268693545c687d67942d7e9cc6af95a0",
+   "source": "runs/m28r1/preflight/m28_physical_diagnostics_corrected.json"
+  },
+  "likelihood_components.json": {
+   "sha256": "8a81cb2354f9a564c414436fa2c04329e0fbd9cf4326f3ba95bdcccf6cb5e0df",
+   "source": "runs/m28/model_comparison.json"
+  },
+  "m28r1_preflight.json": {
+   "sha256": "04266fca40e06db18a259ec16dd10f4fc1838a5a51c9adf7c0efae8e669d5c0f",
+   "source": "runs/m28r1/preflight/restatement.json"
+  },
+  "model_comparison.json": {
+   "sha256": "a3fe617c3d19c699a4b27fe87781b57e5ec52ffba441c88281d55db2941f41a9",
+   "source": "runs/m28/model_comparison.json"
+  },
+  "nonladder_diagnostic.json": {
+   "sha256": "ffc5b6500e9e8e49f8e615a92142eeaa57d5691baaa2faef6d8c66277f3bd366",
+   "source": "runs/m28r1/preflight/m28_physical_diagnostics_corrected.json"
+  },
+  "parameter_domain.json": {
+   "sha256": "eea8031d10d81e778f3221058f5e820eed0207a30cd7451725097a7e973c6c46",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  },
+  "replay.json": {
+   "sha256": "ed15236e08e75f24bc8d6f8289ef085f87b6e95b0db7b821e70539f993ac50dd",
+   "source": "runs/m28/model_comparison.json"
+  },
+  "sn_rows.csv": {
+   "sha256": "bf9bd52a226a6d1dae21a6b6f8510b479e5fec25fb0d3ea608caac96bd584d80",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  },
+  "xi_curve.csv": {
+   "sha256": "e39e30d8dae38fe78e755c2be5c7a1402b1761b75882d814ed76550af1b03ae8",
+   "source": "runs/m28r1/preflight/m28_rebased_reference.json"
+  }
+ },
+ "likelihood_contract": {
+  "src/h0cdr/fitting/m25_track_p.py": "d863cc42b16b5d2ea39dfd69e6799b354b02311c53746a21c3624a758b0d6532",
+  "src/h0cdr/fitting/m26_joint.py": "9ab68f6182981f8f13ccf926c9c500f6c56ece167d16e012ccc8761235479884",
+  "src/h0cdr/likelihoods/pantheon_plus_shoes_joint.py": "dccaaa206a6f76941c509db7e466aa8caceae23ce705d3fb0eb02de3a1af4efe",
+  "src/h0cdr/model_m25_chronogeometric.py": "e58f8f9d5561a9be7ffdd113bb1462efa3eb208f308b9aba62a6e14f04b1bc98",
+  "src/h0cdr/theory/m26_variable_epoch.py": "5d6579c041fe6b736d6546554f3146c17b26478b7f6c0052e1b203278da3ede4"
+ },
+ "temporal_basis_hash": "ca68b2c2bbf852fe62ab121ea3b91ab98e14693c0317622051066161d41ca2ac"
+}

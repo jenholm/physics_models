@@ -1,0 +1,10 @@
+{
+  "binding": {
+    "table": "T1"
+  },
+  "generated_at": "2026-09-13T23:47:54.280078+00:00",
+  "sources": {
+    "paper/evidence/m28_final/parameter_domain.json": "eea8031d10d81e778f3221058f5e820eed0207a30cd7451725097a7e973c6c46"
+  },
+  "table": "m28_domain"
+}

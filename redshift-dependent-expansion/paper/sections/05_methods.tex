@@ -1,0 +1,73 @@
+\section{Empirical reconstruction method}
+\label{sec:methods}
+
+This paper fits no cosmological model. Its only fitted objects are
+the bridge coordinates mapping the frozen endpoint histories onto
+each other over the constrained domain $z\le1.8$.
+
+\subsection{Bridge coordinates and difference fields}
+
+The fitted bridge coordinates at order $m$ are the overall amplitude
+$K_{H}$, the reciprocity parameter $\epsilon$, and the Legendre shape
+coefficients $c_{0},\ldots,c_{m-1}$ (at the selected $m=3$: five fitted
+coordinates). The compared fields are
+$\Delta_{1}(z)\equiv\ln H_{R}(z)-\ln H_{C_{1}}(z)$,
+$\Delta_{2}(z)\equiv\ln H_{R}(z)-\ln H_{C_{2}}(z)$, and
+$\Delta_{C}(z)\equiv\ln H_{C_{1}}(z)-\ln H_{C_{2}}(z)$
+(Section~\ref{sec:endpoint-repr}).
+
+\subsection{Likelihood residual vector and SN nuisance profile}
+
+The residual vector has $1670$ rows: DESI BAO rows plus $1657$
+Pantheon+SH0ES rows (row-selection contract,
+\path{paper/evidence/sn_selection_contract.json}). DESI rows are
+whitened with the Cholesky factor of the full published covariance;
+SN rows are whitened with the full $1657\times1657$ covariance and
+projected to remove the whitened-ones direction, which analytically
+profiles the single common absolute magnitude $M$
+(Eqs.~\eqref{eq:r0}--\eqref{eq:chijoint}). No $H_{0}$ target, penalty,
+or reweighting enters anywhere.
+
+\subsection{Fold definitions and constrained selection rule}
+
+Order selection uses held-out behavior on identical folds: five
+supernova conditional folds and six DESI leave-block-out folds at
+$z\le1.8$. The Ly$\alpha$ block at $z=2.33$ is scored separately as an
+out-of-domain continuation test and never participates in selection.
+The predeclared rule selects the smallest $m$ within $2.0$ of the
+best combined held-out score
+(constrained re-score \texttt{constrained\_cv\_rescore.json} in paper
+evidence).
+
+\subsection{Projected Jacobian rank}
+
+Let $r\in\mathbb{R}^{1670}$ be the whitened, nuisance-projected
+residual vector and $p=(\log K_{H},\epsilon,c_{0},c_{1},c_{2})$ the
+fitted coordinates. The projected whitened Jacobian is
+\begin{equation}
+  J_{ij} = \frac{\partial r_{i}}{\partial p_{j}}\,s_{j},
+  \label{eq:jacobian}
+\end{equation}
+with finite-difference steps $h_{j}=10^{-6}\max(1,|p_{j}|)$ and column
+scales $s=(0.4055,0.20,1,1,1)$. Its singular values are
+$[602.38,157.31,102.07,32.03,22.31]$ (condition number $\approx27$),
+giving local projected Jacobian rank $5/5$ fitted coordinates
+(rank-operator contract \texttt{rank\_operator\_contract.json} in
+paper evidence).
+These are fitted coordinates, not measured observables.
+
+\subsection{Bootstrap and information criteria}
+
+A parametric bootstrap of the entire selection pipeline under the
+bare null (null contract \texttt{null\_model\_contract.json} in paper
+evidence)
+calibrates order-selection frequency; it tests the complexity of the
+selected representation, not the existence of the numerical difference
+between frozen endpoint histories. Information criteria are reported
+descriptively (parsimony penalty only), never as detections.
+
+Figures and tables are generated exclusively from frozen evidence,
+all SHA-pinned in the manifest \path{paper/evidence_manifest.yaml};
+generation fails if a source hash mismatches. All reported
+values are best fits; no credible or confidence intervals are claimed,
+and every comparison is descriptive with no Wilks-theorem calibration.

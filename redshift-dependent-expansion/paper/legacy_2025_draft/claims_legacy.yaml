@@ -1,0 +1,320 @@
+# Legacy claim registry (pre-publication project history).
+# ARCHIVED: excluded from all paper generation and from the arXiv bundle.
+# Retained for project provenance only.
+claims:
+  # HISTORICAL ENDPOINT PROVENANCE (M28/B2/BRIDGE claims retained for
+  # endpoint R/C1 provenance only; not headline paper claims).
+  - id: M28-H0
+    status: supported
+    text: >
+      The M28 early-epoch extension reaches the locally measured expansion
+      scale (H0_phys near 73) while improving the joint DESI+CMB+SN
+      likelihood over the G10 late-time baseline.
+    evidence:
+      - paper/evidence/m28_final/model_comparison.json
+      - paper/evidence/m28_final/frozen_model.json
+
+  - id: M28-RULER
+    status: supported
+    text: >
+      Acoustic rulers follow the derived-ruler ratio construction from the
+      early field, exact at zero early amplitude, shrinking r_d and r_s
+      under negative early amplitude.
+    evidence:
+      - paper/evidence/m28_final/acoustic_rulers.json
+
+  - id: M28-DESI
+    status: supported
+    text: >
+      M28 improves the DESI DR2 BAO block over the G10 baseline at
+      comparable CMB cost.
+    evidence:
+      - paper/evidence/m28_final/model_comparison.json
+      - paper/evidence/m28_final/desi_rows.csv
+
+  - id: M28-CAL
+    status: conditional
+    text: >
+      M28V_CALIBRATOR_INVARIANCE_ASSUMPTION_ONLY: zero calibrator correction
+      (Delta mu_cal = 0, no new parameters) is an assumption supported
+      qualitatively only (|g_E(0)|~3.5e-11 but local bound 4.6e-4 mag exceeds
+      1e-4 target); not quantitatively established.
+    evidence:
+      - paper/evidence/m28_final/calibrator_invariance.json
+
+  - id: M28-CMB-COMPRESSED
+    status: supported
+    text: >
+      The CMB block used here is a compressed prior only; the CMB
+      contribution to the joint improvement is small.
+    evidence:
+      - paper/evidence/m28_final/model_comparison.json
+
+  - id: M28-CMB-FULL
+    status: not_supported
+    text: >
+      Full-Boltzmann CMB validation of the M28 early lever (TT/TE/EE
+      spectra, damping tail, lensing) has not been performed and is not
+      claimed.
+    evidence:
+      - paper/evidence/m28_final/model_comparison.json
+
+  - id: M28-OMEGAM-EDGE
+    status: conditional
+    text: >
+      The rebased solution has best-fit Omega_m = 0.4444, near the upper
+      edge of the declared [0.20, 0.45] domain; it is a joint-fit solution
+      within the declared domain and contract, with no extrapolation
+      beyond it.
+    evidence:
+      - paper/evidence/m28_final/model_comparison.json
+      - paper/evidence/m28_final/m28r1_preflight.json
+
+  - id: M28-SIGNIFICANCE
+    status: not_established
+    text: >
+      No sigma-level significance is attached to the joint-likelihood
+      difference; the value Delta chi2 = -28.62 is reported descriptively
+      only, without a calibrated null distribution.
+    evidence:
+      - paper/evidence/m28_final/model_comparison.json
+
+  - id: M28-LADDER-TRANSFER
+    status: supported
+    text: >
+      Ladder and non-ladder subset likelihoods are diagnostics with
+      separately profiled nuisance terms: each improves under M28, but
+      they are non-additive under the joint cross-covariance and do not
+      sum to the joint improvement.
+    evidence:
+      - paper/evidence/m28_final/model_comparison.json
+      - paper/evidence/m28_final/m28r1_preflight.json
+
+  - id: M28-EPOCH-STRUCTURE
+    status: diagnostic_only
+    text: >
+      The frozen fitted expansion history H(z_obs) carries localized
+      kinematic structure against two named comparators (exact-valid
+      same-domain AE=0 null and model background); the same-domain null
+      carries localized structure of its own, no stable quantitative
+      dynamical marker survives, and all markers are provisional until
+      gate, width, boundary, convergence, and observational-survival
+      checks pass.
+    evidence:
+      - paper/evidence/m28_epoch_signatures/marker_summary.json
+      - paper/evidence/m28_epoch_signatures/epoch_curves.csv
+      - paper/evidence/m28_epoch_signatures/marker_stability.json
+      - paper/evidence/m28_epoch_signatures/null_kinematic_sanity.json
+
+  - id: M28-KINEMATIC-Q
+    status: diagnostic_only
+    text: >
+      The deceleration diagnostic q (zero defined by H^2+dotH=0, read
+      directly from the audit epoch curves) is a diagnostic of the
+      frozen fit; residual-sign zeros and kinematic zeros are distinct,
+      and all crossings are provisional.
+    evidence:
+      - paper/evidence/m28_epoch_signatures/marker_summary.json
+      - paper/evidence/m28_epoch_signatures/epoch_curves.csv
+      - paper/evidence/m28_epoch_signatures/dynamical_markers.json
+
+  - id: M28-PHANTOM-INTERPRETATION
+    status: conditional
+    text: >
+      Intervals with dotH>0 admit a kinematic w_eff<-1 phantom-like or
+      super-acceleration interpretation only; this is not a fundamental
+      phantom field, and crossings count as physical only after gate,
+      width, boundary, convergence, and observational survival.
+      No stable phantom-amplitude claim is made (n_stable=0).
+    evidence:
+      - paper/evidence/m28_epoch_signatures/marker_summary.json
+      - paper/evidence/m28_epoch_signatures/marker_stability.json
+
+  - id: M28-GROWTH-PREDICTION
+    status: not_supported
+    text: >
+      No growth prediction (D, f, fsig8, S8) is made: M28 has no
+      perturbation sector, and inserting the fitted H(z) into GR growth
+      is forbidden; only a qualitative future-test statement is made.
+    evidence:
+      - paper/evidence/m28_final/model_comparison.json
+
+  - id: M28-REDSHIFT-DRIFT
+    status: not_established
+    text: >
+      No numerical redshift-drift prediction is established; drift is a
+      future falsification test pending clock-mapping validation, with
+      Sandage-Loeb recovery shown only at g=x=0.
+    evidence:
+      - docs/M28_REDSHIFT_DRIFT_DERIVATION.md
+
+  - id: M28-C1-MATCHING
+    status: supported
+    text: >
+      Late-law vs tail matching at U=ln11 is C0 continuous but not C1;
+      derivatives are masked/split at the kink with no line across.
+    evidence:
+      - paper/evidence/m28_validation/matching_audit.json
+
+  - id: M28-EXACT-GATE
+    status: conditional_review_required
+    text: >
+      Exact-gate standing of the frozen vector requires review; a gate
+      miss or an exact neighbor with equal likelihood would revise the
+      epoch markers.
+    evidence:
+      - paper/evidence/m28_validation/matching_audit.json
+      - runs/m28_validation/preflight/frozen_exact_gates.json
+
+  - id: M28-CALIBRATOR-INVARIANCE
+    status: assumption_only
+    text: >
+      Calibrator invariance (Delta mu_cal = 0) holds as an assumption of
+      the declared calibration contract only, not as a measured theorem.
+    evidence:
+      - paper/evidence/m28_final/calibrator_invariance.json
+
+  - id: B2-SPLIT
+    status: supported
+    text: >
+      Within the tested model classes, the Hubble tension appears as a
+      mismatch between a distance-calibrated expansion history (M28-A)
+      and a CMB-calibrated acoustic/primordial history (B2), with 7
+      fitted B2 parameters against 23 distance-branch parameters.
+    evidence:
+      - runs/cmb_reconstruction/frozen/MODEL_A_FINAL.json
+      - runs/cmb_reconstruction/frozen/MODEL_B2_FINAL.json
+      - runs/cmb_reconstruction/frozen/likelihood_budget.json
+      - runs/cmb_reconstruction/frozen/model_complexity.json
+
+  - id: B2-RESOLUTION
+    status: not_supported
+    text: >
+      No resolution of the Hubble tension is claimed: neither branch
+      fits everything (A excluded by full Planck; B2 pays +53.6 DESI+SN
+      and +25.0 ladder chi2).
+    evidence:
+      - runs/cmb_reconstruction/frozen/NOT_SOLVED.md
+      - runs/cmb_reconstruction/frozen/likelihood_budget.json
+
+  - id: B2-MG
+    status: not_supported
+    text: >
+      No modified gravity detection is claimed: B2 perturbation freedom
+      is zero (GR fixed; mu/eta scans tested and rejected).
+    evidence:
+      - runs/cmb_reconstruction/frozen/NOT_SOLVED.md
+      - runs/cmb_reconstruction/frozen/model_complexity.json
+
+  - id: B2-LCDM-FAILURE
+    status: not_supported
+    text: >
+      No proof that Lambda-CDM fails is claimed: the CMB branch is
+      Lambda-CDM with running and fits Planck (total chi2 1002.0).
+    evidence:
+      - runs/cmb_reconstruction/frozen/NOT_SOLVED.md
+      - runs/cmb_reconstruction/frozen/MODEL_B2_FINAL.json
+
+  - id: B2-COMPLEXITY
+    status: supported
+    text: >
+      Model B2 fits 7 parameters against 21 effectively fitted for
+      Model A (23-length working vector with x1/x2 fixed at zero
+      post-fit by repair), with zero perturbation freedom on both
+      sides; the CMB-sector separation cannot be bought with extra
+      B2 freedom.
+    evidence:
+      - runs/cmb_reconstruction/frozen/model_complexity.json
+      - runs/cmb_reconstruction/frozen/likelihood_budget.json
+
+  - id: B2-REPRODUCTION
+    status: supported
+    text: >
+      B2 spectra and acoustic scale reproduce through an independent
+      Cobaya-theory pipeline path (TT/TE/EE agreement, rdrag to 1e-5,
+      end-to-end Planck chi2), confirming the result is not a
+      pipeline-path artifact.
+    evidence:
+      - runs/cmb_reconstruction/frozen/reproduction_b2.json
+      - runs/cmb_reconstruction/frozen/figures/b2r2_figures.json
+
+  - id: BRIDGE-EXISTS
+    status: supported
+    text: >
+      Within the predeclared bridge family and likelihood contract, a
+      compact five-coordinate observable map approximates the flexible
+      distance solution, sacrificing Delta chi2 = 8.04 against the
+      21-coordinate control with 16 fewer fitted coordinates.
+    evidence:
+      - paper/evidence/cmb_bridge_r4v/frozen_visible_map.json
+      - paper/evidence/cmb_bridge_r4v/r4v_summary.json
+      - paper/evidence/cmb_bridge_r4v/provenance_manifest.json
+
+  - id: BRIDGE-DIMENSION
+    status: supported
+    text: >
+      Constrained-domain predictive validation (SN plus DESI z<=1.8
+      folds, smallest m within 2.0 of best) selects shifted-Legendre
+      order 3; m4 is the raw minimum by only 0.13. Lyman-alpha is a
+      separate failed continuation test, not what selects the order;
+      the roughness family is boundary-limited.
+    evidence:
+      - paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json
+      - paper/evidence/cmb_bridge_r4v/sn_cv_by_order.csv
+      - paper/evidence/cmb_bridge_r4v/desi_cv_by_order.csv
+      - paper/evidence/cmb_bridge_r4v/roughness_bound_audit.json
+      - paper/evidence/cmb_bridge_r4v/provenance_manifest.json
+
+  - id: BRIDGE-RANK
+    status: supported
+    text: >
+      All five fitted coordinates of the selected bridge are locally
+      identifiable (local projected Jacobian rank 5 of 5 fitted
+      coordinates after covariance whitening and nuisance projection;
+      not five measured observables).
+    evidence:
+      - paper/evidence/cmb_bridge_r4v/rank_audit_m3.json
+      - paper/evidence/cmb_bridge_r4v/rank_operator_contract.json
+      - paper/evidence/cmb_bridge_r4v/provenance_manifest.json
+
+  - id: BRIDGE-EPSILON
+    status: supported_negative
+    text: >
+      No evidence exists for nonreciprocal calibration: epsilon = 0 is
+      consistent with the profile likelihood (Delta chi2 = 0.124,
+      1-sigma interval approximately [-0.012, +0.005]).
+    evidence:
+      - paper/evidence/cmb_bridge_r4v/epsilon_profile_m3.json
+      - paper/evidence/cmb_bridge_r4v/provenance_manifest.json
+
+  - id: BRIDGE-DYNAMICS
+    status: not_established
+    text: >
+      No fundamental dynamical completion has been established; the
+      bridge is an empirical background map, not a field theory.
+    evidence:
+      - paper/evidence/cmb_bridge_r4v/r4v_summary.json
+
+  - id: BRIDGE-H0-SOLUTION
+    status: not_established
+    text: >
+      The bridge does not constitute a complete resolution of the
+      Hubble tension; neither branch fits everything.
+    evidence:
+      - paper/evidence/cmb_bridge_r4v/r4v_summary.json
+      - runs/cmb_reconstruction/frozen/NOT_SOLVED.md
+
+  - id: BRIDGE-TRIANGULATION
+    status: descriptive_robustness
+    text: >
+      The separately implemented Planck-compatible references show
+      substantially the same redshift separation from R: common-mode
+      fractions above 0.998 per interval, principal angle 1.5 degrees,
+      and frozen-map cross-branch transfer within 6.8 percent residual.
+      This is reference sensitivity, not independent confirmation.
+    evidence:
+      - paper/evidence/cmb_bridge_r6/common_mode.json
+      - paper/evidence/cmb_bridge_r6/agreement_metrics.json
+      - paper/evidence/cmb_bridge_r6/transfer_results.json
+      - paper/evidence/cmb_bridge_r6/r6_disposition.json
+      - paper/evidence/cmb_bridge_r6/provenance_manifest.json

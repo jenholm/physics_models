@@ -1,0 +1,209 @@
+{
+ "contract": "7 fixed windows x 23-param refit; windows fixed, not dimensions; same domain/gates as M28 rebase",
+ "windows": [
+  {
+   "tag": "wide_w040",
+   "u_lo": 5.5,
+   "u_hi": 8.5,
+   "w": 0.4
+  }
+ ],
+ "H0_null": 69.10073515157536,
+ "results": [
+  {
+   "window": "wide_w040",
+   "u_lo": 5.5,
+   "u_hi": 8.5,
+   "w": 0.4,
+   "start": "wide_w040/frozen",
+   "seed": 28100,
+   "x": [
+    0.15,
+    -0.07101661343219355,
+    0.02810247707402027,
+    -0.037826016236938126,
+    0.013027198671839811,
+    -0.06238588724388306,
+    0.023696792756190126,
+    -0.0827496733655084,
+    -0.0012266660393158045,
+    0.07100261919674933,
+    0.45,
+    82.91725671580531,
+    0.017792249408930694,
+    0.08812030150832731,
+    -0.0031657498589395087,
+    -0.0811262464919067,
+    -0.9315808909001044,
+    -1.1155236948343374,
+    -1.9970849256751404,
+    -0.9232974036325845,
+    -8.0,
+    5.6418235140893,
+    -0.1312432401532229
+   ],
+   "A_E": -0.1312432401532229,
+   "r_d": 135.61363554214586,
+   "r_s": 133.29846317079605,
+   "total": 1450.5498136303627,
+   "H0_phys": 72.99567143687787,
+   "H0_background": 61.14227111774197,
+   "h_rd": 82.91725671580531,
+   "omega_m": 0.45,
+   "chi2_desi": 3.416850547323936,
+   "chi2_cmb": 0.004716260139996885,
+   "chi2_joint": 1447.1282468228987,
+   "ladder": 300.4259670690576,
+   "nonladder": 1146.9832366337596,
+   "winner_source": "slsqp_polish",
+   "sign_AE_neg": true,
+   "sign_rd_shrunk": true,
+   "sign_H0_up": true
+  }
+ ],
+ "ranges": {
+  "A_E": {
+   "min": -0.1312432401532229,
+   "max": -0.1312432401532229
+  },
+  "r_d": {
+   "min": 135.61363554214586,
+   "max": 135.61363554214586
+  },
+  "H0_phys": {
+   "min": 72.99567143687787,
+   "max": 72.99567143687787
+  },
+  "total": {
+   "min": 1450.5498136303627,
+   "max": 1450.5498136303627
+  },
+  "chi2_desi": {
+   "min": 3.416850547323936,
+   "max": 3.416850547323936
+  },
+  "chi2_joint": {
+   "min": 1447.1282468228987,
+   "max": 1447.1282468228987
+  },
+  "chi2_cmb": {
+   "min": 0.004716260139996885,
+   "max": 0.004716260139996885
+  }
+ },
+ "mechanism_signs": {
+  "wide_w040": {
+   "AE_neg": true,
+   "rd_shrunk": true,
+   "H0_up": true
+  }
+ },
+ "sign_survival": {
+  "AE_neg": 1,
+  "rd_shrunk": 1,
+  "H0_up": 1,
+  "all_three": 1,
+  "n_windows": 1
+ },
+ "disposition": "WINDOW_ROBUSTNESS_AUDIT_COMPLETE; canonical window 5.5/8.5/0.25 retained; no window replacement",
+ "manifest": {
+  "code_commit": "b19a8a491fca217f3cd9f0a00071f0e75b65e82c",
+  "dirty": true,
+  "python_version": "3.12.3",
+  "numpy_version": "2.5.1",
+  "scipy_version": "1.18.0",
+  "execution_timestamp": "2026-09-11T23:59:23.958336+00:00",
+  "data_hashes": {
+   "data/external/pantheon_plus_shoes_joint/Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+   "data/external/pantheon_plus_shoes_joint/Pantheon+SH0ES_STAT+SYS.cov": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc"
+  },
+  "likelihood_contract_hash": {
+   "src/h0cdr/fitting/m26_joint.py": "9ab68f6182981f8f13ccf926c9c500f6c56ece167d16e012ccc8761235479884",
+   "src/h0cdr/theory/m26_variable_epoch.py": "5d6579c041fe6b736d6546554f3146c17b26478b7f6c0052e1b203278da3ede4",
+   "src/h0cdr/likelihoods/pantheon_plus_shoes_joint.py": "dccaaa206a6f76941c509db7e466aa8caceae23ce705d3fb0eb02de3a1af4efe",
+   "src/h0cdr/fitting/m25_track_p.py": "d863cc42b16b5d2ea39dfd69e6799b354b02311c53746a21c3624a758b0d6532",
+   "src/h0cdr/model_m25_chronogeometric.py": "e58f8f9d5561a9be7ffdd113bb1462efa3eb208f308b9aba62a6e14f04b1bc98"
+  },
+  "parameter_names": [
+   "omega_m",
+   "h_rd",
+   "g0",
+   "g1",
+   "g2",
+   "x1",
+   "x2",
+   "l0",
+   "l1",
+   "l2",
+   "rho0",
+   "rho1",
+   "rho2"
+  ],
+  "parameter_bounds": {
+   "omega_m": [
+    0.2,
+    0.45
+   ],
+   "h_rd": [
+    90.0,
+    115.0
+   ],
+   "g0": [
+    -0.35,
+    0.35
+   ],
+   "g1": [
+    -0.35,
+    0.35
+   ],
+   "g2": [
+    -0.35,
+    0.35
+   ],
+   "x1": [
+    -0.3,
+    0.3
+   ],
+   "x2": [
+    -0.3,
+    0.3
+   ],
+   "l0": [
+    0.003,
+    0.9
+   ],
+   "l1": [
+    0.003,
+    0.9
+   ],
+   "l2": [
+    0.003,
+    0.9
+   ],
+   "rho0": [
+    0.03,
+    0.45
+   ],
+   "rho1": [
+    0.03,
+    0.45
+   ],
+   "rho2": [
+    0.03,
+    0.45
+   ]
+  },
+  "optimizer_config": {
+   "dim": 23,
+   "de_maxiter": 25
+  },
+  "random_seeds": {
+   "base": 28100
+  },
+  "analysis_driver": {
+   "path": "scripts/run_m28_window_robustness.py",
+   "sha256": "4042eb7cbfbae65e2156b6bd4f6b9a716728f61ba40bad38f154a87afb293a1e"
+  },
+  "input_artifacts": {}
+ }
+}

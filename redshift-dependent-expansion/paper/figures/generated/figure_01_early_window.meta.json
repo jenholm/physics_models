@@ -1,0 +1,8 @@
+{
+ "figure": "figure_01_early_window",
+ "generated_at": "2026-09-13T23:47:48.835942+00:00",
+ "sources": {
+  "paper/evidence/m28_final/early_window.csv": "eb7e5d49b7341c03fda06299cdf6b42235317c532b82ac191ee824179bfa4a73",
+  "paper/evidence/m28_final/gamma_curve.csv": "ca68b2c2bbf852fe62ab121ea3b91ab98e14693c0317622051066161d41ca2ac"
+ }
+}

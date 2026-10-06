@@ -1,0 +1,55 @@
+{
+ "N": 1670,
+ "lnN": 7.4205789054108005,
+ "convention": "k = fitted late-map coordinates only (K_H, epsilon + m shape; control 21-vector; profiled SN nuisance M not counted)",
+ "rows": [
+  {
+   "model": "legendre-m2",
+   "k_late_map": 4,
+   "chi2": 1462.1762783985612,
+   "AIC": 1470.1762783985612,
+   "BIC": 1491.8585940202045,
+   "delta_chi2_vs_control": 10.25565807157659
+  },
+  {
+   "model": "legendre-m3",
+   "k_late_map": 5,
+   "chi2": 1459.9605367378347,
+   "AIC": 1469.9605367378347,
+   "BIC": 1497.0634312648888,
+   "delta_chi2_vs_control": 8.039916410850083
+  },
+  {
+   "model": "legendre-m4",
+   "k_late_map": 6,
+   "chi2": 1458.8190499594723,
+   "AIC": 1470.8190499594723,
+   "BIC": 1503.342523391937,
+   "delta_chi2_vs_control": 6.898429632487705
+  },
+  {
+   "model": "legendre-m5",
+   "k_late_map": 7,
+   "chi2": 1458.8116973721549,
+   "AIC": 1472.8116973721549,
+   "BIC": 1510.7557497100304,
+   "delta_chi2_vs_control": 6.891077045170277
+  },
+  {
+   "model": "legendre-m6",
+   "k_late_map": 8,
+   "chi2": 1455.1944499951494,
+   "AIC": 1471.1944499951494,
+   "BIC": 1514.5590812384357,
+   "delta_chi2_vs_control": 3.273829668164808
+  },
+  {
+   "model": "control21",
+   "k_late_map": 21,
+   "chi2": 1451.9206203269846,
+   "AIC": 1493.9206203269846,
+   "BIC": 1607.7527773406114,
+   "delta_chi2_vs_control": 0.0
+  }
+ ]
+}

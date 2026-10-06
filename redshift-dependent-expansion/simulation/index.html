@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redshift-Dependent Expansion: Visualizing the Distance–CMB Difference</title>
+  <meta name="description" content="Interactive illustration of two fitted expansion histories applied to the same synthetic galaxy tracers. Diagnostic visualization, not a physical model.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+</head>
+<body>
+  <header id="hud">
+    <div class="hud-row">
+      <div class="hud-titles">
+        <h1>Redshift-Dependent Expansion: Visualizing the Distance–CMB Difference</h1>
+        <p class="subtitle">Same synthetic tracers, different fitted expansion histories</p>
+      </div>
+      <div class="hud-badges">
+        <span id="badge-exaggeration" class="badge badge-warn" title="Only the displayed radial difference between each tracer pair is multiplied. Graph data are never exaggerated.">difference display ×8</span>
+        <span id="badge-domain" class="badge" title="The validated reconstruction domain of the paper.">z ≤ 1.8 constrained</span>
+      </div>
+    </div>
+    <p class="warning" role="note"><strong>ILLUSTRATIVE</strong> — radial differences exaggerated; not a literal spatial model of the Big Bang. Blue and red points show the same synthetic tracer projected through two fitted expansion histories. Connecting lines exaggerate the inferred radial difference for visibility. This is an illustrative embedding; cosmic expansion is not literally an explosion into surrounding space.</p>
+    <p id="interp-line" class="interp" aria-live="polite"></p>
+    <div class="hud-row controls-row">
+      <p class="controls-hint">
+        <kbd>Space</kbd> pause/resume · <kbd>←</kbd><kbd>→</kbd> step redshift · <kbd>R</kbd> restart ·
+        <kbd>S</kbd> save PNG · <kbd>C</kbd> C2 reference · <kbd>L</kbd> pair lines · <kbd>G</kbd> graphs ·
+        <kbd>E</kbd> exaggeration · <kbd>H</kbd> help · drag rotate · wheel zoom
+      </p>
+      <button id="help-btn" type="button" aria-expanded="false">Help</button>
+    </div>
+    <div id="help-panel" class="help" hidden>
+      <h2>How to read this page</h2>
+      <ul>
+        <li><span class="dot dot-r"></span><strong>Blue points (R)</strong>: where each synthetic tracer lands when distances are computed with the distance-sector endpoint history.</li>
+        <li><span class="dot dot-c1"></span><strong>Red points (C1)</strong>: where the <em>same</em> tracer lands with the Planck-compatible reference history.</li>
+        <li><span class="dot dot-c2"></span><strong>Amber halo (C2, off by default)</strong>: a second Planck-compatible reference; it sits nearly on top of C1 and only checks reference sensitivity.</li>
+        <li><strong>White spokes</strong>: the exaggerated radial gap between the two projections of one tracer. Lengths are multiplied for visibility and are not to scale.</li>
+        <li><strong>Bright shell</strong>: tracers near the current redshift cursor light up; the same cursor moves on the graphs below.</li>
+        <li><strong>Shading</strong>: blue-tinted redshifts (z ≤ 1.8) are the validated paper domain; amber (1.8 &lt; z ≤ 2.33) is the continuation-test region; beyond that is illustration only.</li>
+      </ul>
+      <p class="controls-hint">
+        <kbd>Space</kbd> pause/resume · <kbd>←</kbd><kbd>→</kbd> step redshift · <kbd>R</kbd> restart ·
+        <kbd>S</kbd> save PNG · <kbd>C</kbd> toggle C2 · <kbd>L</kbd> toggle pair lines · <kbd>G</kbd> toggle graphs ·
+        <kbd>E</kbd> cycle exaggeration 1×/4×/8×/12× · <kbd>H</kbd> toggle this help · mouse drag rotates · wheel zooms
+      </p>
+      <p>This page claims no new physics. It re-displays frozen publication numbers; hover any tracer for its numbers.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="stage-card" aria-label="Tracer sphere">
+      <div id="stage-head">
+        <span id="scan-readout" class="mono">z = …</span>
+        <span id="regime-readout" class="mono">…</span>
+        <span class="legend">
+          <span><i class="dot dot-r"></i>R distance sector</span>
+          <span><i class="dot dot-c1"></i>C1 Planck reference</span>
+          <span><i class="dot dot-c2"></i>C2 sensitivity ref</span>
+        </span>
+      </div>
+      <div id="sphere-holder"></div>
+      <div id="tooltip" class="tooltip" hidden></div>
+    </section>
+
+    <section id="dashboard" aria-label="Scientific dashboard">
+      <div class="card">
+        <h2>Expansion histories <span class="units">H(z) [km/s/Mpc]</span></h2>
+        <canvas id="graph-h" height="220"></canvas>
+        <p class="caption">Fitted endpoint histories. Blue band: constrained domain (z ≤ 1.8). Amber band: continuation-test region up to the z = 2.33 anchor. C2 is a sensitivity check on the same reference sky, not an independent confirmation.</p>
+      </div>
+      <div class="card">
+        <h2>Endpoint difference fields <span class="units">Δ = ln H − ln H<sub>ref</sub></span></h2>
+        <canvas id="graph-d" height="220"></canvas>
+        <p class="caption">Dashed gray: compact five-coordinate approximation (order 3). It captures the broad trend but not the exact ∼0.65 peak.</p>
+      </div>
+      <div class="card">
+        <h2>Validation: constrained order selection</h2>
+        <canvas id="graph-cv" height="220"></canvas>
+        <p class="caption">Held-out error above the raw minimum (orders 2–6, constrained domain only). Dashed line: predeclared within-2 parsimony threshold — order 3 is selected although order 4 is lower by ∼0.13.</p>
+        <div class="metrics">
+          <div class="metric" title="Compact five-coordinate description chosen by the predeclared smallest-order-within-2 rule."><span class="k">selected representation</span><span class="v">order 3</span></div>
+          <div class="metric" title="Matched null bootstrap on the constrained domain: fraction of replicates selecting order 3 or higher. Tests representation complexity, not the existence of the endpoint separation."><span class="k">constrained bootstrap</span><span class="v">P(select ≥ m3) = 0.216</span></div>
+          <div class="metric" title="Local projected Jacobian of the order-3 audit: all five fitted coordinates are locally identifiable."><span class="k">projected Jacobian</span><span class="v">rank 5/5</span></div>
+          <div class="metric" title="Condition number of the projected Jacobian; modest, so the rank claim is numerically stable."><span class="k">condition number</span><span class="v">≈ 27</span></div>
+          <div class="metric" title="Fixing the extra scaling coordinate to zero changes the fit by only 0.124 in chi-squared: it is allowed, not required."><span class="k">extra scaling = 0</span><span class="v">Δχ² = 0.124</span></div>
+          <div class="metric" title="Phenomenological distance ruler versus the Planck-compatible ruler; part of the measured separation, not a demonstrated physical sound horizon."><span class="k">ruler ratio R/C1</span><span class="v">≈ 0.92</span></div>
+          <div class="metric metric-fail" title="Extending the compact order-3 map through the z = 2.33 anchor fails strongly. High-redshift continuation is unvalidated and excluded from order selection."><span class="k">Lyα z = 2.33</span><span class="v">continuation FAILED</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Diagnostic visualization of frozen publication numbers. Synthetic tracers only — no observed galaxies are plotted. Method: <a href="METHODOLOGY.md">METHODOLOGY.md</a>. Data: <code>data/publication_simulation_data.json</code>.</p>
+  </footer>
+
+  <script src="simulation.js"></script>
+</body>
+</html>

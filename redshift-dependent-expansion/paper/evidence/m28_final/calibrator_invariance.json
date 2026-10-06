@@ -1,0 +1,8 @@
+{
+ "delta_mu_cal_max_abs": 0.0,
+ "derivation": "docs/M28R1_CALIBRATOR_FORWARD_DERIVATION.md",
+ "n_calibrator": 77,
+ "n_selected": 1657,
+ "new_fitted_parameters": 0,
+ "verdict": "M28R1_CALIBRATOR_INVARIANT"
+}

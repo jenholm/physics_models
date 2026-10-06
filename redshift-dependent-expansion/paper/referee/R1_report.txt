@@ -1,0 +1,52 @@
+# Referee Report R1 (paraphrase record — full pasted text to be filed here verbatim when available)
+
+Date recorded: 2026-10-05 (R8-000)
+Status: TO BE COMPLETED WITH VERBATIM REPORT TEXT
+Location: paper/referee/R1_report.txt (this file)
+
+## Summary (owner paraphrase from R8 authorization)
+
+The referee report is tough but constructive. The core science survived:
+the empirical observation (low-dimensional redshift-dependent difference
+between the distance-compatible history R and the two Planck-compatible
+histories C1/C2) is explicitly judged interesting and worth publishing if
+presented clearly.
+
+Objections fall into four buckets:
+
+1. Exposition — paper reads like an internal research log; grammar/typos
+   block evaluation; defensive historical language; "telescope stays fixed"
+   metaphor disliked.
+2. Nomenclature/provenance clutter — internal development labels
+   (M24/M26A/M28/R131/G10/R4V/R5/R6) make the paper nearly impenetrable;
+   predecessor tables contaminate headline results; undefined generic "R-C"
+   vs explicit C1/C2; title overclaims ("A Common ... Geometry Separating").
+3. Statistical interpretation — m3 order selection not significant (agreed);
+   request for a similarity p-value for the two difference fields (must NOT
+   be manufactured naively: C1/C2 share Planck info, both deltas share R);
+   "triangulation confirms" / "independently constructed" / "independent
+   confirmation" language overstates; compressed-prior vs full-CMB
+   validation ambiguity; peak at z~0.65 presented as physical scale rather
+   than assessed data-leverage location.
+4. Technical clarifications (two bounded diagnostics authorized):
+   (a) hard-gate optimizer discontinuity (1e12 sentinel at nonlinear
+   constraint violations);
+   (b) observational origin of the z~0.65 peak (SN/BAO leverage vs physics).
+   Plus: SN absolute-magnitude profiling mathematics gap (one common M vs
+   subset diagnostics); branch-specific r_d/r_s calibration contract
+   missing (incl. confusing "at A_E=0 ratios are unity" / ambiguous 147.05
+   statements); likely missing SH0ES calibration reference; Table 8 status
+   fragments ("Not predicted", etc.).
+
+## What this file must become
+
+Paste the full verbatim referee report here (replacing this paraphrase but
+keeping the bucket summary as a header). Do not edit the scientific
+evidence to fit the report — R4V/R5/R6 remain frozen per PROJECT.md
+COMMON_GEOMETRY_MAJOR_REVISION.
+
+## Provenance
+
+- Prior frozen dispositions: runs/cmb_bridge/r6/r6_disposition.json
+  (COMMON_REDSHIFT_CMB_GEOMETRY_SUPPORTED), R7 COMMON_GEOMETRY_PAPER_READY.
+- Response document: paper/referee/R1_response.md (item -> R8 task mapping).

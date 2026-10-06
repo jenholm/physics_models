@@ -1,0 +1,218 @@
+{
+ "contract": "chi2_DESI+chi2_CMB+chi2_joint Pantheon+SH0ES; r_d explicit; no H0 target",
+ "descriptive_only": "delta-chi2 values are descriptive; no sigma claims",
+ "nested_status": {
+  "functional_nesting_AE_zero": true,
+  "same_optimizer_domain_comparison": true,
+  "g10_nests_lcdm": false,
+  "note": "M28(A_E=0) reproduces G10 exactly (functional nesting); G10/LCDM comparison is non-nested and descriptive; same_optimizer_domain_comparison is true only when the AE=0 null was re-optimized in the final M28 domain"
+ },
+ "lcdm": {
+  "total": 1499.0610801320709,
+  "chi2_desi": 10.56367273336992,
+  "chi2_cmb": 7.622750146076636,
+  "chi2_joint": 1480.8746572526243,
+  "chi2_ladder": 321.08647225677544,
+  "chi2_nonladder": 1155.1032612833608,
+  "M_hat_ladder": -19.37842507905966,
+  "M_hat_nonladder": -19.397201884126176,
+  "H0_phys": 68.86329177124324,
+  "H0_background": 68.86329177124324,
+  "r_d_mpc": 147.05,
+  "r_s_mpc": 144.43,
+  "n_params": 2,
+  "omega_m": 0.2990582454864129,
+  "h_rd": 101.26347054961319
+ },
+ "g10": {
+  "total": 1479.173408254371,
+  "chi2_desi": 6.658002927423053,
+  "chi2_cmb": 0.005010625416185747,
+  "chi2_joint": 1472.5103947015318,
+  "chi2_ladder": 317.43521345655853,
+  "chi2_nonladder": 1150.5647792543216,
+  "M_hat_ladder": -19.365921462802564,
+  "M_hat_nonladder": -19.38474367104087,
+  "H0_phys": 69.10074892075055,
+  "H0_background": 67.76642785328337,
+  "r_d_mpc": 147.05,
+  "r_s_mpc": 144.43,
+  "n_params": 22,
+  "omega_m": 0.31205385244517275,
+  "h_rd": 99.65053215825321
+ },
+ "m28": {
+  "total": 1450.557591068734,
+  "chi2_desi": 3.4537667443045397,
+  "chi2_cmb": 0.00472391048246289,
+  "chi2_joint": 1447.0991004139469,
+  "chi2_ladder": 300.3993620992117,
+  "chi2_nonladder": 1146.958638878256,
+  "M_hat_ladder": -19.243247498741294,
+  "M_hat_nonladder": -19.24239287550497,
+  "H0_phys": 73.01252056964711,
+  "H0_background": 61.52144155401909,
+  "r_d_mpc": 135.62124956253302,
+  "r_s_mpc": 133.30602954924356,
+  "n_params": 23,
+  "omega_m": 0.44442042124505116,
+  "h_rd": 83.43614778444413,
+  "A_E": -0.12580429618312336
+ },
+ "delta_chi2_m28_minus_g10": -28.61581718563707,
+ "delta_chi2_m28_minus_lcdm": -48.50348906333693,
+ "delta_chi2_g10_minus_lcdm": -19.88767187769986,
+ "sources": {
+  "lcdm": "runs/m26_final/lcdm_baseline.json",
+  "g10": "runs/m26a_free_paper/temporal_ceiling_joint_broad.json levels.G10 best",
+  "m28": "runs/m28r1/preflight/m28_rebased_reference.json winner",
+  "null_same_domain": "runs/m28/same_domain_null.json winner"
+ },
+ "manifest": {
+  "code_commit": "40b6f7be45c3b4fded0321555b65df9b1dbf1b14",
+  "dirty": true,
+  "python_version": "3.12.3",
+  "numpy_version": "2.5.1",
+  "scipy_version": "1.18.0",
+  "execution_timestamp": "2026-09-11T18:32:00.805548+00:00",
+  "data_hashes": {
+   "data/external/pantheon_plus_shoes_joint/Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+   "data/external/pantheon_plus_shoes_joint/Pantheon+SH0ES_STAT+SYS.cov": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc"
+  },
+  "likelihood_contract_hash": {
+   "src/h0cdr/fitting/m26_joint.py": "9ab68f6182981f8f13ccf926c9c500f6c56ece167d16e012ccc8761235479884",
+   "src/h0cdr/theory/m26_variable_epoch.py": "5d6579c041fe6b736d6546554f3146c17b26478b7f6c0052e1b203278da3ede4",
+   "src/h0cdr/likelihoods/pantheon_plus_shoes_joint.py": "dccaaa206a6f76941c509db7e466aa8caceae23ce705d3fb0eb02de3a1af4efe",
+   "src/h0cdr/fitting/m25_track_p.py": "d863cc42b16b5d2ea39dfd69e6799b354b02311c53746a21c3624a758b0d6532",
+   "src/h0cdr/model_m25_chronogeometric.py": "e58f8f9d5561a9be7ffdd113bb1462efa3eb208f308b9aba62a6e14f04b1bc98"
+  },
+  "parameter_names": [
+   "omega_m",
+   "h_rd",
+   "g0",
+   "g1",
+   "g2",
+   "x1",
+   "x2",
+   "l0",
+   "l1",
+   "l2",
+   "rho0",
+   "rho1",
+   "rho2"
+  ],
+  "parameter_bounds": {
+   "omega_m": [
+    0.2,
+    0.45
+   ],
+   "h_rd": [
+    90.0,
+    115.0
+   ],
+   "g0": [
+    -0.35,
+    0.35
+   ],
+   "g1": [
+    -0.35,
+    0.35
+   ],
+   "g2": [
+    -0.35,
+    0.35
+   ],
+   "x1": [
+    -0.3,
+    0.3
+   ],
+   "x2": [
+    -0.3,
+    0.3
+   ],
+   "l0": [
+    0.003,
+    0.9
+   ],
+   "l1": [
+    0.003,
+    0.9
+   ],
+   "l2": [
+    0.003,
+    0.9
+   ],
+   "rho0": [
+    0.03,
+    0.45
+   ],
+   "rho1": [
+    0.03,
+    0.45
+   ],
+   "rho2": [
+    0.03,
+    0.45
+   ]
+  },
+  "optimizer_config": {
+   "contract": "common exact joint replay"
+  },
+  "random_seeds": {
+   "replay": "recorded vectors, no optimization"
+  },
+  "analysis_driver": {
+   "path": "scripts/paper/build_m28_model_comparison.py",
+   "sha256": "4451972a8bd28381803b7d888dd0e63dadbf6657a1079134dea49aed546617f2"
+  },
+  "input_artifacts": {
+   "lcdm": "a893daaf93bcbf4966758c6361815b860a9b0f34b786ce9e255dbbec13233f18",
+   "g10": "a54ab66273296ed46b5300d89899be10f5cce2c667f547ea962f44fe572b8bf4",
+   "m28": "40eed2a950a60d0e9cd3fef2d12638a46f876a0add9bab3c7e8858af97120ab2"
+  }
+ },
+ "null_same_domain": {
+  "total": 1479.1727710602236,
+  "chi2_desi": 6.656475515824093,
+  "chi2_cmb": 0.005224580961462178,
+  "chi2_joint": 1472.511070963438,
+  "chi2_ladder": 317.43566979905717,
+  "chi2_nonladder": 1150.5657275870321,
+  "M_hat_ladder": -19.365923390487772,
+  "M_hat_nonladder": -19.3847436921711,
+  "H0_phys": 69.10073515157536,
+  "H0_background": 67.76642646985094,
+  "r_d_mpc": 147.05,
+  "r_s_mpc": 144.43,
+  "n_params": 22,
+  "omega_m": 0.3120537614912566,
+  "h_rd": 99.65053012391581,
+  "A_E": 0.0,
+  "x": [
+   0.06338423277810303,
+   -0.007363460879209219,
+   0.01612901281865672,
+   -0.03306061702143652,
+   0.03333976119452532,
+   0.0005793715259408433,
+   0.03105988943995778,
+   -0.04085495214104476,
+   -0.0009027965751868437,
+   -0.0037294630155342177,
+   0.3120537614912566,
+   99.65053012391581,
+   0.030571958694780223,
+   0.10751020644912687,
+   -0.002265997927057001,
+   -0.08666498328424307,
+   -0.8910824302765188,
+   -1.1427642020750581,
+   -1.9324302158630744,
+   -0.4767287482451757,
+   -5.350203016420654,
+   3.1996251470642583
+  ]
+ },
+ "delta_chi2_m28_minus_null": -28.61517999148964,
+ "delta_chi2_null_minus_g10": -0.0006371941474299092
+}

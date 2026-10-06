@@ -1,0 +1,17 @@
+title: "Characterizing a Low-Dimensional Redshift-Dependent Difference Between CMB- and Distance-Compatible Expansion Histories"
+author: "Jake Enholm"
+documentclass: article
+latex_engine: pdflatex
+texlive_target: "2023+"
+status: draft
+paper_mode: draft
+claims_registry: paper/claims.yaml
+results_registry: paper/generated/results_registry.json
+provenance: paper/generated/provenance.json
+main_tex: paper/main.tex
+figures: paper/figures/generated/overview_fig1_endpoints.pdf, paper/figures/generated/bridge_fig2_m3.pdf, paper/figures/generated/bridge_fig3_cv.pdf, paper/figures/generated/bridge_fig4_epsilon.pdf, paper/figures/generated/bridge_fig5_triangulation.pdf
+tables: paper/tables/generated/constrained_cv_rescore.tex
+arxiv:
+  submission_authorized: false
+  bundle_root_flat: true
+release_workflow: "scripts/paper/build_expansion_history_paper.py --release (evidence -> registry -> figures -> PAPER_MODE=release validate_claims.py -> pdflatex/bibtex -> bundle -> check)"

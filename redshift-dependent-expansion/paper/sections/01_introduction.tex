@@ -1,0 +1,90 @@
+\section{Introduction}
+\label{sec:intro}
+
+The Hubble tension is an observational disagreement between the local
+supernova distance ladder,
+$H_{0} = 73.04 \pm 1.04$\kmsMpc{} \citep{Riess2022}, and the Planck
+2018 TT/TE/EE spectrum, $67.4 \pm 0.5$\kmsMpc{} in flat $\Lambda$CDM
+\citep{Planck2018}, reviewed in \citet{Verde2019} and
+\citet{KnoxMillea2020}. The mismatch extends beyond a single number:
+DESI DR2 BAO \citep{DESIDR2} sharpens the late-time
+distance--redshift relation while the Pantheon+SH0ES compilation
+\citep{Scolnic2022,Brout2022} maps the supernova expansion history,
+and neither a distance-calibrated nor a CMB-calibrated history fits
+all sectors at once. Observed values, uncertainties, and covariance
+matrices are held fixed across model comparisons; only theory
+predictions change between branches.
+
+The standard question this paper asks is: is the disagreement
+reducible to a compact redshift-dependent difference between
+independently calibrated background histories? Rather than fitting
+another cosmological model with additional dynamical freedom, we test
+whether the observable gap between already-calibrated endpoints has
+low-dimensional, predictable structure.
+
+The experimental design uses three frozen endpoints. The
+distance-compatible history~R reaches
+$H_{0}=\DistanceHZero$\kmsMpc{} and fits DESI DR2 BAO and
+Pantheon+SH0ES supernovae. The CMB-compatible history~C1 is a Planck TT/TE/EE-compatible
+reference with $H_{0}=\CmbOneHZero$\kmsMpc{} produced with the stated
+CAMB/likelihood configuration. The secondary Planck-compatible reference~C2 is a
+separately implemented baseline with
+$H_{0}=\CmbTwoHZero$\kmsMpc{}, built through its own likelihood and
+spectral-parity path for reference-sensitivity checking. C1 and C2 are separately implemented in pipeline/model space, not statistically
+independent in data space: they share the
+Planck sky but differ in construction pipeline, parameter choices,
+and calibration route.
+
+This differs from fitting another cosmological model in four ways.
+First, the endpoints are constructed separately, before any
+comparison is made. Second, bridge dimensionality is selected with
+held-out prediction, not training $\chi^{2}$. Third, higher
+flexibility is allowed to fail: overfitting orders and
+boundary-limited families are retained as frozen adversarial
+controls. Fourth, the reference-branch robustness test changes the CMB
+reference branch without changing the hypothesis: the same compact
+map must describe both $\Delta_{1}$ and $\Delta_{2}$.
+
+The headline result, over the constrained domain $z\le1.8$, is
+\[
+\Delta_{1}(z) \simeq \Delta_{2}(z),
+\qquad
+\|\Delta_{C}\| \ll \|\Delta_{1,2}\|,
+\]
+where the fields
+$\Delta_{1}(z)\equiv\ln H_{R}(z)-\ln H_{C_{1}}(z)$,
+$\Delta_{2}(z)\equiv\ln H_{R}(z)-\ln H_{C_{2}}(z)$, and
+$\Delta_{C}(z)\equiv\ln H_{C_{1}}(z)-\ln H_{C_{2}}(z)$
+are defined in Section~\ref{sec:endpoint-repr} and summarized in the
+nomenclature table (Table~\ref{tab:nomenclature}).
+The two R--CMB difference fields share one dominant direction
+(cosine~\GeometryCosineSimilarity{}, principal angle
+\GeometryPrincipalAngle$^{\circ}$), peak near
+$z\approx\GeometryPeakZ{}$, and transfer across branches with
+fractional residual degradation~\GeometryTransferDegradation{},
+whereas the CMB--CMB difference is much smaller
+throughout (about 1--8\% of the R--CMB difference across the
+constrained bins).
+
+In plain terms, the distance-sector endpoint requires a
+systematically higher expansion rate than the Planck-calibrated
+references, and the size of that mismatch changes with redshift
+rather than behaving like a simple constant $H_{0}$ offset. A compact
+five-parameter map summarizes that pattern over $z\le1.8$, but its
+statistical significance and physical origin are not established, and
+the same compact extrapolation fails at the Ly$\alpha$ point at
+$z=2.33$.
+
+This paper identifies and characterizes that empirical deformation.
+The principal result of this work is therefore not a specific
+dynamical model, but an empirically defined expansion-history target
+that candidate explanations of the CMB--distance discrepancy can be
+tested against. Its physical origin remains deliberately unaddressed.
+Section~\ref{sec:endpoints} defines the data and the R, C1, and C2
+endpoints (with the nomenclature table immediately below);
+Section~\ref{sec:methods} the empirical reconstruction method;
+Section~\ref{sec:bridge} the predictive model-selection tests;
+Section~\ref{sec:robustness} the reference-branch robustness test;
+Section~\ref{sec:results} the results;
+and Sections~\ref{sec:discussion}--\ref{sec:conclusion} the
+interpretation, limitations, and conclusions.

@@ -1,0 +1,85 @@
+# Publication claim registry (common-geometry reconstruction paper).
+# Allowed status values:
+#   exploratory | supported | not_supported | conditional | not_established
+#   | descriptive_robustness (reference-sensitivity description, no p-value)
+#   | supported_negative
+# validate_claims.py fails the release build if the Abstract, Results or
+# Conclusion uses a not_supported / conditional / not_established claim as
+# established fact, or if a supported claim points at missing evidence.
+# This registry contains ONLY the publication claims, with neutral internal
+# IDs. Historical M24/M28/B2/time-current claims live in
+# paper/legacy_2025_draft/claims_legacy.yaml and are excluded from all
+# paper generation. This file is CI machinery only and is NOT shipped in
+# the arXiv bundle.
+claims:
+
+  - id: PUB-ENDPOINT-DIFFERENCE
+    status: supported
+    text: >
+      The distance-compatible history R differs substantially from
+      both Planck-compatible histories C1 and C2 across the constrained
+      domain z <= 1.8.
+    evidence:
+      - paper/evidence/cmb_bridge_r6/difference_fields.npz
+      - paper/evidence/cmb_bridge_r6/scale_comparison.json
+      - paper/evidence/cmb_bridge_r6/agreement_metrics.json
+
+  - id: PUB-COMPACT-REPRESENTATION
+    status: supported
+    text: >
+      A five-coordinate order-3 map gives a compact empirical
+      description of the constrained-domain branch difference with
+      local projected Jacobian rank 5 of 5 fitted coordinates,
+      selected by the predeclared smallest-m-within-2.0 rule
+      (m4 is the raw minimum by only 0.13).
+    evidence:
+      - paper/evidence/cmb_bridge_r4v/frozen_visible_map.json
+      - paper/evidence/cmb_bridge_r4v/rank_audit_m3.json
+      - paper/evidence/cmb_bridge_r4v/information_criteria.json
+      - paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json
+
+  - id: PUB-REFERENCE-SENSITIVITY
+    status: descriptive_robustness
+    text: >
+      Changing between the two Planck-compatible references changes the
+      inferred difference only slightly: C1 and C2 are much closer to
+      each other than either is to R throughout the constrained domain,
+      the two R-CMB fields share one dominant common mode, and the
+      frozen order-3 basis transfers across references with small
+      residual degradation. This is reference sensitivity, not
+      independent confirmation (no frequentist p-value assigned).
+    evidence:
+      - paper/evidence/cmb_bridge_r6/scale_comparison.json
+      - paper/evidence/cmb_bridge_r6/agreement_metrics.json
+      - paper/evidence/cmb_bridge_r6/common_mode.json
+      - paper/evidence/cmb_bridge_r6/transfer_results.json
+      - paper/evidence/cmb_bridge_r6/r6_disposition.json
+
+  - id: PUB-COMPLEXITY-NOT-ESTABLISHED
+    status: not_established
+    text: >
+      No sigma-level significance is attached to the compact
+      map; the matched constrained-domain null bootstrap gives
+      P(select>=m3) = 0.216, which tests representation complexity,
+      not existence of the endpoint separation.
+    evidence:
+      - paper/evidence/cmb_bridge_r8r2/selection_bootstrap_constrained.json
+
+  - id: PUB-LYA-CONTINUATION-FAILURE
+    status: not_established
+    text: >
+      High-redshift continuation through the Lyman-alpha anchor
+      fails strongly and remains unvalidated; it is a separate
+      extrapolation test that never participates in order selection.
+    evidence:
+      - paper/evidence/cmb_bridge_r4v/desi_cv_by_order.csv
+      - paper/evidence/cmb_bridge_r6/domain_split.json
+
+  - id: PUB-ORIGIN-NOT-ESTABLISHED
+    status: not_established
+    text: >
+      No physical origin, dynamical completion, or Hubble-tension
+      resolution is established; R is a phenomenological endpoint,
+      not presented as a complete cosmological model.
+    evidence:
+      - paper/evidence/cmb_bridge_r6/r6_disposition.json

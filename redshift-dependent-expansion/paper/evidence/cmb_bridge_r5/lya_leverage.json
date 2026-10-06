@@ -1,0 +1,32 @@
+[
+ {
+  "order": 2,
+  "full_data_chi2": 1462.18,
+  "train_chi2_without_LyA": 1459.34,
+  "held_out_LyA_chi2": 33.6
+ },
+ {
+  "order": 3,
+  "full_data_chi2": 1459.96,
+  "train_chi2_without_LyA": 1459.3,
+  "held_out_LyA_chi2": 59.7
+ },
+ {
+  "order": 4,
+  "full_data_chi2": 1458.82,
+  "train_chi2_without_LyA": 1458.44,
+  "held_out_LyA_chi2": 262.5
+ },
+ {
+  "order": 5,
+  "full_data_chi2": 1458.81,
+  "train_chi2_without_LyA": 1456.42,
+  "held_out_LyA_chi2": 5448.6
+ },
+ {
+  "order": 6,
+  "full_data_chi2": 1455.19,
+  "train_chi2_without_LyA": 1452.74,
+  "held_out_LyA_chi2": 19969.2
+ }
+]

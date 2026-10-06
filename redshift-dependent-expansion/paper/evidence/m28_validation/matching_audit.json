@@ -1,0 +1,49 @@
+{
+ "u_star": 2.3978952727983707,
+ "late": {
+  "g": 0.0,
+  "x": 0.0,
+  "s": 0.0,
+  "dg_du": -2.354412005194129,
+  "dx_du": 0.0,
+  "g_early_at_U": -5.137902250415254e-07,
+  "g_total_at_U": -5.137902250415254e-07,
+  "dg_full_at_U": -2.354414060346636,
+  "H_phys_over_H_bg": 1.000000513790357,
+  "dH_du_below": 2.354399597837009
+ },
+ "tail": {
+  "g": -5.137902250415254e-07,
+  "x": 0.0,
+  "s": 0.0,
+  "dg_du": -2.0551525067479014e-06,
+  "dx_du": 0.0,
+  "H_phys_over_H_bg": 1.000000513790357,
+  "dH_du_above": 2.0552448631860898e-06
+ },
+ "gaps_c0": {
+  "g": 0.0,
+  "x": 0.0,
+  "s": 0.0
+ },
+ "gaps_c1": {
+  "dg": 2.354412005194129,
+  "dx": 0.0
+ },
+ "H_gap": 0.0,
+ "dH_gap": 2.354397542592146,
+ "c0_continuous": true,
+ "c1_continuous": false,
+ "tolerances": {
+  "c0": 1e-06,
+  "c1": 1e-06,
+  "fd_eps": 1e-06
+ },
+ "method": "one-sided values/derivatives at U=ln11, finite-difference dH/du only, no smoothing",
+ "provenance": {
+  "vector": "configs/m28/frozen_publication_model.json:x_optimizer",
+  "omega_m": 0.44442042124505116,
+  "h_rd": 83.43614778444413,
+  "A_E": -0.12580429618312336
+ }
+}

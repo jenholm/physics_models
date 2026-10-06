@@ -1,0 +1,11 @@
+{
+  "binding": {
+    "gamma_model": "M24DLowZCurrent.from_free_parameters",
+    "zlow": 0.0009999999990020414
+  },
+  "figure": "figure_01_gamma_current",
+  "generated_at": "2026-08-31T18:08:24.207648+00:00",
+  "sources": {
+    "paper/evidence/m24d_reference/parameters.json": "078edeaa90ebdfbf1320b91628a8c427faf86e29ded92ec250c06ba97c2286b0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+ "disposition": "FROZEN_OPTIMUM_GATE_ROBUST",
+ "acceptance": {
+  "frozen optimum replays through the hard-gate objective": true,
+  "frozen optimum is a local attractor (tiny perturbations return)": true,
+  "smooth diagnostic lands in same basin": true,
+  "no better feasible solution discovered": true
+ },
+ "frozen_ae": -0.12580429618312336,
+ "rng_seed": 20261005
+}

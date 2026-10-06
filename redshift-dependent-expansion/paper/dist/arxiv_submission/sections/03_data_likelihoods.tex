@@ -1,0 +1,95 @@
+\label{sec:data}
+% Part of Section~2 (Data and endpoint definitions): likelihood details.
+% This file contributes subsections only; the section heading lives in
+% 02_endpoint_construction.tex.
+
+Observed values, uncertainties, and covariance matrices are held fixed
+across model comparisons. Only theory
+predictions change. What follows groups the likelihoods into the
+low-redshift distance sector, the high-redshift CMB sector, and the
+controls that keep the comparison honest.
+
+\subsection{Low-redshift distances}
+
+DESI DR2 BAO \citep{DESIDR2} enters through the collaboration
+distance ratios $D_{M}/r_{d}$, $D_{H}/r_{d}$, $D_{V}/r_{d}$ with the
+published covariances; DESI values are fixed and only the theory
+prediction changes between branches.
+
+The supernova block is the full Pantheon+SH0ES compilation
+\citep{Scolnic2022,Brout2022,Riess2022} as one 1657-row covariance likelihood
+with one common profiled absolute magnitude $M$ (row-selection contract,
+\path{paper/evidence/sn_selection_contract.json}: 1701 raw rows
+selected by the exact mask \texttt{(zHD > 0.01) | IS\_CALIBRATOR} to
+1657 rows, of which 77 calibrators and 1580 Hubble-flow rows). With
+$\mu_{\mathrm{no}\,M}$ the branch distance modulus at $M=0$,
+\begin{align}
+  r_{0} &= m_{B}^{\mathrm{corr}} - \mu_{\mathrm{no}\,M},
+  \label{eq:r0} \\
+  \hat{M} &= \frac{\mathbf{1}^{T}C^{-1}r_{0}}
+                  {\mathbf{1}^{T}C^{-1}\mathbf{1}},
+  \label{eq:mhat} \\
+  \chi^{2}_{\mathrm{joint}}
+    &= (r_{0}-\hat{M}\mathbf{1})^{T}C^{-1}(r_{0}-\hat{M}\mathbf{1}),
+  \label{eq:chijoint}
+\end{align}
+where $C$ is the full $1657\times1657$ statistical-plus-systematics
+covariance. The primary joint likelihood profiles one common $M$
+(Eq.~\eqref{eq:mhat}). Ladder and non-ladder subsets are separately
+profiled for diagnostics,
+\begin{equation}
+  \hat{M}_{\mathrm{ladder}},\qquad \hat{M}_{\mathrm{nonladder}},
+  \label{eq:msubset}
+\end{equation}
+each using its marginal covariance with an independent $M$, so
+$\chi^{2}_{\mathrm{ladder}}+\chi^{2}_{\mathrm{non\text{-}ladder}}
+\neq \chi^{2}_{\mathrm{joint}}$.
+These subset values are audit diagnostics (diagnostic-only) and are
+not additive contributions to the primary joint likelihood.
+
+Calibrator rows carry the published Cepheid host distance
+$\mu_{\mathrm{cal}}=\mathrm{CEPH\_DIST}$, on the SH0ES Cepheid
+period--luminosity calibration \citep{Riess2019,Riess2022}. Under the
+adopted
+calibration contract, no additional theory-side correction is applied
+to local calibrator distance moduli: $\Delta\mu_{\mathrm{cal}}=0$
+(validation disposition \textit{calibrator-invariance-assumption-only}). The early field is
+negligible locally ($|g_{E}(0)|\sim3.5\times10^{-11}$) and same-epoch factors
+cancel qualitatively, but the local-propagation bound $4.6\times10^{-4}$~mag
+exceeds the $10^{-4}$~mag target, so the assumption is supported qualitatively,
+not quantitatively established. The luminosity-distance construction
+$D_{L}=(1+z)D_{M}$ is Etherington's reciprocity result
+\citep{Etherington1933} and assumes massless photons, null geodesics, and
+photon-number conservation. Hubble-flow rows use
+$z_{\mathrm{HD}}$ for the transverse integral and the
+$z_{\mathrm{HD}}$/$z_{\mathrm{HEL}}$ prefactor
+$D_{L}=(1+z_{\mathrm{HEL}})D_{M}(z_{\mathrm{HD}})$.
+
+\subsection{High-redshift CMB}
+
+Two CMB uses appear in this paper and must not be confused. The
+distance endpoint~R carries the phenomenological value
+$r_{d}=135.39$~Mpc, which is not validated as early-universe physics:
+the compressed Planck distance prior \citep{Chen2019} was validated
+only for conventional $\Lambda$CDM, $w$CDM, and CPL models and
+cannot by itself establish the viability of nonstandard
+pre-recombination physics. The C1 and C2 reference constructions are
+calibrated instead to the full Planck TT/TE/EE spectra with
+foreground-marginalized likelihoods, evaluated through a Boltzmann
+solver at each sampled cosmology, and carry full Planck-compatible
+CAMB rulers near $147.1$~Mpc. Sound-speed and drag-epoch conventions
+follow the standard baryon-loading treatment
+\citep{EisensteinHu1998,HuSugiyama1996}.
+
+\subsection{Controls}
+
+Three controls keep the branch comparison honest. First, $\Lambda$CDM
+parity: the Boltzmann pipeline reproduces reference $\Lambda$CDM
+spectra before either branch is evaluated, so pipeline error cannot
+masquerade as branch separation. Second, frozen endpoint artifacts
+are hash-bound: every number in
+Sections~\ref{sec:results}--\ref{sec:robustness} is generated from
+frozen machine-readable evidence with source-hash binding
+(\path{paper/evidence_manifest.yaml}); generation fails on hash
+mismatch. Headline numerical results are generated from or hash-bound
+to frozen evidence.

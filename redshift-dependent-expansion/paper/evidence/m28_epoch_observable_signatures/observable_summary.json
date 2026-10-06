@@ -1,0 +1,12 @@
+{
+  "n_bao_bins": 7,
+  "max_abs_frac_DH": 0.011325105687456177,
+  "max_abs_frac_DM": 0.012887731225265367,
+  "max_abs_delta_mu_mag": 0.027806553497271243,
+  "drift_status": "BACKGROUND_PROJECTED_PROVISIONAL: standard clock mapping assumed; observed-redshift drift NOT validated (see m28_redshift_drift.py sentinel)",
+  "validated_external": false,
+  "sources": [
+    "paper/evidence/m28_epoch_signatures/epoch_curves.csv",
+    "paper/evidence/m28_epoch_signatures/bao_signature_predictions.csv"
+  ]
+}

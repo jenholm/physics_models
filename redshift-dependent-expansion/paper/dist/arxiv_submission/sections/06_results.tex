@@ -1,0 +1,61 @@
+\section{Results}
+\label{sec:results}
+
+This section states the paper's empirical results in one place.
+Construction details are in
+Sections~\ref{sec:data-endpoints}--\ref{sec:robustness}.
+Headline numerical results are generated from or hash-bound to frozen evidence.
+
+\subsection{Headline branch separation}
+
+The phenomenological low-redshift distance-sector endpoint~R
+($H_{0}=\DistanceHZero$\kmsMpc{}; not presented as a complete cosmological model) differs substantially from both
+Planck-compatible references C1 ($H_{0}=\CmbOneHZero$\kmsMpc{}) and
+C2 ($H_{0}=\CmbTwoHZero$\kmsMpc{}, secondary sensitivity reference) across the constrained domain
+$z\le1.8$.
+The two R--CMB difference fields
+$\Delta_{1}$ and $\Delta_{2}$ (defined in Section~\ref{sec:endpoint-repr})
+share one dominant common
+mode (common-mode fraction $\ge\GeometryCommonFractionMin{}$ per
+interval), while the CMB--CMB difference
+$\Delta_{C}$ is much smaller throughout: across the constrained bins,
+the C1--C2 RMS difference is about 1--8\% of the R--CMB difference
+(RMS ratios \GeometryCmbRatioLow{} and
+\GeometryCmbRatioHigh{} on the constrained and high intervals).
+
+\subsection{Compact reconstruction}
+
+A five-coordinate order-3 (m3) map gives a compact empirical
+description of the constrained-domain ($z\le1.8$) branch difference with local projected Jacobian rank~5
+of~5 fitted coordinates ($\chi^{2}=\BridgeChiTwo{}$, only \BridgeDeltaCtrl{} above the
+21-coordinate control; $\mathrm{AIC}\approx\BridgeAIC{}$ against
+$\approx\BridgeAICCtrl{}$ for the control, reported descriptively as
+parsimony rather than evidence). Selection is
+predictive (held-out supernova and DESI $z\le1.8$ folds,
+Section~\ref{sec:bridge}) and carries no significance of
+its own: the matched constrained-domain null bootstrap tests representation complexity, not
+existence of the endpoint separation (null bootstrap
+$P(\mathrm{select}\ge m3)=\CvConstrBootProb{}$).
+Zero ruler-clock split is allowed
+($\Delta\chi^{2}(\epsilon{=}0)=\BridgeEpsDelta{}$).
+The fitted difference reaches its largest
+amplitude near $z\approx\GeometryPeakZ{}$; because this region also
+carries substantial observational leverage, we do not interpret the
+peak redshift as a fundamental physical scale
+(Section~\ref{sec:peak-support}).
+
+\subsection{Reference-branch robustness}
+
+The frozen m3 basis transfers across the two Planck references with small
+residual degradation (fraction \GeometryTransferDegradation{}):
+parameters learned on
+one reference construction predict the other separation. The two R--CMB fields
+share one dominant direction
+(cosine~\GeometryCosineSimilarity{}, principal angle
+\GeometryPrincipalAngle$^{\circ}$). This reference-sensitivity
+check shows the deformation is insensitive to the tested
+CMB-reference construction; it does not assign a frequentist
+p-value to the similarity (Section~\ref{sec:robustness-stats}).
+Neither branch fits everything and no tension resolution is claimed.
+High-redshift continuation through the
+Lyman-alpha anchor remains unvalidated.

@@ -1,0 +1,39 @@
+{
+  "R": {
+    "rd_value": 135.39157629683098,
+    "rd_source": "runs/cmb_bridge/r3/smooth_lowz_endpoint.json (pinned from runs/cmb_bridge/r2/matched_control/best_fit.json control fit)",
+    "rd_recomputed": false,
+    "rs_value": null,
+    "rs_source": "not stored; r_s is not used in the R6 H(z) comparison for R",
+    "rs_recomputed": false,
+    "rs_not_used": true,
+    "bao_prediction_path": "D_M/r_d, D_H/r_d, D_V/r_d with the R ruler r_d=135.3916 Mpc"
+  },
+  "C1": {
+    "rd_value": 147.15162553235126,
+    "rd_source": "runs/cmb_bridge/r4/bare_endpoint.json (CAMB 2.0.4 stage-0 background)",
+    "rd_recomputed": true,
+    "rs_value": 144.50088529718144,
+    "rs_source": "runs/cmb_bridge/r4/bare_endpoint.json rstar (CAMB 2.0.4 stage-0 background)",
+    "rs_recomputed": true,
+    "rs_not_used": false,
+    "bao_prediction_path": "D_M/r_d, D_H/r_d, D_V/r_d with the C1 ruler r_d=147.1516 Mpc"
+  },
+  "C2": {
+    "rd_value": 147.11109035486086,
+    "rd_source": "runs/cmb_branch/baseline/likelihood.json acoustic.rdrag (CAMB baseline)",
+    "rd_recomputed": true,
+    "rs_value": 144.450249580362,
+    "rs_source": "runs/cmb_branch/baseline/likelihood.json acoustic.rstar (CAMB baseline)",
+    "rs_recomputed": true,
+    "rs_not_used": false,
+    "bao_prediction_path": "D_M/r_d, D_H/r_d, D_V/r_d with the C2 ruler r_d=147.1111 Mpc"
+  },
+  "rd_ratio_to_C1": 0.920082097680023,
+  "rd_ratio_to_C2": 0.9203356182748689,
+  "rd_ratio_note": "R ruler is ~0.92 of either CMB ruler, i.e. an ~8% smaller ruler. This is a property of the phenomenological distance endpoint, not a demonstrated physical sound horizon.",
+  "early_universe_viability": "not established for R: the predecessor compressed Planck distance prior cannot validate such nonstandard pre-recombination physics",
+  "full_cmb_status": "R has no full-CMB validation; historical Model A full-spectrum validation failed (high-l chi2 13169.8, low-l TT non-finite)",
+  "bbn_status": "no BBN viability is claimed for R; no BBN fit performed",
+  "note": "R uses an early-ruler value different from C1/C2 (135.39 vs 147.15/147.11 Mpc); this ruler difference is part of the measured branch separation, not a shared calibration."
+}

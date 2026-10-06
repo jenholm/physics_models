@@ -1,0 +1,101 @@
+{
+ "coeffs": [
+  {
+   "param": "K_H",
+   "value": 0.9277764271119294,
+   "bound": [
+    0.8,
+    1.2
+   ],
+   "fraction_to_bound": 0.3194410677798235,
+   "nearest": "lo",
+   "grad": 0.0003898662725987378,
+   "outward": false
+  },
+  {
+   "param": "epsilon",
+   "value": -0.0060114247391992205,
+   "bound": [
+    -0.1,
+    0.1
+   ],
+   "fraction_to_bound": 0.46994287630400394,
+   "nearest": "lo",
+   "grad": -0.001272474037250504,
+   "outward": false
+  },
+  {
+   "param": "c0",
+   "value": -0.20756176122529443,
+   "bound": [
+    -0.5,
+    0.5
+   ],
+   "fraction_to_bound": 0.29243823877470554,
+   "nearest": "lo",
+   "grad": -9.129053069045767e-06,
+   "outward": false
+  },
+  {
+   "param": "c1",
+   "value": 0.49999999999999517,
+   "bound": [
+    -0.5,
+    0.5
+   ],
+   "fraction_to_bound": 4.829470157119431e-15,
+   "nearest": "hi",
+   "grad": -4.125084421957581,
+   "outward": true
+  },
+  {
+   "param": "c2",
+   "value": 0.3360993939226976,
+   "bound": [
+    -0.5,
+    0.5
+   ],
+   "fraction_to_bound": 0.1639006060773024,
+   "nearest": "hi",
+   "grad": 6.014033715473487e-05,
+   "outward": false
+  },
+  {
+   "param": "c3",
+   "value": 0.07105108080844996,
+   "bound": [
+    -0.5,
+    0.5
+   ],
+   "fraction_to_bound": 0.42894891919155004,
+   "nearest": "hi",
+   "grad": -4.979483492206782e-06,
+   "outward": false
+  },
+  {
+   "param": "c4",
+   "value": 0.20656158111969566,
+   "bound": [
+    -0.5,
+    0.5
+   ],
+   "fraction_to_bound": 0.2934384188803043,
+   "nearest": "hi",
+   "grad": 0.0001526018422737252,
+   "outward": false
+  },
+  {
+   "param": "c5",
+   "value": -0.35419047209302895,
+   "bound": [
+    -0.5,
+    0.5
+   ],
+   "fraction_to_bound": 0.14580952790697105,
+   "nearest": "lo",
+   "grad": 0.00012465761756175198,
+   "outward": false
+  }
+ ],
+ "disposition": "ROUGHNESS_BOUND_LIMITED"
+}

@@ -1,0 +1,55 @@
+# Referee Report R2 (paraphrase record — full pasted text to be filed here verbatim when available)
+
+Date recorded: 2026-10-05 (R8R2-000)
+Status: PARAPHRASE — replace with verbatim report text when available.
+Location: paper/referee/R2_report.txt (this file)
+
+## Owner assessment of the report
+
+This referee is useful. Most methodological criticisms are taken
+seriously, but they do not force a new cosmological model. The biggest
+problems are manuscript architecture and claim semantics, not the
+underlying frozen evidence.
+
+### VALID (accepted, repair authorized)
+
+1. R/Model-A identity ambiguity (H0 72.80 vs 73.21 used
+   interchangeably). The most important fix.
+2. C2's weak scientific independence (same Planck sky, nearly same
+   LCDM family) — downgrade to reference-sensitivity check.
+3. r_d viability buried (135.39 Mpc, ~8% smaller ruler, no
+   BBN/full-CMB validation) — confront directly.
+4. Lyα/order-selection inconsistency (catastrophic z=2.33 fold choosing
+   the order) — re-score constrained domain, keep Lyα as failed
+   continuation test.
+5. Rank definition ("effective observable rank 5 of 5" reads as five
+   measured quantities) — replace with explicit Jacobian-rank statement.
+6. Missing likelihood details (bare null undefined, SN row selection
+   unreproducible, distance-duality citation, Chen-prior scope).
+
+### PARTLY VALID
+
+- AIC criticism (mathematically true, not an error: AIC is supposed to
+  penalize parameter count) — defang, remove from abstract, report
+  descriptively.
+- "Whole result is null-consistent" conflation — the quoted bootstrap
+  P(select>=m3)=0.148 tests polynomial-complexity selection, not
+  existence of the endpoint separation. Tone down claims without
+  falsely relabeling the result a null.
+
+### STALE (regression-tested, otherwise ignored)
+
+- 23-parameter vector repeated-q10 complaint: source already has the
+  correct unique slots (q_l0..2, q_rho0..2).
+- "deliberately" typo complaint: already spelled correctly.
+
+## Authorized repair cycle (R8R2-001..R8R2-026)
+
+See PROJECT.md disposition COMMON_GEOMETRY_REFEREE2_REVISION and
+paper/referee/R2_response.md for the per-item mapping.
+
+## Provenance
+
+- Prior cycle: COMMON_GEOMETRY_MAJOR_REVISION_COMPLETE (R8-000..R8-022).
+- Frozen: runs/cmb_bridge/r4v, r5_paper, r6;
+  paper/evidence/cmb_bridge_r4v, r5, r6.

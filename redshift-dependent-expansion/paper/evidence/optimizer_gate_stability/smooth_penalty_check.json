@@ -1,0 +1,25 @@
+{
+ "lambda": 10000.0,
+ "s": 0.5,
+ "tol": 2.0,
+ "note": "diagnostic only; never replaces the frozen solution",
+ "runs": [
+  {
+   "tag": "smooth_from_frozen",
+   "fun": 1450.5525107095996,
+   "success": false,
+   "delta_vs_frozen": -0.005080359134353785,
+   "feasible": true,
+   "param_dist_vs_frozen": 0.02360004437901466
+  },
+  {
+   "tag": "smooth_from_best_hard",
+   "fun": 1450.5522092681779,
+   "success": false,
+   "delta_vs_frozen": -0.00538180055605153,
+   "feasible": true,
+   "param_dist_vs_frozen": 0.02647801555347165
+  }
+ ],
+ "smooth_same_basin": true
+}

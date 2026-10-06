@@ -1,0 +1,15 @@
+{
+  "binding": {
+    "additive_only": "Total/DESI/compressed-CMB/Pantheon+SH0ES joint",
+    "caption_agreement": "caption lists additive blocks only",
+    "ladder_nonladder": "diagnostic-only; separately profiled M_hat; non-additive; in ruler-audit table only",
+    "same_domain_null": false,
+    "same_domain_null_note": "parallel AE=0 same-domain null JSON absent; G10 historical baseline retained",
+    "table": "T3"
+  },
+  "generated_at": "2026-09-13T23:47:54.282215+00:00",
+  "sources": {
+    "paper/evidence/m28_final/model_comparison.json": "a3fe617c3d19c699a4b27fe87781b57e5ec52ffba441c88281d55db2941f41a9"
+  },
+  "table": "m28_g10_vs_m28"
+}

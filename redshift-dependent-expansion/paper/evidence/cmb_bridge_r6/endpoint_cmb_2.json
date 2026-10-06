@@ -1,0 +1,11 @@
+{
+ "branch": "C2 (independent stock LCDM baseline; own Planck likelihood + spectral parity)",
+ "H0": 67.4,
+ "params_H0": 67.4,
+ "lapse_Gamma": null,
+ "lapse_note": "pure LCDM background; no lapse DOF defined",
+ "source_artifact": "runs/cmb_branch/baseline/lcdm_table.npz",
+ "source_sha256": "95cba32c030e38773d84bcc55ecfe700dc738062d0428199891e3c18e25d8686",
+ "table": "endpoint_cmb_2.npz",
+ "table_sha256": "8c2c12e272264f875fcc104c5c7b73137a7dd06ee620f9cc80f605b9fa6dbccd"
+}

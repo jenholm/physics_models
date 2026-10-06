@@ -1,0 +1,87 @@
+{
+  "H_phys": {
+    "max": 15233.285262323507,
+    "max_z_obs": 1.666220735785953,
+    "min": 11.432040694025389,
+    "min_z_obs": 2.20649702832345
+  },
+  "dotH_zero_count": 4,
+  "dotH_zero_z_obs": [
+    1.6665616618375771,
+    1.7826078928591398,
+    2.0764039308493554,
+    2.205344514230904
+  ],
+  "frozen_M28_context": {
+    "H_phys": {
+      "max": 29834.67202988016,
+      "max_z_obs": 1.6541806020066891,
+      "min": 12.215860341294292,
+      "min_z_obs": 2.139766208944109
+    },
+    "dotH_zero_count": 6,
+    "q": {
+      "max": 3496.233213478127,
+      "max_z_obs": 1.549592126744507,
+      "min": -1920.569818980185,
+      "min_z_obs": 1.7625418060200668
+    },
+    "q_zero_count": 7
+  },
+  "interpretation": "the exact-valid same-domain AE=0 comparator retains substantial localized late-time kinematic structure (multiple dotH/q zeros, extreme q magnitudes, narrow q<0 intervals): sharp excursions are not unique to the M28 extension",
+  "method": "read-only aggregation of audit evidence (paper/evidence/m28_epoch_signatures/epoch_curves.csv verbatim audit copy + dynamical_markers.json); no model import, no law decode, no fitting, no recalculation of physics",
+  "model": "exact_valid_null",
+  "narrowest_neg_q_width": {
+    "width": 0.11287605386966737,
+    "z_end": 1.7785953177257525,
+    "z_start": 1.6657192638560852
+  },
+  "neg_q_interval_widths": [
+    {
+      "width": 0.42962709078716144,
+      "z_end": 0.43962709078716145,
+      "z_start": 0.01
+    },
+    {
+      "width": 0.16933015442219368,
+      "z_end": 0.8111391996483244,
+      "z_start": 0.6418090452261307
+    },
+    {
+      "width": 0.11287605386966737,
+      "z_end": 1.7785953177257525,
+      "z_start": 1.6657192638560852
+    },
+    {
+      "width": 0.1284280936454847,
+      "z_end": 2.2,
+      "z_start": 2.0715719063545155
+    }
+  ],
+  "provenance": {
+    "generated_at": "2026-09-13T00:04:56.883348+00:00",
+    "sources": {
+      "paper/evidence/m28_epoch_signatures/dynamical_markers.json": "35fb2958ca0056c24d12ba332402d27850dab3a0b58b9e9229070dff2f727407",
+      "paper/evidence/m28_epoch_signatures/epoch_curves.csv": "7e0fa4987cdf80045d42e9e4cf342cf0227d73927609971ec3da83a12e275d42"
+    }
+  },
+  "q": {
+    "max": 4584.326429979067,
+    "max_z_obs": 1.5489720890854461,
+    "min": -5428.433341204344,
+    "min_z_obs": 1.7785953177257525
+  },
+  "q_zero_count": 7,
+  "q_zero_z_obs": [
+    0.4405464505458609,
+    0.6415208033435845,
+    0.8114328130398094,
+    1.6622569904408118,
+    1.7826086346888756,
+    2.069245420053534,
+    2.2021809971696014
+  ],
+  "status": "EXACT_VALID_NULL_SANITY",
+  "w_eff_max": 3055.884286652712,
+  "w_eff_min": -3619.2888941362294
+}

@@ -1,0 +1,22 @@
+{
+ "z_peak_common": 0.6508471970813196,
+ "peak_abs_common": 0.12257174509003432,
+ "z_max_sn_count_hf": 0.049999999999999996,
+ "z_max_sn_weight_hf": 0.049999999999999996,
+ "z_max_desi_invvar": 0.25,
+ "sn_density_match": false,
+ "desi_density_match": false,
+ "r5_attribution_peak_interval": [
+  0.0,
+  0.4
+ ],
+ "r5_attribution_match": false,
+ "frozen_m3_curve_z_of_max": 0.39233594840022457,
+ "m3_curve_peak_match": false,
+ "frozen_m3_vs_control_residual_z_of_max": 0.6688266517368995,
+ "m3_residual_note": "the 0.669 value is the m3-vs-control residual maximum, not the m3 curve peak; do not conflate",
+ "m3_assessment": "R-C1 and R-C2 both peak near 0.65; m3 captures their broad low/intermediate-z trend but not their exact peak",
+ "m2_note": "m2/m3 reselection prohibited; frozen m3 curve peak compared only",
+ "disposition": "PEAK_NOT_EXPLAINED_BY_SIMPLE_DATA_DENSITY",
+ "interpretation": "The fitted difference reaches its largest amplitude near z~0.65. Because this region also carries substantial observational leverage, we do not interpret the peak redshift as a fundamental physical scale."
+}

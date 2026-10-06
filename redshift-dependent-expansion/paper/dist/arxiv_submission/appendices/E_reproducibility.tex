@@ -1,0 +1,20 @@
+\section{Reproducibility}
+\label{app:repro}
+
+The driver \path{scripts/paper/build_expansion_history_paper.py}
+replays the frozen evidence, rebuilds the results registry,
+regenerates all figures and tables with source-hash binding, validates
+claims in release mode, compiles the manuscript with pdflatex and
+bibtex, and builds and checks the arXiv bundle. The bundle
+\path{paper/dist/arxiv_submission/} is flat and self-contained,
+excluding run directories, source code, tests, credentials, logs, and
+caches. Random seeds, code hashes, and data hashes are recorded in the
+frozen evidence manifests.
+
+Numerical stack. All array arithmetic uses NumPy \citep{Harris2020} and
+all optimization and quadrature use SciPy \citep{Virtanen2020};
+versions are pinned in the frozen evidence manifests.
+Frozen endpoint artifacts and their hashes are listed in
+\path{paper/evidence_manifest.yaml}; regeneration fails on hash
+mismatch, so the published numbers reproduce exactly from the
+archived evidence.

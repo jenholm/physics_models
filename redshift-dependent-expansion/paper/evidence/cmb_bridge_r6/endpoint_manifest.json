@@ -1,0 +1,22 @@
+{
+ "grid": {
+  "n": 2000,
+  "zmin": 0.0,
+  "zmax": 2.33,
+  "spacing": "uniform-u"
+ },
+ "branches": {
+  "R": {
+   "source": "runs/cmb_bridge/r3/smooth_lowz_history.npz",
+   "sha256": "a8e5fd19ab4985353579326b9c9701daf042ebe53c87727e2762d568e48ac353"
+  },
+  "C1": {
+   "source": "runs/cmb_bridge/r4/bare_background.npz",
+   "sha256": "6c098347ec3c0e93058a433cd891abff1aa6a0dcc04ea9485147a9ca4bcbc5dc"
+  },
+  "C2": {
+   "source": "runs/cmb_branch/baseline/lcdm_table.npz",
+   "sha256": "95cba32c030e38773d84bcc55ecfe700dc738062d0428199891e3c18e25d8686"
+  }
+ }
+}

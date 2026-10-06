@@ -1,0 +1,9 @@
+# pdflatex for the first paper version (arXiv TeX Live 2023/2025 safe).
+$pdf_mode = 1;
+$bibtex_use = 2;
+$clean_ext = 'synctex.gz bbl run.xml bbl-file blg';
+END {
+  # keep main.bbl for the arXiv bundle (arXiv accepts a pre-generated
+  # .bbl whose basename matches the main TeX file)
+  1;
+}

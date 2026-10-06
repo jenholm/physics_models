@@ -1,0 +1,38 @@
+\section{Perturbation-channel activation checks}
+\label{app:activation}
+
+This appendix records pipeline-hygiene evidence: that the Boltzmann
+perturbation channels used in the CMB tests actually respond to their
+inputs. It is a methods note, not a physics result.
+
+\paragraph{RGR activation mechanism.} In the EFTCAMB results module the
+perturbation switch is overwritten by the RGR time: for models with all
+EFT functions zeroed, RGR returns ``never'' (1.1), so EFT perturbations
+stay silently off whenever the external background table matches the
+solver's own background. Early coupling-rescaling runs therefore
+compared identical spectra across parameter values while appearing to
+scan. Two fixes removed the artifact: Fortran default initializers for
+all working flags (\path{patches/heftcamb/m28_mueta/09_EFTCAMB_defaults.patch},
+which also hardens every Python-driven run), and extension of the
+designer source rescaling to the stock-GR branch (24 J-sites total),
+making activation independent of the RGR switch. The worker path that
+clobbered the designer model identifier was repaired at the same time.
+
+\paragraph{Verification.} After the fix: the M28 baseline spectra are
+bit-identical to the pre-fix baseline; the GR nesting gate passes
+(unlensed spectra agree at $2$--$5\times10^{-7}$ across independent
+paths); a $\mu_0=0.2$ coupling moves the TT spectrum by 89\% (channel
+engaged); and the CMB-only coupling fit finds its minimum at the GR
+edge ($\mu_0=0.037$, $-0.9\%$ in high-$\ell$ only, lowTT non-finite
+everywhere). The reconstruction branch used for Model~B2 carries no M28
+imports (enforced by AST test) and needs no EFT machinery: GR
+perturbations are optimal there (B2 Layer-3).
+
+\paragraph{Reading.} A reviewer cannot dismiss the A/B split as a dead
+perturbation channel: the channels demonstrably respond, the B2
+observational gates hold (DESI~$<40$, SN~$<1560$, lowTT~$<100$,
+high-$\ell$~$<1000$, A high-$\ell$~$>10000$), and the frozen B2 spectra
+regenerated independently from the frozen parameters reproduce the
+gated likelihoods (high-$\ell$ 583.77 vs 583.77; A 13169.78 exact).
+Full run record: \path{runs/m28_pivot/WHY_PIVOT.md} and
+\path{runs/cmb_reconstruction/frozen/}.

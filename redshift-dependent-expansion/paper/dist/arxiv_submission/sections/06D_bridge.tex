@@ -1,0 +1,167 @@
+\section{Predictive model-selection tests}
+\label{sec:bridge}
+
+This section reconstructs the difference between the
+distance-compatible history~R and the CMB-compatible history~C1 with
+a compact coordinate representation. All bridge numbers resolve to
+frozen evidence in \path{paper/evidence/cmb_bridge_r4v/} through
+registry macros; headline numerical results are generated from or
+hash-bound to frozen evidence.
+
+\subsection{Model-selection procedure}
+
+Within the predeclared bridge family (shifted-Legendre shape basis
+with split ruler/clock calibration) and fixed likelihood contract,
+orders $m=2$--$6$ were fitted from multiple optimizer starts with a
+boundary audit, a rank audit, and epsilon profiling. Constrained-domain
+order selection uses held-out behavior on identical folds over
+$z\le1.8$: five supernova conditional folds and six DESI
+leave-block-out folds at $z\le1.8$. The Ly$\alpha$ block at $z=2.33$
+is scored separately as an out-of-domain continuation test and never
+participates in selection
+(constrained re-score \texttt{constrained\_cv\_rescore.json} in paper
+evidence;
+no refitting — a re-score of frozen folds only).
+
+\subsection{Main result}
+
+Constrained predictive validation selects shifted-Legendre order~3
+($m=\CvConstrSelected{}$) with five fitted coordinates: total
+$\chi^{2}=\BridgeChiTwo{}$, only
+\BridgeDeltaCtrl{} above the 21-coordinate control despite 16 fewer
+fitted coordinates, with local projected Jacobian rank~5 of~5 fitted
+coordinates after covariance whitening and nuisance projection
+(Section~\ref{sec:methods}). Scores are tabulated with both columns:
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Constrained-domain held-out scores by order (selection
+  column) with the Ly$\alpha$ continuation score alongside. The star
+  marks the selected order under the predeclared smallest-$m$-within-2.0
+  rule. Frozen folds, re-scored; no refitting.}
+  \label{tab:constrained-cv}
+  \input{tables/generated/constrained_cv_rescore}
+\end{table}
+
+The raw constrained minimum is $m=4$
+(\CvConstrMFour{} against \CvConstrMThree{} at $m=3$), a margin of
+about $0.13$ that does not overturn the predeclared smallest-$m$
+rule: $m=3$ remains selected. Selection therefore does not depend on
+the Ly$\alpha$ catastrophe. Information criteria are reported
+descriptively, side-by-side: $k=\BridgeKmThree{}$,
+$\chi^{2}=\BridgeChiTwo{}$,
+$\Delta\chi^{2}_{\rm control}=\BridgeDeltaCtrl{}$,
+AIC~$\approx\BridgeAIC{}$ against $\approx\BridgeAICCtrl{}$ for the
+$k=\BridgeKCtrl{}$ control ($\Delta{\rm AIC}=\BridgeAICDeltaVsCtrl{}$).
+In words: $m3$ gives up $8.04$ in $\chi^{2}$ while using 16 fewer
+fitted bridge coordinates; AIC therefore favors the compact
+representation primarily through its parsimony penalty. This is not
+interpreted as a detection or a calibrated probability. The measurable shape is concentrated at low to
+intermediate redshift (DESI improvement peak $0.4<z<0.8$; redshift
+audit in evidence). The Legendre representation is a compression
+basis for the empirical deformation, not a proposed fundamental
+expansion law.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/generated/bridge_fig2_m3}
+  \caption{Five-coordinate m3 reconstruction compared with the
+  flexible 21-coordinate control. The lower panel shows
+  $(H_{m3}-H_{\rm control})/H_{\rm control}$.}
+  \label{fig:bridge-m3}
+\end{figure}
+
+\subsection{Predictive validation and the failed continuation}
+
+Higher orders degrade constrained held-out prediction
+(Table~\ref{tab:constrained-cv}). The bare null is the bare
+$\Lambda$CDM endpoint with zero fitted bridge coordinates ($K_{H}$
+fixed to no deformation, $\epsilon$ not applicable) and a single
+common $M$ profiled per fold-train (null contract,
+\path{paper/evidence/cmb_bridge_r5/null_model_contract.json}).
+Against this null on identical folds,
+the frozen $m=3$ map improves held-out supernova prediction by
+$\Delta\chi^{2}=\BridgeNullSn{}$ and improves constrained DESI
+($z\le1.8$) by $\Delta\chi^{2}=\BridgeNullDesiConstr{}$ (bare
+$\chi^{2}=\BridgeDesiBareConstr{}$ against
+$m3$ $\chi^{2}=\BridgeDesiMThreeConstr{}$); the separate $z=2.33$ Ly$\alpha$
+continuation test fails strongly. The Ly$\alpha$ block
+is then scored as an out-of-domain continuation test, where every
+order fails badly (Ly$\alpha$ column of
+Table~\ref{tab:constrained-cv}). The empirical continuation
+fails, and therefore the reconstruction's validated domain ends at
+$z\le1.8$; this bounds the claim rather than rescuing the model.
+
+\subsection{Prosecution: selection is not significance}
+\label{sec:prosecution}
+
+A parametric bootstrap of the entire constrained-domain selection
+pipeline under the bare null (250 replicates; same null/candidate
+family, data split, bounds and selection rule;
+constrained
+bootstrap \texttt{selection\_bootstrap\_constrained.json} in paper
+evidence)
+gives $P(\mathrm{select} \ge m3 \mid \mathrm{null}) =
+\CvConstrBootProb{}$, reported exactly as obtained with no threshold
+tuning. The Ly$\alpha$ catastrophe statistic is recorded separately
+and never chooses $m$. This bootstrap tests the complexity of the
+selected representation, not the existence of the numerical difference
+between frozen endpoint histories. Model-order selection alone is not
+evidence of a discovery. The reference-sensitivity analysis is a
+separate robustness check, not a significance test. The result is presented as a compact reconstruction
+with demonstrated held-out behavior, not evidence of a discovery.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/generated/bridge_fig3_cv}
+  \caption{Constrained predictive model selection: held-out
+  $\Delta\chi^{2}$ versus the constrained minimum (top; SN plus DESI
+  $z\le1.8$), with the Ly$\alpha$ continuation catastrophe on a
+  logarithmic scale (bottom; not used in selection). The $m3$/$m4$
+  near-tie is visible; the dashed line is the within-2 selection
+  threshold above the minimum, and the predeclared smallest-$m$-within-2.0 rule
+  selects $m3$.}
+  \label{fig:bridge-cv}
+\end{figure}
+
+\subsection{Reciprocity test}
+
+The ruler/clock split is consistent with zero: $\Delta\chi^{2}
+(\epsilon{=}0)=\BridgeEpsDelta{}$, with 1-sigma profile
+approximately $[-0.012,+0.005]$. No nonreciprocal calibration is
+detected; $\epsilon$ is not detected.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/generated/bridge_fig4_epsilon}
+  \caption{Reciprocity profile $\Delta\chi^{2}(\epsilon)$ in the
+  selected $m=3$ map: optimum near $-0.005$ and zero at
+  $\Delta\chi^{2}=\BridgeEpsDelta{}$, with horizontal
+  $\Delta\chi^{2}=1$ and $4$ levels.}
+  \label{fig:bridge-epsilon}
+\end{figure}
+
+\subsection{Why increased flexibility is rejected}
+\label{sec:adversarial}
+
+The analysis actively rejected better-looking training solutions. The
+roughness family reaches $\chi^{2}=1453.34$ but its leading shape
+coefficient sits exactly at the imposed bound ($c_{1}=+0.5$) with
+the local descent gradient pointing outward, so its optimum depends
+on the box: it is boundary-limited and retained as a supporting
+basis only. The Legendre $m=6$ map reaches good training
+$\chi^{2}=1455.19$ with an interior optimum but fails the held-out
+Lyman-alpha continuation test (Table~\ref{tab:constrained-cv});
+it is therefore not promoted.
+Both are retained as frozen adversarial controls in
+evidence.
+
+\subsection{Scope of this section}
+
+The analysis establishes an empirical background reconstruction,
+not a fundamental field theory. Whether this map is the observable
+limit of new dynamics remains unresolved. Chronometer, growth,
+lensing, time-delay, and siren sectors are not predicted without a
+covariant completion; the sector table in evidence records every
+status as NOT\_PREDICTED\_WITHOUT\_COMPLETION. The $m3$
+representation is not interpreted as a fundamental polynomial law.

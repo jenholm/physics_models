@@ -1,0 +1,20 @@
+{
+  "Gamma_0": 0.8607079764242914,
+  "H0_background": 62.65389580433204,
+  "H0_effective": 72.79344158586768,
+  "Omega_m": 0.3649014046287583,
+  "chi2_cmb": 0.015490503861260272,
+  "chi2_desi": 8.388014572907057,
+  "chi2_h0_compressed": 0.056204744433659644,
+  "chi2_joint": 1524.803321730813,
+  "chi2_sn": 1516.343611909611,
+  "delta_chi2_vs_identity": 33.46179256256846,
+  "identity_baseline_chi2_joint": 1558.2651142933814,
+  "omega_m_h2_like_note": "omega_m h^2 is not a free parameter of the M24D family; the M24B/C/D spine value 0.14327 is an empirical cross-run stability observation, not a fitting target.",
+  "sn_profiled_mu_offset": 0.07939024751958254,
+  "source": {
+    "artifact": "best_rescue_candidate.json",
+    "disposition": "M24D_LOWZ_RESCUE_80_PERCENT",
+    "run": "runs/m24d_lowz_sensitivity"
+  }
+}

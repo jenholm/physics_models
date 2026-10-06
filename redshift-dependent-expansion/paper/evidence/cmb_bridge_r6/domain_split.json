@@ -1,0 +1,12 @@
+{
+ "constrained_domain": [
+  0.0,
+  1.8
+ ],
+ "constrained_note": "covers all non-LyA DESI blocks (max 1.484); LyA at 2.33 tests the continuation law, not the low-redshift deformation",
+ "extrapolation_test": [
+  2.33,
+  2.33
+ ],
+ "lya_note": "R5 bootstrap: LyA catastrophes in 76.8% of null replicates; generic flexible-extrapolator behavior"
+}

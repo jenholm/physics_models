@@ -1,0 +1,306 @@
+{
+  "n_equations": 31,
+  "inventory": [
+    {
+      "equation_id": "EQ-01",
+      "variables": [
+        "H",
+        "q"
+      ],
+      "snippet": "E_{\\mathrm{bg}}^{2}(z)     = \\Omega_{r}(1+z)^{4} + \\Omega_{m}(1+z)^{3}       + 1 - \\Omega_{m} - \\Omega_{r},   \\qquad   H_{\\mathrm{bg}} = H_{0,\\mathrm{bg}}\\,E_{\\",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-02",
+      "variables": [
+        "Gamma",
+        "Xi",
+        "q"
+      ],
+      "snippet": "\\boxed{%     ds^{2} = -\\Gamma(u)^{2} c^{2} dt^{2}     + \\bigl[a_{\\mathrm{bg}}(t)\\,\\Xi(u)\\bigr]^{2} d\\Sigma^{2}%   }   \\label{eq:late-metric}",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-03",
+      "variables": [
+        "Gamma",
+        "Xi",
+        "q"
+      ],
+      "snippet": "u = \\ln(1+z_{\\mathrm{bg}}),   \\qquad   g = \\ln\\Gamma,   \\qquad   x = \\ln\\Xi,   \\qquad   s = dx/du.   \\label{eq:coords}",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-04",
+      "variables": [
+        "q"
+      ],
+      "snippet": "g(u) =   \\begin{cases}     g_{\\mathrm{late}}(u) + A_{E}\\,W_{E}(u), & u \\le \\ln 11, \\\\     A_{E}\\,W_{E}(u), & u > \\ln 11,   \\end{cases}   \\qquad   x(u) =   \\begi",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-05",
+      "variables": [
+        "H",
+        "q"
+      ],
+      "snippet": "\\boxed{%     h_{\\mathrm{rd}} \\equiv h_{\\mathrm{bg}}\\,r_{d}     = \\frac{H_{0,\\mathrm{bg}}}{100\\,\\mathrm{km\\,s^{-1}\\,Mpc^{-1}}}\\,r_{d}%   }   \\label{eq:hrd}",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-06",
+      "variables": [
+        "q"
+      ],
+      "snippet": "r_{d} = r_{d,0}\\,\\frac{I_{E}(z_{d})}{I_{0}(z_{d})},   \\qquad   r_{s} = r_{s,0}\\,\\frac{I_{E}(z_{*})}{I_{0}(z_{*})},   \\label{eq:rulers}",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-07",
+      "variables": [
+        "q"
+      ],
+      "snippet": "\\boxed{%     \\theta = (t_{0},\\dots,t_{9},\\Omega_{m},h_{\\mathrm{rd}},     g_{0},g_{1},x_{1},x_{2},     q_{l0},q_{l1},q_{l2},q_{\\rho0},q_{\\rho1},q_{\\rho2},A_{E})%",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-08",
+      "variables": [
+        "q"
+      ],
+      "snippet": "\\boxed{%     \\chi^{2}_{\\mathrm{real}}     = \\chi^{2}_{\\mathrm{DESI}} + \\chi^{2}_{\\mathrm{CMB}}     + \\chi^{2}_{\\mathrm{joint}}%   }   \\label{eq:chireal}",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-09",
+      "variables": [
+        "Xi"
+      ],
+      "snippet": "1+z_{\\mathrm{obs}} = (1+z_{\\mathrm{bg}})\\,\\Xi_{0}/\\Xi(z),",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-10",
+      "variables": [
+        "q"
+      ],
+      "snippet": "\\hat{M} = \\frac{\\mathbf{1}^{T}C^{-1}r_{0}}                  {\\mathbf{1}^{T}C^{-1}\\mathbf{1}},   \\qquad   \\chi^{2}_{\\mathrm{joint}}     = (r_{0}-\\hat{M}\\mathbf{1",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-11",
+      "variables": [],
+      "snippet": "\\boxed{\\hat{\\theta}   = \\arg\\min_{\\theta \\in \\Theta_{M28}} \\chi^{2}_{\\mathrm{real}}(\\theta)}",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-12",
+      "variables": [
+        "H"
+      ],
+      "snippet": "\\boxed{\\chi^{2}_{\\mathrm{real}}   = \\chi^{2}_{\\mathrm{DESI}} + \\chi^{2}_{\\mathrm{CMB}}   + \\chi^{2}_{P+\\mathrm{SH0ES}}}",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-13",
+      "variables": [],
+      "snippet": "\\hat{M}(\\theta)   = \\frac{\\mathbf{1}^{T} C_{\\mathrm{SN}}^{-1} r_{0}(\\theta)}          {\\mathbf{1}^{T} C_{\\mathrm{SN}}^{-1} \\mathbf{1}}.",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-14",
+      "variables": [
+        "q"
+      ],
+      "snippet": "\\theta = (t_{0},\\dots,t_{9},\\Omega_{m},h_{\\mathrm{rd}}, g_{0},g_{1},x_{1},x_{2}, q_{l0},q_{l1},q_{l2},q_{\\rho0},q_{\\rho1},q_{\\rho2},A_{E})^{T}.",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-15",
+      "variables": [
+        "q"
+      ],
+      "snippet": "f_{i} = \\frac{e^{\\tilde{q}_{li}}}{\\sum_{j=0}^{3} e^{\\tilde{q}_{lj}}}, \\qquad \\boxed{l_{i} = L_{\\min} + (U - 4L_{\\min})\\, f_{i}},",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-16",
+      "variables": [
+        "q"
+      ],
+      "snippet": "\\rho_{i} = \\rho_{\\min}   + (\\rho_{\\max} - \\rho_{\\min})\\,\\sigma(q_{\\rho i}), \\qquad w_{i} = \\rho_{i}\\,\\min(l_{i}, l_{i+1}),",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-17",
+      "variables": [
+        "q"
+      ],
+      "snippet": "b_{1} = l_{0}, \\quad b_{2} = l_{0} + l_{1}, \\quad b_{3} = l_{0} + l_{1} + l_{2},",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-18",
+      "variables": [
+        "q"
+      ],
+      "snippet": "\\max |g_{\\mathrm{late}}| \\le 0.35, \\quad \\max |x| \\le 0.30, \\quad \\min (1 - s) > 0.05,",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-19",
+      "variables": [
+        "q"
+      ],
+      "snippet": "|A_{E}| \\le 0.35, \\qquad 0 < W_{E} < 1,",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-20",
+      "variables": [],
+      "snippet": "\\boxed{dz_{\\mathrm{obs}}/dz_{\\mathrm{bg}} > 0}.",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-21",
+      "variables": [],
+      "snippet": "R = \\int \\Phi'(u)^{T} \\Phi'(u)\\,du",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-22",
+      "variables": [],
+      "snippet": "S_{jj} = \\left[\\int (\\Phi v_{j})^{2}\\,du\\right]^{1/2},",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-23",
+      "variables": [],
+      "snippet": "\\boxed{\\delta g = \\Phi\\,V_{10}\\,S_{10}^{-1}\\,t}.",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-24",
+      "variables": [
+        "q"
+      ],
+      "snippet": "W_{E}(u) = S((u-u_{\\mathrm{lo}})/w)\\,S((u_{\\mathrm{hi}}-u)/w), \\quad S(y) = 1/(1+e^{-y}).",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-25",
+      "variables": [
+        "H",
+        "q"
+      ],
+      "snippet": "1+z_{\\mathrm{obs}} &= (1+z_{\\mathrm{bg}})\\,e^{-x},   \\label{eq:zobs} \\\\   \\frac{dz_{\\mathrm{obs}}}{dz_{\\mathrm{bg}}}     &= e^{-x}\\,(1-s),   \\label{eq:zobs-jac}",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-26",
+      "variables": [
+        "H",
+        "Gamma",
+        "Xi",
+        "q"
+      ],
+      "snippet": "\\frac{D_{M}}{r_{d}}     &= \\frac{c}{100\\,h_{\\mathrm{rd}}}\\,I(z_{\\mathrm{bg}}),   \\label{eq:dm-rd} \\\\   \\frac{D_{H}}{r_{d}}     &= \\frac{c}{100\\,h_{\\mathrm{rd}}}",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-27",
+      "variables": [
+        "q"
+      ],
+      "snippet": "r_{0} &= m_{B}^{\\mathrm{corr}} - \\mu_{\\mathrm{no}\\,M},   \\label{eq:r0} \\\\   \\hat{M} &= \\frac{\\mathbf{1}^{T}C^{-1}r_{0}}                   {\\mathbf{1}^{T}C^{-1}\\",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-28",
+      "variables": [
+        "H"
+      ],
+      "snippet": "\\chi^{2}_{\\mathrm{DESI}}(\\theta)   &= r_{D}(\\theta)^{T} C_{D}^{-1} r_{D}(\\theta), \\\\ \\chi^{2}_{\\mathrm{CMB}}(\\theta)   &= r_{C}(\\theta)^{T} C_{C}^{-1} r_{C}(\\th",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-29",
+      "variables": [],
+      "snippet": "p_{0} &= l_{0} - w_{0}/2 > 0, \\\\ p_{1} &= l_{1} - (w_{0}+w_{1})/2 \\ge l_{1}/2, \\\\ p_{2} &= l_{2} - (w_{1}+w_{2})/2 \\ge l_{2}/2, \\\\ p_{3} &= l_{3} - w_{2}/2 > 0,",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-30",
+      "variables": [
+        "H"
+      ],
+      "snippet": "2.35$; $H$ is continuous with derivative kink gap $\\sim",
+      "defined_before_use": true,
+      "units_checked": true
+    },
+    {
+      "equation_id": "EQ-31",
+      "variables": [],
+      "snippet": "1.1$\\% across 7 DESI bins (overlay only, DESI in-likelihood, \\texttt{validated\\_external=false}); transverse response up to $\\sim",
+      "defined_before_use": true,
+      "units_checked": true
+    }
+  ],
+  "limit_checks": {
+    "gr_limit_Gamma_to_1_stated": true,
+    "early_limit_declared": true,
+    "H0_units_kmsMpc": true,
+    "rd_units_Mpc": true,
+    "dimensionless_flags": [
+      false
+    ]
+  },
+  "variable_mention": {
+    "H": true,
+    "H_0": false,
+    "r_d": false,
+    "Gamma": true,
+    "Xi": true,
+    "g_E": false,
+    "A_E": false,
+    "E_bg": false,
+    "z_obs": false,
+    "z_bg": false,
+    "D_H": false,
+    "D_M": false,
+    "D_V": false,
+    "q": true,
+    "w_eff": false,
+    "dotH": false
+  },
+  "status": "PASS"
+}

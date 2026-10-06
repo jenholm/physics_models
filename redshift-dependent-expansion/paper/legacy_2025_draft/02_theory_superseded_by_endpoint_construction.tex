@@ -1,0 +1,210 @@
+\section{Theory: a redshift-dependent time-current response}
+\label{sec:theory}
+
+The physical object under test is a global cosmological
+time-current response $\Gamma(z)$: a redshift-dependent rescaling
+of the expansion history evaluated against redshift-resolved
+observables. In the standard limit $\Gamma(z) \to 1$ the model
+recovers the reference expansion exactly; departures from unity
+encode the additional physics. One early-time amplitude $A_{E}$
+controls the departure through a fixed window localized to the
+drag/recombination era (implementation detail below).
+
+Implemented background. The code integrates a flat background with
+\begin{equation}
+  E_{\mathrm{bg}}^{2}(z)
+    = \Omega_{r}(1+z)^{4} + \Omega_{m}(1+z)^{3}
+      + 1 - \Omega_{m} - \Omega_{r},
+  \qquad
+  H_{\mathrm{bg}} = H_{0,\mathrm{bg}}\,E_{\mathrm{bg}},
+  \label{eq:ebg}
+\end{equation}
+with fixed $\Omega_{r}=9.0\times10^{-5}$
+(\texttt{DEFAULT\_OMEGA\_R} in
+\texttt{model\_cghstc33\_background.py}).
+
+The unified early-epoch-model metric is the phenomenological ansatz
+\begin{equation}
+  \boxed{%
+    ds^{2} = -\Gamma(u)^{2} c^{2} dt^{2}
+    + \bigl[a_{\mathrm{bg}}(t)\,\Xi(u)\bigr]^{2} d\Sigma^{2}%
+  }
+  \label{eq:late-metric}
+\end{equation}
+with background coordinate
+\begin{equation}
+  u = \ln(1+z_{\mathrm{bg}}),
+  \qquad
+  g = \ln\Gamma,
+  \qquad
+  x = \ln\Xi,
+  \qquad
+  s = dx/du.
+  \label{eq:coords}
+\end{equation}
+This is a phenomenological ansatz imposed on the background; the metric
+is a phenomenological ansatz and is not derived here from the Einstein
+field equations. The coordinate $u$ is always
+the background epoch $u=\ln(1+z_{\mathrm{bg}})$, never an ambiguous
+$u=\ln(1+z)$.
+
+The early-epoch-model fields obey the piecewise law
+\begin{equation}
+  g(u) =
+  \begin{cases}
+    g_{\mathrm{late}}(u) + A_{E}\,W_{E}(u), & u \le \ln 11, \\
+    A_{E}\,W_{E}(u), & u > \ln 11,
+  \end{cases}
+  \qquad
+  x(u) =
+  \begin{cases}
+    x_{\mathrm{late}}(u), & u \le \ln 11, \\
+    0, & u > \ln 11.
+  \end{cases}
+  \label{eq:m28-piecewise}
+\end{equation}
+The early window $W_{E}(u)$ is fixed and localized to the
+drag/recombination era; the spatial sector and its slope are untouched
+by $A_{E}$. At $A_{E}=0$ the wrapped theory returns the late law
+exactly. In code (\texttt{m28\_early\_epoch.py}) the early field is
+added at all $u$ and the late law restores to $g=0$, $x=0$ for
+$u>\ln11$ (to $10^{-14}$), so the branched form above is equivalent to
+the implementation. The fitted amplitude is $A_{E}=\MXXVIIIBTwoAE$.
+
+Observer-frame mapping. Normalization $\Xi(0)=1$, i.e.\ $x(0)=0$, is
+imposed so that the spatial field maps the background epoch onto the
+redshift actually observed today with no present-day offset:
+\begin{align}
+  1+z_{\mathrm{obs}} &= (1+z_{\mathrm{bg}})\,e^{-x},
+  \label{eq:zobs} \\
+  \frac{dz_{\mathrm{obs}}}{dz_{\mathrm{bg}}}
+    &= e^{-x}\,(1-s),
+  \label{eq:zobs-jac} \\
+  H_{\mathrm{phys}} &= H_{\mathrm{bg}}\,e^{-g}\,(1-s),
+  \label{eq:hphys} \\
+  H_{0,\mathrm{bg}} &= \frac{100\,h_{\mathrm{rd}}}{r_{d}},
+  \label{eq:h0bg} \\
+  &\text{(derived $r_{d}$ here, not the fixed anchor; code: }
+    \texttt{m26\_joint.py}\text{)}\nonumber \\
+  H_{0,\mathrm{phys}}
+    &= H_{0,\mathrm{bg}}\,e^{-g(0)}\,[1-s(0)],
+  \label{eq:h0phys}
+\end{align}
+with $H_{0,\mathrm{phys}}=\MXXVIIIBTwoHZeroA$\kmsMpc{} at background
+value $\MXXVIIIBTwoHZeroBgA$\kmsMpc{} for the canonical Model~A best fit.
+
+Catalog redshifts are observer-frame redshifts. The early-epoch model solves for the
+background epoch that produces each observed catalog redshift through
+Eq.~\eqref{eq:zobs}, then propagates distances and expansion rates
+through $\Gamma$ and $\Xi$ via
+Eqs.~\eqref{eq:zobs-jac}--\eqref{eq:h0phys}.
+
+Background parameters. Define the background ruler product once,
+\begin{equation}
+  \boxed{%
+    h_{\mathrm{rd}} \equiv h_{\mathrm{bg}}\,r_{d}
+    = \frac{H_{0,\mathrm{bg}}}{100\,\mathrm{km\,s^{-1}\,Mpc^{-1}}}\,r_{d}%
+  }
+  \label{eq:hrd}
+\end{equation}
+with $h_{\mathrm{bg}}=H_{0,\mathrm{bg}}/(100$\kmsMpc{}$)$ and both
+$h_{\mathrm{rd}}$ and the derived ruler $r_{d}$ in Mpc
+(never velocity per distance).
+The early-epoch $h_{\mathrm{rd}}$ value is not comparable to the
+standard DESI $\sim$\,101.5~Mpc number because the modified distance law
+absorbs $\Gamma/\Xi$ into the integral (see Appendix~B).
+Likewise $\Omega_{m}=\MXXVIIIBTwoOmegaA$ is the background $E_{\mathrm{bg}}$
+fraction as transformed through $\Gamma/\Xi$ in the early-epoch-model distance law,
+not a $\Lambda$CDM $\Omega_{m}$; the search domain [0.20,\,0.45] is unchanged.
+
+BAO observables. With
+$I(z_{\mathrm{bg}})=\int_{0}^{z_{\mathrm{bg}}}
+\Gamma/(\Xi\,E_{\mathrm{bg}})\,dz_{\mathrm{bg}}'$,
+\begin{align}
+  \frac{D_{M}}{r_{d}}
+    &= \frac{c}{100\,h_{\mathrm{rd}}}\,I(z_{\mathrm{bg}}),
+  \label{eq:dm-rd} \\
+  \frac{D_{H}}{r_{d}}
+    &= \frac{c}{100\,h_{\mathrm{rd}}}\,
+       \frac{\Gamma/(\Xi\,E_{\mathrm{bg}})}
+            {dz_{\mathrm{obs}}/dz_{\mathrm{bg}}},
+  \label{eq:dh-rd} \\
+  \frac{D_{V}}{r_{d}}
+    &= \left[z_{\mathrm{obs}}
+       \left(\frac{D_{M}}{r_{d}}\right)^{2}
+       \frac{D_{H}}{r_{d}}\right]^{1/3}.
+  \label{eq:dv-rd}
+\end{align}
+DESI publishes fixed values of $D_{M}/r_{d}$, $D_{H}/r_{d}$,
+$D_{V}/r_{d}$; the early-epoch model changes only the theory prediction, never the
+published values or covariances.
+
+Acoustic rulers. Define the baseline anchors once,
+$r_{d,0}=147.05$~Mpc and $r_{s,0}=144.43$~Mpc, with the fixed early set
+$z_{d}=1059.94$, $z_{*}=1089.92$,
+$\omega_{b}h^{2}\simeq0.02237$, $\Omega_{r}=9\times10^{-5}$ plus these
+baseline rulers. By construction $r_{d}(A_{E}=0)=147.05$~Mpc and
+$r_{s}(A_{E}=0)=144.43$~Mpc for every $\Omega_{m}$: the denominator
+uses the current background $E_{\mathrm{bg}}(z;\Omega_{m})$ but the
+ratio renormalizes to the fixed Planck anchors. The early-epoch-model rulers are
+fractional early-field modifications applied to fixed $r_{d,0}$/$r_{s,0}$,
+\begin{equation}
+  r_{d} = r_{d,0}\,\frac{I_{E}(z_{d})}{I_{0}(z_{d})},
+  \qquad
+  r_{s} = r_{s,0}\,\frac{I_{E}(z_{*})}{I_{0}(z_{*})},
+  \label{eq:rulers}
+\end{equation}
+where $I_{E}(z_{x})=\int_{z_{x}}^{z_{\max}}c_{s}(z)\,e^{g_{E}(z)}/E_{\mathrm{bg}}(z)\,dz$,
+$I_{0}$ uses the same integrand at $g_{E}=0$ with
+$g_{E}(u)=A_{E}W_{E}(u)$ only (not the full late-plus-early $g$),
+$z_{\max}=10^{7}$, and $c_{s}(z) = c/\sqrt{3(1+R_{b})}$ with standard
+baryon loading. The early field changes these acoustic integrals only;
+no recombination or drag-epoch recompute is performed. This is a
+background-level ruler ratio, not a full recombination calculation;
+full fixed approximations and non-recalculated physics are listed in
+Appendix~C. Negative $A_{E}$ raises early physical expansion and shrinks the rulers
+to $r_{d}=\MXXVIIIBTwoRdA$~Mpc and $r_{s}=\MXXVIIIBTwoRsA$~Mpc.
+
+Local calibrators. Under the adopted calibration contract, no
+additional theory-side correction is applied to local calibrator
+distance moduli: $\Delta\mu_{\mathrm{cal}}=0$
+(validation disposition \textit{calibrator-invariance-assumption-only}). The early field is
+negligible locally with $|g_{E}(0)|\sim3.5\times10^{-11}$, homogeneous same-epoch lapse
+factors cancel qualitatively in the calibration transfer, but the numeric
+local-propagation bound is $4.6\times10^{-4}$~mag, exceeding the $10^{-4}$~mag
+target (\texttt{passes\_1e-4} false); the zero-correction assumption is therefore
+supported qualitatively, not quantitatively established. Cosmological propagation
+through the late sector is already in the likelihood.
+
+Background versus perturbations. To be explicit about scope:
+$\Gamma$ modifies background evolution only. It supplies an expansion
+history $H(z)$, distances, and derived acoustic rulers, but no
+perturbation dynamics: growth, lensing, and CMB-anisotropy predictions
+require a separately completed perturbation sector. This split matches
+the branch structure of the paper: the distance branch is a background
+fit evaluated under GR, and the CMB branch carries its own GR
+perturbation sector with no inheritance between them
+(Section~\ref{sec:perturbations}).
+
+What survives in final Model~A. The machinery above is the full
+$(\Gamma,\Xi)$ theory in which the predecessor was fitted, and a
+referee will reasonably ask why the paper defines a spatial mapping
+the later Boltzmann campaign removed. The answer is explicit: the R7B
+repair identified the integrated late $\Xi$ mapping as the CMB poison,
+collapsing the high-$\ell$ excess by more than an order of magnitude
+on removal, and imposed
+$x_{1}=x_{2}=0$ without refit. In final Model~A the $\Xi$ sector is
+therefore identically trivial, $x(u)=0$, $s(u)=0$, $\Xi(u)=1$
+(verified: $1-s$ minimum and maximum both $1.0$ in the reclosure
+probes), and the observer mapping collapses to $z_{\mathrm{obs}} =
+z_{\mathrm{bg}}$ with $H_{\mathrm{phys}} = H_{\mathrm{bg}}\,e^{-g}$.
+What survives is the $\Gamma$ sector: the late temporal modes, the
+broad backbone, the background $(\Omega_{m}, H_{0,\mathrm{bg}})$, and
+the early amplitude $A_{E} = \MXXVIIIBTwoAE$, giving
+$H_{0,\mathrm{phys}} = \MXXVIIIBTwoHZeroA$\kmsMpc{} at background
+$\MXXVIIIBTwoHZeroBgA$\kmsMpc{}. What was rejected is the late spatial
+mapping itself, together with the predecessor coordinates that
+depended on it. The full $(\Gamma,\Xi)$ development stays in this
+section because the predecessor fit, the audit trail, and the repair
+diagnostic are all stated in its language; final Model~A simply
+evaluates it at $\Xi=1$.

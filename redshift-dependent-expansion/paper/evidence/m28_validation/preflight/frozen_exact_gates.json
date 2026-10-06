@@ -1,0 +1,42 @@
+{
+ "kind": "frozen",
+ "n_params": 23,
+ "A_E": -0.12580429618312336,
+ "audit": {
+  "min_one_minus_s": 0.04999183134527807,
+  "u_min_one_minus_s": 1.1032297345065007,
+  "max_abs_g_late": 0.17563252505509544,
+  "u_max_abs_g_late": 0.04055404350113754,
+  "max_abs_x": 0.08154693820486664,
+  "u_max_abs_x": 0.933849043754035,
+  "min_redshift_jacobian": 0.05207029551017267,
+  "u_min_redshift_jacobian": 1.103310673738404,
+  "passes": false,
+  "failure_reason": "h_phys_nonpositive min(1-s)=0.049991831 <= 0.05",
+  "dense_min_one_minus_s": 0.0499918313546136,
+  "dense_max_abs_g_late": 0.17563252505355054,
+  "dense_max_abs_x": 0.08154693820486664,
+  "dense_min_redshift_jacobian": 0.05207029556179262,
+  "max_adaptive_dense_disagreement": 5.161995136893083e-11
+ },
+ "likelihood": {
+  "total": 1450.557591068734,
+  "chi2_desi": 3.4537667443045397,
+  "chi2_cmb": 0.00472391048246289,
+  "chi2_joint": 1447.0991004139469,
+  "H0_phys": 73.01252056964711,
+  "H0_background": 61.52144155401909,
+  "h_rd": 83.43614778444413,
+  "omega_m": 0.44442042124505116,
+  "r_d_mpc": 135.62124956253302,
+  "r_s_mpc": 133.30602954924356,
+  "r_d_passed_explicitly": true
+ },
+ "recorded_total": 1450.557591068734,
+ "replay_delta": 0.0,
+ "provenance": {
+  "vector": "configs/m28/frozen_publication_model.json:x_optimizer",
+  "evaluator": "h0cdr.fitting.m28_validation",
+  "gates": "h0cdr.validation.m28_exact_gates"
+ }
+}

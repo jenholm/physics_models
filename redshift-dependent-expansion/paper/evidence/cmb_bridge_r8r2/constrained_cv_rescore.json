@@ -1,0 +1,64 @@
+{
+ "rule": "smallest m within 2.0 of best combined held-out (SN + DESI z<=1.8)",
+ "z_boundary": 1.8,
+ "lya_role": "Ly-alpha continuation test only; excluded from selection",
+ "sources": [
+  "runs/cmb_bridge/r4v/sn_cv_by_order.csv",
+  "runs/cmb_bridge/r4v/desi_cv_by_order.csv"
+ ],
+ "per_order": {
+  "2": {
+   "sn_held": 8201.122370094918,
+   "desi_constrained_held": 12.79794578528147,
+   "desi_lya_held": 33.61155017854385,
+   "combined_constrained": 8213.9203158802,
+   "n_sn_folds": 5,
+   "n_desi_constrained_folds": 6,
+   "n_desi_lya_folds": 1,
+   "delta_vs_best": 49.7714987122672
+  },
+  "3": {
+   "sn_held": 8153.1026727572735,
+   "desi_constrained_held": 11.173703115740858,
+   "desi_lya_held": 59.70043251698184,
+   "combined_constrained": 8164.276375873014,
+   "n_sn_folds": 5,
+   "n_desi_constrained_folds": 6,
+   "n_desi_lya_folds": 1,
+   "delta_vs_best": 0.12755870508226508
+  },
+  "4": {
+   "sn_held": 8151.896448063203,
+   "desi_constrained_held": 12.252369104728682,
+   "desi_lya_held": 262.51865285730054,
+   "combined_constrained": 8164.148817167932,
+   "n_sn_folds": 5,
+   "n_desi_constrained_folds": 6,
+   "n_desi_lya_folds": 1,
+   "delta_vs_best": 0.0
+  },
+  "5": {
+   "sn_held": 8166.760696549575,
+   "desi_constrained_held": 20.009563486044637,
+   "desi_lya_held": 5448.562423890092,
+   "combined_constrained": 8186.77026003562,
+   "n_sn_folds": 5,
+   "n_desi_constrained_folds": 6,
+   "n_desi_lya_folds": 1,
+   "delta_vs_best": 22.62144286768762
+  },
+  "6": {
+   "sn_held": 8160.914464933487,
+   "desi_constrained_held": 23.09073073624665,
+   "desi_lya_held": 19969.182232907646,
+   "combined_constrained": 8184.005195669733,
+   "n_sn_folds": 5,
+   "n_desi_constrained_folds": 6,
+   "n_desi_lya_folds": 1,
+   "delta_vs_best": 19.856378501801373
+  }
+ },
+ "best_combined": 8164.148817167932,
+ "selected_m": 3,
+ "no_refit": true
+}

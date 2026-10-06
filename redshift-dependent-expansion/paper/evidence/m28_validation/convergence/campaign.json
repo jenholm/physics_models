@@ -1,0 +1,168 @@
+{
+ "contract": "Full 23-param in-domain refits; frozen model/data/domain untouched; real chi2 only; no H0 target or penalty.",
+ "frozen_total": 1450.557591068734,
+ "frozen_ae": -0.12580429618312336,
+ "settings": {
+  "seeds": [
+   39101
+  ],
+  "de_maxiter": 2,
+  "n_polish": 2,
+  "slsqp_maxiter": 10,
+  "pilot": true,
+  "full_note": "Full campaign is >=20 DE seeds x de_maxiter 200 x 8 polish x slsqp 1000. Pilot defaults below are honestly reported in settings.pilot; rerun with --de-maxiter 200 --n-polish 8 --slsqp-maxiter 1000 --seeds <>=20 ids> for the full budget."
+ },
+ "best_by_seed": [
+  {
+   "seed": 39101,
+   "total": 1450.5575507951132,
+   "dchi2": -4.027362069791707e-05,
+   "A_E": -0.12582069753457018,
+   "H0_phys": 73.01321681633088,
+   "H0_background": 61.522075037284225,
+   "r_d": 135.61984255243814,
+   "r_s": 133.30465982425753,
+   "omega_m": 0.4444210673812493,
+   "h_rd": 83.43614130055772,
+   "chi2_desi": 3.454424616249381,
+   "chi2_cmb": 0.00471717696336138,
+   "chi2_joint": 1447.0984090019006,
+   "winner_source": "slsqp_polish",
+   "hash": "4280a39232524b4a"
+  }
+ ],
+ "winner": {
+  "seed": 39101,
+  "total": 1450.5575507951132,
+  "dchi2": -4.027362069791707e-05,
+  "A_E": -0.12582069753457018,
+  "H0_phys": 73.01321681633088,
+  "H0_background": 61.522075037284225,
+  "r_d": 135.61984255243814,
+  "r_s": 133.30465982425753,
+  "omega_m": 0.4444210673812493,
+  "h_rd": 83.43614130055772,
+  "chi2_desi": 3.454424616249381,
+  "chi2_cmb": 0.00471717696336138,
+  "chi2_joint": 1447.0984090019006,
+  "winner_source": "slsqp_polish",
+  "x": [
+   0.1475700019772161,
+   -0.05451134279925496,
+   0.005189369260476991,
+   -0.04075415432753763,
+   0.02148909265483671,
+   -0.0362950663276091,
+   0.02888446857162651,
+   -0.062436113926764895,
+   -0.0027225220942579146,
+   -0.036741206870929716,
+   0.4444210673812493,
+   83.43614130055772,
+   0.01406224961225902,
+   0.08584166524909484,
+   -0.0028273970316633097,
+   -0.08137933108655448,
+   -0.9319124526654172,
+   -1.126388631028371,
+   -2.0465196954026705,
+   -0.8122212798902239,
+   -7.783203498275294,
+   5.991434621795083,
+   -0.12582069753457018
+  ],
+  "margins": {
+   "min_1_minus_s": 0.05206148075078687,
+   "max_abs_g": 0.1756298498006169,
+   "max_abs_x": 0.08137933108655448,
+   "min_redshift_jacobian": 0.05422213324856223
+  },
+  "hash": "4280a39232524b4a",
+  "de_trace": [
+   1450.5575910687344,
+   1450.5575910687344
+  ],
+  "de_fun": 1450.5575910687344,
+  "slsqp_scores": [
+   1450.5575507951132,
+   1450.5575508361935,
+   1454.3188605875323,
+   1473.7176315505326,
+   1620.0558846874383
+  ],
+  "candidate_bank": [
+   {
+    "fun": 1450.557591068734,
+    "source": "injected_start"
+   },
+   {
+    "fun": 1479.173408254371,
+    "source": "injected_extra"
+   },
+   {
+    "fun": 1618.9158279869146,
+    "source": "injected_extra"
+   },
+   {
+    "fun": 6471.3678988830015,
+    "source": "injected_extra"
+   },
+   {
+    "fun": 1450.5575910687344,
+    "source": "de_winner"
+   },
+   {
+    "fun": 1450.5575508361935,
+    "source": "slsqp_polish"
+   },
+   {
+    "fun": 1473.7176315505326,
+    "source": "slsqp_polish"
+   },
+   {
+    "fun": 1454.3188605875323,
+    "source": "slsqp_polish"
+   },
+   {
+    "fun": 1620.0558846874383,
+    "source": "slsqp_polish"
+   },
+   {
+    "fun": 1450.5575507951132,
+    "source": "slsqp_polish"
+   }
+  ]
+ },
+ "new_best_check": {
+  "gap": -4.027362069791707e-05,
+  "tol": 0.1,
+  "flag": "OK",
+  "is_new_best": false
+ },
+ "function_space": {
+  "within_dchi2_of_campaign_best": 2.0,
+  "n_near_optimal": 1,
+  "pairwise_rms_g_x_s_Hphys": [
+   [
+    0.0
+   ]
+  ],
+  "metric": "pairwise RMS of normalized g/x/s/H_phys on a common u grid; NOT param distance",
+  "seeds": [
+   39101
+  ]
+ },
+ "traces": {
+  "39101": [
+   1450.5575910687344,
+   1450.5575910687344
+  ]
+ },
+ "provenance": {
+  "src/h0cdr/theory/m28_early_epoch.py": "c5178755cbe432689672431a58f739dbe1b06266cf5992a0ca460de6c10b9c71",
+  "src/h0cdr/cosmology/m28_sound_horizon.py": "5c1c57e7c0964dd84b8698c4ea6ff754519aa4077ff470f10c565a1cfdcc83ce",
+  "src/h0cdr/validation/m28_profile.py": "89d53305432841fb86f54839167ef11c46f0c86356c16a711a6b6ca836c15560",
+  "scripts/run_m26a_temporal_ceiling.py": "d204e5782dd2aa846fdceb6cd14b1e7561eaa4b3eecf2fc5a2e322681630944f",
+  "configs/m28/frozen_publication_model.json": "cd0dd310f15a3073ede90bcc2a36cab393a881a811aef4da4870d2dc895bcfb8"
+ }
+}

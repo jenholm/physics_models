@@ -1,0 +1,49 @@
+{
+ "RMS": 0.01249925464944701,
+ "max": 0.03060469527097641,
+ "z_of_max": 0.6688266517368995,
+ "DM_fractional_error": 0.003938747934614917,
+ "DH_fractional_error": 0.012401392978415344,
+ "redshift_attribution": [
+  {
+   "interval": [
+    0.0,
+    0.4
+   ],
+   "control_rms_lnH": 0.08482639629660821,
+   "selected_rms_lnH": 0.08800823916610555
+  },
+  {
+   "interval": [
+    0.4,
+    0.8
+   ],
+   "control_rms_lnH": 0.11227461313388502,
+   "selected_rms_lnH": 0.09107130342539213
+  },
+  {
+   "interval": [
+    0.8,
+    1.2
+   ],
+   "control_rms_lnH": 0.07691629373500082,
+   "selected_rms_lnH": 0.08296819778341165
+  },
+  {
+   "interval": [
+    1.2,
+    1.8
+   ],
+   "control_rms_lnH": 0.0753345518464154,
+   "selected_rms_lnH": 0.07510718481886902
+  },
+  {
+   "interval": [
+    1.8,
+    2.33
+   ],
+   "control_rms_lnH": 0.07678364770087681,
+   "selected_rms_lnH": 0.0742409246092977
+  }
+ ]
+}

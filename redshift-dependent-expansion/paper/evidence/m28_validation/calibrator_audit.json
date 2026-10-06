@@ -1,0 +1,25 @@
+{
+ "epoch": {
+  "g_late_0": -0.17124518385369022,
+  "Gamma_0": 0.8426149525613535,
+  "x_0": 0.0,
+  "Xi_0": 1.0,
+  "s_0": 0.0,
+  "g_E_0": -3.509270700507638e-11,
+  "g_tot_0": -0.17124518388878293,
+  "Gamma_tot_0": 0.8426149525317839
+ },
+ "cancellation_demo": {
+  "ratio_physical": 0.5,
+  "ratio_geometric": 0.5,
+  "independent_of_gamma0": true
+ },
+ "local_bound": {
+  "z_local": 0.0019480143159572082,
+  "frac_bound": 0.0004283953431302445,
+  "mag_bound": 0.0004651243339870897,
+  "passes_1e-4": false
+ },
+ "disposition": "ASSUMPTION_ONLY",
+ "note": "m28r1_calibrator_forward.py immutable; zero correction."
+}

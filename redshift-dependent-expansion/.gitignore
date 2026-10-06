@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Data policy — ignore external/raw data not specifically tracked
+data/external/*
+!data/external/.gitkeep
+
+# Tracked raw data for reproducibility (SPARC quality1 inputs, xGASS coherence scores)
+# data/raw/sparc/sparc_quality1_rich_inputs.csv — public SPARC catalog
+# data/raw/xgass/m75_xgass_coherence_scores.csv — derived coherence scores
+data/raw/.gitkeep
+
+# Large/intermediate outputs
+outputs/logs/*
+!outputs/logs/.gitkeep

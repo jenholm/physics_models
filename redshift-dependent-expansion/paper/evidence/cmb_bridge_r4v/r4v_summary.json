@@ -1,0 +1,20 @@
+{
+ "primary_disposition": "VISIBLE_BRIDGE_MODERATE_DIMENSION",
+ "FUNDAMENTAL_DYNAMICS_UNDEFINED": true,
+ "PHYSICAL_RECOMBINATION_INTERPRETATION_UNDEFINED": true,
+ "ruler_clock_result": "NO_EVIDENCE_FOR_NONRECIPROCAL_CALIBRATION",
+ "selected": {
+  "family": "legendre",
+  "m": 3,
+  "chi2": 1459.9605367378347,
+  "delta_vs_control": 8.039916410850083,
+  "K_H": 0.9271626190250303,
+  "epsilon": -0.0034619713294071104,
+  "effective_rank": 5
+ },
+ "rejected": {
+  "roughness": "ROUGHNESS_BOUND_LIMITED (supporting only)",
+  "legendre_m6": "VISIBLE_BRIDGE_OVERFIT pattern (in-sample +3.27, worst DESI held-out 19992)"
+ },
+ "dimensions_identifiable": 5
+}

@@ -1,0 +1,10 @@
+{
+  "binding": {
+    "table": "T2"
+  },
+  "generated_at": "2026-09-13T23:47:54.281120+00:00",
+  "sources": {
+    "paper/evidence/m28_final/frozen_model.json": "585dd78188b8fd491098881076a43c6b9acc347a8e8919128334e2a87bd0923e"
+  },
+  "table": "m28_best_fit"
+}
