@@ -243,6 +243,8 @@ kbd {
   font-size: 0.75rem;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .metric .k { color: var(--ink-dim); }
