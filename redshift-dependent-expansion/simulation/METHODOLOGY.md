@@ -89,7 +89,10 @@ tracer's brightness follows a radial shell,
 
     weight = exp(−0.5 · ((z_i − zScan) / shellWidth)²),
 
-so only tracers near the graph cursor light up. Three regimes are shown:
+so only tracers near the graph cursor light up. The moving redshift shell
+controls emphasis only. All synthetic tracers remain present throughout
+the visualization; the global `aVisual` factor alone controls the
+cinematic growth of the sphere. Three regimes are shown:
 z > 2.33 illustration only (no paper inference), 1.8 < z ≤ 2.33
 continuation-test region (the compact map fails at the z = 2.33 anchor),
 and 0 ≤ z ≤ 1.8 validated paper domain.

@@ -23,8 +23,10 @@
     tracers: [],
     stars: [],
     proj: [], // projected screen positions for hover inspection
-    animationProgress: 0.55,
+    animationProgress: 0.0,
     playing: true,
+    endHoldElapsed: 0.0,
+    endHoldSeconds: 1.75,
     yaw: 0.7,
     pitch: 0.42,
     zoom: 1.0,
@@ -38,11 +40,23 @@
     lastPY: 0,
     hoverIndex: -1,
     sphereSketch: null,
-    zScan: 1.0,
-    aVisual: 1.0,
+    zScan: 3.4,
+    aVisual: 0.06,
     peakBoost: 1.0,
     graphCtx: {}
   };
+
+  // Restart the presentation cycle from the beginning. Preserves the
+  // viewer camera (yaw/pitch/zoom) by design: only presentation progress
+  // and its cached derived values are touched.
+  function resetAnimation() {
+    state.animationProgress = 0.0;
+    state.zScan = zScanOf(0.0);
+    state.aVisual = aVisualOf(0.0);
+    state.peakBoost = 1.0;
+    state.playing = true;
+    state.endHoldElapsed = 0.0;
+  }
 
   /* ---------------- deterministic utilities ---------------- */
 
@@ -215,6 +229,7 @@
     state.exaggerationOptions = data.display_defaults.exaggeration_options;
     state.tracers = buildTracers(data);
     state.stars = buildStars(data.tracers.seed);
+    resetAnimation();
     updateBadge();
   }
 
@@ -270,6 +285,11 @@
           ' Largest endpoint separation occurs in this broad ' +
           'low/intermediate-redshift region.';
       }
+      if (state.animationProgress >= 1) {
+        scanEl.textContent = 'z = 0.00 · present-day endpoint';
+        regEl.textContent = 'present-day endpoint';
+        interp.textContent += ' Present-day endpoint — restarting shortly.';
+      }
     }
   }
 
@@ -278,6 +298,37 @@
   function shellWeight(zi, zScan, width) {
     var d = (zi - zScan) / width;
     return Math.exp(-0.5 * d * d);
+  }
+
+  // Point/line styling for one tracer. The shell weight is an emphasis
+  // device only: every tracer stays clearly visible in all regimes, and
+  // the shell adds brightness/size on top. Pure function of its inputs.
+  function tracerVisualStyle(shellWeightValue, regime, aVisual, peakBoost) {
+    void aVisual;
+    var basePointAlpha =
+      regime === 'early' ? 0.16 :
+      regime === 'continuation' ? 0.30 :
+      0.38;
+
+    var shellPointBoost = 0.58 * shellWeightValue * peakBoost;
+    var pointAlpha = clamp(basePointAlpha + shellPointBoost, 0, 1);
+
+    var baseLineAlpha =
+      regime === 'early' ? 0.025 :
+      regime === 'continuation' ? 0.045 :
+      0.065;
+
+    var lineAlpha = clamp(
+      baseLineAlpha + 0.34 * shellWeightValue,
+      0,
+      0.55
+    );
+
+    return {
+      pointAlpha: pointAlpha,
+      lineAlpha: lineAlpha,
+      pointRadius: 1.35 + 1.8 * shellWeightValue
+    };
   }
 
   function rotatePoint(p, cosY, sinY, cosP, sinP) {
@@ -318,7 +369,19 @@
   function step(dt) {
     if (state.playing && state.data) {
       state.animationProgress += dt * 0.045;
-      if (state.animationProgress > 1) state.animationProgress -= 1;
+
+      if (state.animationProgress >= 1) {
+        // Hold the fully expanded present-day sphere briefly, then loop.
+        // Never shrink backward: the reset jumps only after the hold.
+        state.animationProgress = 1;
+        state.endHoldElapsed += dt;
+
+        if (state.endHoldElapsed >= state.endHoldSeconds) {
+          resetAnimation();
+        }
+      } else {
+        state.endHoldElapsed = 0.0;
+      }
       state.yaw += dt * 0.12;
     }
     state.zScan = zScanOf(state.animationProgress);
@@ -363,7 +426,6 @@
     var cosP = Math.cos(state.pitch);
     var sinP = Math.sin(state.pitch);
     var width = state.data.display_defaults.shell_width;
-    var dim = regime === 'early' ? 0.35 : 1.0;
 
     // Faint reference outline of the present-day visual sphere.
     pp.noFill();
@@ -426,23 +488,30 @@
       var syC = cy - it.rC.y * worldR * sC;
       state.proj.push({ sx: (sxR + sxC) / 2, sy: (syR + syC) / 2, tr: it.tr });
 
-      var bright = 0.06 + 0.94 * wgt;
-      var alpha = dim * bright * state.peakBoost;
-      if (alpha > 1) alpha = 1;
+      // Shell emphasis only: peakBoost amplifies the shell contribution,
+      // never the whole population. Every pair stays visible.
+      var style = tracerVisualStyle(
+        wgt,
+        regime,
+        state.aVisual,
+        state.peakBoost
+      );
 
       if (state.showPairLines) {
-        pp.stroke(200, 212, 232, 14 + 150 * alpha);
+        pp.stroke(
+          200, 212, 232,
+          Math.round(255 * style.lineAlpha)
+        );
         pp.strokeWeight(1);
         pp.line(sxR, syR, sxC, syC);
       }
-      var pr = 1.1 + 2.2 * wgt;
       pp.noStroke();
       // C1 Planck-compatible reference (red).
-      pp.fill(255, 90, 90, 30 + 225 * alpha);
-      pp.circle(sxC, syC, pr * 2);
+      pp.fill(255, 90, 90, Math.round(255 * style.pointAlpha));
+      pp.circle(sxC, syC, style.pointRadius * 2);
       // R distance-sector endpoint (blue).
-      pp.fill(77, 163, 255, 30 + 225 * alpha);
-      pp.circle(sxR, syR, pr * 2);
+      pp.fill(77, 163, 255, Math.round(255 * style.pointAlpha));
+      pp.circle(sxR, syR, style.pointRadius * 2);
 
       if (state.showC2) {
         // C2 hugs the displayed C1 position: its small unexaggerated true
@@ -464,9 +533,9 @@
         var sxO = cx + (it.rC.x + oVec.x) * worldR * so;
         var syO = cy - (it.rC.y + oVec.y) * worldR * so;
         pp.noFill();
-        pp.stroke(255, 176, 32, 40 + 200 * alpha);
+        pp.stroke(255, 176, 32, Math.round(40 + 200 * style.pointAlpha));
         pp.strokeWeight(1.2);
-        pp.circle(sxO, syO, pr * 2 + 5);
+        pp.circle(sxO, syO, style.pointRadius * 2 + 5);
       }
     }
 
@@ -629,8 +698,7 @@
           break;
         case 'r':
         case 'R':
-          state.animationProgress = 0;
-          state.playing = true;
+          resetAnimation();
           break;
         case 's':
         case 'S':
@@ -933,6 +1001,7 @@
     zScanOf: zScanOf,
     aVisualOf: aVisualOf,
     displayRadii: displayRadii,
+    tracerVisualStyle: tracerVisualStyle,
     easeOutCubic: easeOutCubic
   };
 })();
