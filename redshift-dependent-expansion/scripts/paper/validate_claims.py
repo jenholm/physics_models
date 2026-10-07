@@ -52,6 +52,13 @@ def main():
 
     with open(REPO / "paper/generated/results_registry.json") as fh:
         registry = json.load(fh)["macros"]
+    claims_text = (REPO / "paper/claims.yaml").read_text()
+    gap_macro = registry.get("CvConstrMThreeDeltaVsBest", {}).get("latex")
+    if gap_macro and (
+        "CvConstrMThreeDeltaVsBest" not in claims_text
+        or gap_macro not in claims_text
+    ):
+        errors.append("claims.yaml m4-gap figure does not match CvConstrMThreeDeltaVsBest")
     macro_tex = (REPO / "paper/generated/results_macros.tex").read_text()
     for name, entry in registry.items():
         needle = f"\\newcommand{{\\{name}}}{{{entry['latex']}}}"

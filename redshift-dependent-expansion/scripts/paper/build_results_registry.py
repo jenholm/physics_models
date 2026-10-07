@@ -15,6 +15,7 @@ assertions on the headline numbers (RDE-054).
 
 import hashlib
 import json
+import math
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -139,6 +140,17 @@ def main():
         "paper/evidence/model_selection/bootstrap.json", "frac_select_ge_m3")
     add("CvConstrLyaProb", boot["frac_lya_catastrophe"], fmt(boot["frac_lya_catastrophe"], 3),
         "paper/evidence/model_selection/bootstrap.json", "frac_lya_catastrophe")
+    # m3 gap to the raw best (exact evidence difference, two decimals)
+    gap = per["3"]["combined_constrained"] - rescore["best_combined"]
+    add("CvConstrMThreeDeltaVsBest", gap, fmt(gap, 2),
+        "paper/evidence/model_selection/constrained_cv.json",
+        "per_order.3.combined_constrained - best_combined")
+    # bootstrap Monte Carlo standard error sqrt(p(1-p)/n)
+    p = boot["frac_select_ge_m3"]
+    n = boot["nrep"]
+    mcse = math.sqrt(p * (1.0 - p) / n)
+    add("CvConstrBootMcse", mcse, fmt(mcse, 3),
+        "paper/evidence/model_selection/bootstrap.json", "sqrt(p(1-p)/n)")
 
     # --- reference sensitivity (supported domain) ---
     sup = agree["supported"]
@@ -187,6 +199,8 @@ def main():
     assert macros["CmbTwoHZero"]["latex"] == "67.4"
     assert macros["CvConstrSelected"]["latex"] == "3"
     assert macros["CvConstrBootProb"]["latex"] == "0.216"
+    assert macros["CvConstrMThreeDeltaVsBest"]["latex"] == "0.13"
+    assert macros["CvConstrBootMcse"]["latex"] == "0.026"
     assert macros["BridgeRank"]["latex"] == "5"
     assert macros["BridgeEpsDelta"]["latex"] == "0.124"
     assert macros["ReferenceSensitivityRatioMinPct"]["latex"] == "1.3"

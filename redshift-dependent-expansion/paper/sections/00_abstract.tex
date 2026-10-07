@@ -1,34 +1,6 @@
-Under the endpoint constructions examined here, low-redshift distance data and Planck-calibrated references favor substantially different best-fit expansion histories: neither side fits the full DESI DR2, Pantheon+SH0ES, and
-Planck TT/TE/EE likelihood contract at once, and none of the tested endpoints simultaneously supplies a complete fit to all sectors. We compare three fixed
-endpoints over the constrained domain $z\le1.8$: a phenomenological
-low-redshift distance-sector endpoint~R reaching
-$H_{0}=\DistanceHZero$\kmsMpc{}, a
-Planck-calibrated reference~C1 with
-$H_{0}=\CmbOneHZero$\kmsMpc{}, and a secondary
-Planck-compatible reference~C2 with $H_{0}=\CmbTwoHZero$\kmsMpc{}
-(a separately implemented sensitivity check sharing the same Planck
-sky, not an independent confirmation).
-Within the predeclared reconstruction family, constrained-domain predictive
-validation (SN plus DESI $z\le1.8$ folds; Ly$\alpha$ scored separately
-as a failed continuation test) selects a
-compact five-coordinate order-3 map of the endpoint difference with
-local projected Jacobian rank~5 of~5 fitted coordinates
-($\chi^{2}=\BridgeChiTwo{}$, only \BridgeDeltaCtrl{} above the
-21-coordinate control).
-The fixed order-3 map improves held-out supernova prediction by $\Delta\chi^{2}=\BridgeNullSn{}$
-against the null reconstruction (the undeformed $\Lambda$CDM reference, with zero fitted reconstruction
-coordinates and the common SN nuisance parameter profiled normally) and improves constrained DESI ($z\le1.8$) by
-$\Delta\chi^{2}=\BridgeNullDesiConstr{}$ (null reconstruction $\chi^{2}=\BridgeDesiBareConstr{}$ against
-$m=3$ $\chi^{2}=\BridgeDesiMThreeConstr{}$); the order-3 reconstruction fails its separate $z=2.33$ Ly$\alpha$ continuation test strongly, and the matched constrained-domain null
-bootstrap (250 replicates; same null/candidate family, data split,
-bounds and selection rule) gives
-$P(\mathrm{select}\ge m{=}3)=\CvConstrBootProb{}$ with
-Ly$\alpha$ continuation-failure fraction~\CvConstrLyaProb{} recorded separately.
-Zero ruler-clock split is allowed
-($\Delta\chi^{2}(\epsilon{=}0)=\BridgeEpsDelta{}$).
-The reference-sensitivity check shows that the difference between R and C1 and the difference between R and C2 share one
-dominant direction (cosine~\GeometryCosineSimilarity{},
-principal angle~\GeometryPrincipalAngle$^{\circ}$,
-common-mode fraction $\ge\GeometryCommonFractionMin{}$ per interval,
-largest amplitude near $z\approx\GeometryPeakZ{}$). Across the constrained redshift bins, the RMS difference between C1 and C2 is approximately 1\% to 8\% of the corresponding RMS difference between R and either Planck reference.
+Low-redshift distance data and Planck-calibrated references favor substantially different best-fit expansion histories under the endpoint constructions examined here. We test whether their difference has a compact redshift-dependent structure over $z\le1.8$.
+We compare three fixed endpoints over the constrained domain: a phenomenological low-redshift distance-sector endpoint~R reaching $H_{0}=\DistanceHZero$\kmsMpc{}, a Planck-calibrated reference~C1 with $H_{0}=\CmbOneHZero$\kmsMpc{}, and a secondary Planck-compatible reference~C2 with $H_{0}=\CmbTwoHZero$\kmsMpc{} (a separately implemented sensitivity check sharing the same Planck sky).
+Constrained-domain predictive validation (SN plus DESI $z\le1.8$ folds; Ly$\alpha$ scored separately as a failed continuation test) selects a compact five-coordinate order-3 map of the endpoint difference with local projected Jacobian rank~5 of~5 fitted coordinates ($\chi^{2}=\BridgeChiTwo{}$).
+The fixed order-3 map improves held-out supernova prediction by $\Delta\chi^{2}=\BridgeNullSn{}$ and constrained DESI ($z\le1.8$) by $\Delta\chi^{2}=\BridgeNullDesiConstr{}$; the matched constrained-domain null bootstrap (250 replicates) gives $P(\mathrm{select}\ge3\mid\mathrm{null})=\CvConstrBootProb{}$. The ruler-clock split is consistent with zero ($\Delta\chi^{2}(\epsilon{=}0)=\BridgeEpsDelta{}$).
+The reference-sensitivity check shows that the difference between R and C1 and the difference between R and C2 share one dominant direction (cosine~\GeometryCosineSimilarity{}, principal angle~\GeometryPrincipalAngle$^{\circ}$, common-mode fraction $\ge\GeometryCommonFractionMin{}$ per interval, largest amplitude near $z\approx\GeometryPeakZ{}$). Across the constrained redshift bins, the RMS difference between C1 and C2 is approximately 1\% to 8\% of the corresponding RMS difference between R and either Planck reference.
 In plain terms, the distance-sector endpoint has a systematically higher $H(z)$ than the Planck-calibrated references, and the size of that difference changes with redshift rather than behaving like a single constant $H_0$ offset. A five-coordinate order-3 reconstruction captures this redshift-dependent pattern over $z\le1.8$, with its largest endpoint separation near $z\approx0.65$; the separate Ly$\alpha$ continuation test at $z=2.33$ fails.

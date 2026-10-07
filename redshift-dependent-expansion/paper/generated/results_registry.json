@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T16:05:38.410800+00:00",
+ "generated_at": "2026-10-07T20:04:02.121498+00:00",
  "macros": {
   "BridgeAIC": {
    "value": 1469.9605367378347,
@@ -167,6 +167,20 @@
    "latex": "0.788",
    "source": "paper/evidence/model_selection/bootstrap.json",
    "key": "frac_lya_catastrophe",
+   "sha256": "1fc7784f902570a8a4859bbffee3de654058efde2868efd05911ee2109b04d45"
+  },
+  "CvConstrMThreeDeltaVsBest": {
+   "value": 0.12755870508226508,
+   "latex": "0.13",
+   "source": "paper/evidence/model_selection/constrained_cv.json",
+   "key": "per_order.3.combined_constrained - best_combined",
+   "sha256": "5a276eef8789bbc405d169e3b85ce8d551bc402cb349d0525bad1347ffdc71bb"
+  },
+  "CvConstrBootMcse": {
+   "value": 0.026026448086513842,
+   "latex": "0.026",
+   "source": "paper/evidence/model_selection/bootstrap.json",
+   "key": "sqrt(p(1-p)/n)",
    "sha256": "1fc7784f902570a8a4859bbffee3de654058efde2868efd05911ee2109b04d45"
   },
   "GeometryCosineSimilarity": {

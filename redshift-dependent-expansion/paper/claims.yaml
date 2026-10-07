@@ -31,7 +31,8 @@ claims:
       description of the constrained-domain endpoint difference with
       local projected Jacobian rank 5 of 5 fitted coordinates,
       selected by the predeclared smallest-m-within-2.0 rule
-      (m4 is the raw minimum by only 0.13).
+      (m4 is the raw minimum by only CvConstrMThreeDeltaVsBest=0.13,
+      sourced from the generated results registry).
     evidence:
       - paper/evidence/reconstruction/visible_map.json
       - paper/evidence/reconstruction/jacobian_rank.json

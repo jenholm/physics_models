@@ -43,7 +43,7 @@ coordinates after covariance whitening and nuisance projection
   \input{tables/generated/constrained_cv_rescore}
 \end{table}
 
-The raw constrained minimum occurs at $m=4$, only 0.13 below the $m=3$ score. Under the predeclared smallest-order-within-2 rule, $m=3$ is therefore selected. Selection therefore does not depend on
+The raw constrained minimum occurs at $m=4$, only \CvConstrMThreeDeltaVsBest{} below the $m=3$ score. Under the predeclared smallest-order-within-2 rule, $m=3$ is therefore selected. Selection therefore does not depend on
 the Ly$\alpha$ continuation failure. Information criteria are reported
 descriptively, side-by-side: $k=\BridgeKmThree{}$,
 $\chi^{2}=\BridgeChiTwo{}$,
@@ -95,13 +95,9 @@ constrained
 bootstrap \texttt{bootstrap.json} in paper
 evidence)
 gives $P(\mathrm{select} \ge m{=}3 \mid \mathrm{null}) =
-\CvConstrBootProb{}$, reported exactly as obtained with no threshold
+\CvConstrBootProb{}$, with Monte Carlo standard error $\CvConstrBootMcse{}$ from 250 bootstrap realizations, reported exactly as obtained with no threshold
 tuning. The Ly$\alpha$ continuation-failure statistic is recorded separately
-and never chooses $m$. This bootstrap tests the complexity of the
-selected representation, not the existence of the numerical difference
-between fixed endpoint histories. Model-order selection alone is not
-evidence of a discovery. The reference-sensitivity analysis is a
-separate robustness check, not a significance test. The result is presented as a compact reconstruction
+and never chooses $m$. The bootstrap calibrates how often the selection procedure chooses an order at least as complex as $m=3$ under the null reconstruction; it does not test whether the two fixed endpoint histories are numerically identical. The reference-sensitivity analysis addresses a separate question: how much the inferred difference changes when the Planck reference construction changes. The result is presented as a compact reconstruction
 with demonstrated held-out behavior.
 
 \begin{figure}[!htbp]

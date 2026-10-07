@@ -19,9 +19,9 @@ prediction changes between references.
 The supernova block is the full Pantheon+SH0ES compilation
 \citep{Scolnic2022,Brout2022,Riess2022} as one 1657-row covariance likelihood
 with one common profiled absolute magnitude $M$ (row-selection contract,
-\path{paper/evidence/likelihood/sn_selection_contract.json}: 1701 raw rows
-selected by the exact mask \texttt{(zHD > 0.01) | IS\_CALIBRATOR} to
-1657 rows, of which 77 calibrators and 1580 Hubble-flow rows). With
+\path{paper/evidence/likelihood/sn_selection_contract.json}: 1701 raw rows;
+rows are retained when $z_{\mathrm{HD}}>0.01$ or the row is a calibrator (in code the exact mask is \texttt{((zHD > 0.01) | IS\_CALIBRATOR)}), giving 1657 selected rows,
+of which 77 calibrators and 1580 Hubble-flow rows). With
 $\mu_{\mathrm{no}\,M}$ the endpoint distance modulus at $M=0$,
 \begin{align}
   r_{0} &= m_{B}^{\mathrm{corr}} - \mu_{\mathrm{no}\,M},
@@ -81,7 +81,7 @@ parity: the Boltzmann pipeline reproduces reference $\Lambda$CDM
 spectra before either endpoint is evaluated, so pipeline error cannot
 masquerade as endpoint separation. Second, fixed endpoint artifacts
 are hash-bound: every number in
-Sections~\ref{sec:results}--\ref{sec:reference-sensitivity} is generated from
+Sections~\ref{sec:model-selection}--\ref{sec:results} is generated from
 versioned machine-readable evidence with source-hash binding
 (\path{paper/evidence_manifest.yaml}); generation fails on hash
 mismatch. Headline numerical results are generated from or hash-bound
