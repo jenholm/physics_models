@@ -1,5 +1,6 @@
 title: "Characterizing a Low-Dimensional Redshift-Dependent Difference Between CMB- and Distance-Compatible Expansion Histories"
 author: "Jake Enholm"
+repository_url: "https://github.com/jenholm/physics_models/tree/main/redshift-dependent-expansion"
 documentclass: article
 latex_engine: pdflatex
 texlive_target: "2023+"

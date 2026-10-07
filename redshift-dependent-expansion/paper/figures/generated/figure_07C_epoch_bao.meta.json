@@ -1,8 +1,0 @@
-{
- "figure": "figure_07C_epoch_bao",
- "generated_at": "2026-09-13T23:47:53.703670+00:00",
- "sources": {
-  "paper/evidence/m28_epoch_signatures/bao_signature_predictions.csv": "d1b9aa6631e76e030cc65650459e3d73951c14e3ac3372e082ac60b08f7f81bd",
-  "paper/evidence/m28_epoch_signatures/marker_summary.json": "b7b984fd933cf29891758abdae5524afd993977e7a3fdd1d5351d7e3031e3d26"
- }
-}

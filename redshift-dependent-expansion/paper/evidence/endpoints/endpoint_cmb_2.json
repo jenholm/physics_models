@@ -1,0 +1,11 @@
+{
+ "branch": "C2 secondary Planck-compatible reference",
+ "H0": 67.4,
+ "params_H0": 67.4,
+ "lapse_Gamma": null,
+ "lapse_note": "pure LCDM background; no lapse DOF defined",
+ "source_artifact": "publication pipeline (see scripts/paper/); original run path not shipped",
+ "source_sha256": "95cba32c030e38773d84bcc55ecfe700dc738062d0428199891e3c18e25d8686",
+ "table": "endpoint_cmb_2.npz",
+ "table_sha256": "8c2c12e272264f875fcc104c5c7b73137a7dd06ee620f9cc80f605b9fa6dbccd"
+}

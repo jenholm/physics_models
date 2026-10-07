@@ -1,8 +1,3 @@
 {
- "figure": "figure_A_sn_subset_diagnostics",
- "generated_at": "2026-09-13T23:47:52.291339+00:00",
- "sources": {
-  "paper/evidence/m28_final/model_comparison.json": "a3fe617c3d19c699a4b27fe87781b57e5ec52ffba441c88281d55db2941f41a9",
-  "paper/evidence/m28_final/sn_rows.csv": "bf9bd52a226a6d1dae21a6b6f8510b479e5fec25fb0d3ea608caac96bd584d80"
- }
+ "csv_sha256": "621d705c07d165d167523156f4041492d840a50c2bbae0709a985cb2865afcca"
 }

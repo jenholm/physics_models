@@ -3,13 +3,13 @@
 \label{sec:data-endpoints}
 
 The three expansion histories compared in this paper were obtained
-separately, before any comparison was made. Each is frozen: no
+separately, before any comparison was made. Each is fixed: no
 endpoint is refit, retuned, or extended anywhere in this analysis.
-All headline values resolve through generated macros to the frozen
+All headline values resolve through generated macros to the fixed
 artifacts cited below. Symbols are defined once in the nomenclature
 table (Table~\ref{tab:nomenclature}); throughout the main text,
 R is the distance-compatible endpoint, C1 and C2 are the two
-Planck-compatible endpoints, and m3 is the selected compact
+Planck-compatible endpoints, and the order-3 representation is the selected compact
 reconstruction basis.
 
 \input{tables/nomenclature}
@@ -17,24 +17,18 @@ reconstruction basis.
 \subsection{Distance-compatible endpoint R}
 \label{sec:endpoint-r}
 
-R is a frozen phenomenological low-redshift expansion history
-obtained from the distance-sector optimization, with
-$H_{0}=\DistanceHZero$\kmsMpc{} and $r_{d}=135.39$~Mpc; it is not
-presented as a complete early-universe cosmology. It describes what
-the fitted low-redshift distance sector prefers; no viable
-recombination, BBN, or perturbation completion is claimed. The
+R is the fixed phenomenological distance-sector endpoint used in this comparison. It reaches $H_0=72.80$~km~s$^{-1}$~Mpc$^{-1}$, carries $r_d=135.39$~Mpc, and provides the low-redshift distance-sector reference history. The
 compressed distance prior \citep{Chen2019} used during endpoint
 discovery was validated only for conventional late-time models; it did
 not validate the $r_{d}=135.39$~Mpc early-universe physics.
 
-Concretely, R is the smooth low-redshift control history
-(\path{runs/cmb_bridge/r3/smooth_lowz_history.npz}, pinned in
-\path{paper/evidence/cmb_bridge_r6/endpoint_manifest.json}), a
-direct-$H(z)$ spline control carrying no lapse degree of freedom. It
-reaches $H_{0}=\DistanceHZero$\kmsMpc{} with
+Concretely, R is the smooth low-redshift reference history
+(pinned in
+\path{paper/evidence/endpoints/endpoint_manifest.json}).
+It reaches $H_{0}=\DistanceHZero$\kmsMpc{} with
 $r_{d}=135.39$~Mpc and fits the DESI DR2 and Pantheon+SH0ES distance
-sector. Nothing in Sections~\ref{sec:bridge} or
-\ref{sec:robustness} depends on the history of how R was found.
+sector. Nothing in Sections~\ref{sec:model-selection} or
+\ref{sec:reference-sensitivity} depends on the history of how R was found.
 
 \subsection{CMB-compatible endpoint C1}
 \label{sec:endpoint-c1}
@@ -42,10 +36,8 @@ sector. Nothing in Sections~\ref{sec:bridge} or
 C1 is a Planck TT/TE/EE-compatible reference background with
 $H_{0}=\CmbOneHZero$\kmsMpc{} and
 $r_{\mathrm{drag}}=147.15$~Mpc, produced with the stated
-CAMB/likelihood configuration
-(\path{runs/cmb_bridge/r4/bare_background.npz}).
-No distance-branch
-parameter, table, or likelihood entered its construction.
+CAMB/likelihood configuration.
+No distance-sector parameter, table, or likelihood entered its construction.
 
 \subsection{Secondary Planck-compatible reference C2}
 \label{sec:endpoint-c2}
@@ -53,8 +45,7 @@ parameter, table, or likelihood entered its construction.
 C2 is a secondary Planck-compatible $\Lambda$CDM reference with
 $H_{0}=\CmbTwoHZero$\kmsMpc{}, used only as a reference-sensitivity
 check, evaluated through its own Planck
-likelihood
-(\path{runs/cmb_branch/baseline/lcdm_table.npz}). It shares the
+likelihood. It shares the
 Planck sky with C1 and uses nearly the same $\Lambda$CDM background
 family with its own parameter choices and calibration route, so it
 cannot provide independent cosmological confirmation. C1
@@ -68,46 +59,46 @@ constructions row by row.
 
 All three endpoints are compared on one common uniform-$u$ grid of
 2000 nodes spanning $0 \le z \le 2.33$
-(\path{paper/evidence/cmb_bridge_r6/endpoint_redshift.json}). The
+(\path{paper/evidence/endpoints/endpoint_redshift.json}). The
 difference fields
 \[
 \Delta_{1}(z) \equiv \ln H_{R}(z)-\ln H_{C_{1}}(z), \qquad
 \Delta_{2}(z) \equiv \ln H_{R}(z)-\ln H_{C_{2}}(z), \qquad
 \Delta_{C}(z) \equiv \ln H_{C_{1}}(z)-\ln H_{C_{2}}(z)
 \]
-are evaluated on that grid and frozen in
-\path{paper/evidence/cmb_bridge_r6/difference_fields.npz}. The
+are evaluated on that grid and fixed in
+\path{paper/evidence/reference_sensitivity/difference_fields.npz}. The
 constrained domain is $z \le 1.8$, covering all non-Ly$\alpha$ DESI
 blocks; the Ly$\alpha$ anchor at $z=2.33$ tests the continuation law,
 not the low-redshift deformation
-(\path{paper/evidence/cmb_bridge_r6/domain_split.json}).
+(\path{paper/evidence/reference_sensitivity/domain_split.json}).
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/generated/overview_fig1_endpoints}
-  \caption{Frozen endpoint overview (no fits in this figure). Top: the
-  three frozen histories $H_{R},H_{C_{1}},H_{C_{2}}$; C1 and C2 nearly
+  \caption{Fixed endpoint overview (no fits in this figure). Top: the
+  three fixed histories $H_{R},H_{C_{1}},H_{C_{2}}$; C1 and C2 nearly
   overlap in the upper panel and distinct line styles are used to keep
   both visible. Bottom: their
   logarithmic differences $\Delta_{1},\Delta_{2},\Delta_{C}$; across
-  the constrained bins the C1--C2 RMS difference is about 1--8\% of
-  the R--CMB difference.
+  the constrained bins the RMS difference between C1 and C2 is approximately 1\% to 8\% of
+  the corresponding RMS difference between R and either Planck reference.
   Shading marks the constrained domain $z\le1.8$; the dotted line
   marks the Ly$\alpha$ continuation test at $z=2.33$.}
   \label{fig:endpoint-overview}
 \end{figure}
 
-\subsection{Branch acoustic calibration}
+\subsection{Endpoint acoustic calibration}
 \label{sec:calibration}
 
-Each endpoint carries its own acoustic ruler, traced to frozen
-artifacts in the branch calibration contract
-(\path{paper/evidence/branch_calibration_contract.json}). Boltzmann
+Each endpoint carries its own acoustic ruler, traced to fixed
+artifacts in the endpoint calibration contract
+(\path{paper/evidence/endpoints/calibration_contract.json}). Boltzmann
 rulers are computed with CAMB \citep{Lewis2000}:
 
 \begin{table}[!htbp]
   \centering
-  \caption{Branch acoustic calibration: every endpoint's ruler.
+  \caption{Endpoint acoustic calibration: every endpoint's ruler.
   The compressed distance prior \citep{Chen2019} did not validate
   nonstandard early-universe physics for R.}
   \label{tab:calibration}
@@ -127,7 +118,7 @@ rulers are computed with CAMB \citep{Lewis2000}:
 \end{table}
 
 R uses an early-ruler value different from C1/C2; this ruler
-difference is part of the measured branch separation, not a shared
+difference is part of the measured endpoint separation, not a shared
 calibration. The R ruler is roughly $0.92$ of either CMB ruler, an
 $\sim8\%$ smaller ruler. This is a property of the phenomenological
 distance endpoint, not a demonstrated physical sound horizon: R's
@@ -136,12 +127,12 @@ validated as early-universe physics. The compressed Planck distance
 prior \citep{Chen2019} was validated only for conventional
 $\Lambda$CDM, $w$CDM, and CPL models and cannot by itself validate
 such nonstandard pre-recombination physics; no BBN viability is
-claimed (no BBN fit is performed). The BAO forward model is branch-specific:
+claimed (no BBN fit is performed). The BAO forward model is endpoint-specific:
 \begin{equation}
   D_{M}/r_{d},\qquad D_{H}/r_{d},\qquad D_{V}/r_{d},
   \label{eq:bao-forward}
 \end{equation}
-evaluated with each branch's own ruler from
+evaluated with each endpoint's own ruler from
 Table~\ref{tab:calibration}.
 
 \input{tables/endpoint_construction_comparison}

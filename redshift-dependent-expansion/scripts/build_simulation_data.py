@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the frozen publication JSON for the redshift-expansion visualization.
+"""Build the fixed publication JSON for the redshift-expansion visualization.
 
 Reads ONLY neutral publication artifacts kept alongside the paper
 (figure CSV tables and evidence contracts with public-relative names)
@@ -22,10 +22,10 @@ SRC_ENDPOINTS = "paper/figures/generated/overview_fig1_endpoints.csv"
 SRC_DIFFS = "paper/figures/generated/bridge_fig5_triangulation.csv"
 SRC_CV = "paper/figures/generated/bridge_fig3_cv.csv"
 SRC_EPSILON = "paper/figures/generated/bridge_fig4_epsilon.csv"
-SRC_BOOTSTRAP = "paper/evidence/cmb_bridge_r8r2/selection_bootstrap_constrained.json"
-SRC_RESCORE = "paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json"
-SRC_IDENTITY = "paper/evidence/endpoint_identity_contract.json"
-SRC_RULERS = "paper/evidence/branch_calibration_contract.json"
+SRC_BOOTSTRAP = "paper/evidence/model_selection/bootstrap.json"
+SRC_RESCORE = "paper/evidence/model_selection/constrained_cv.json"
+SRC_IDENTITY = "paper/evidence/endpoints/endpoint_identity.json"
+SRC_RULERS = "paper/evidence/endpoints/calibration_contract.json"
 
 OUT_PATH = "simulation/data/publication_simulation_data.json"
 
@@ -133,7 +133,7 @@ def main():
     h_c1 = resample(z_src, h_c1_src, z_out)
     h_c2 = resample(z_src, h_c2_src, z_out)
 
-    # Absolute comoving distances come from the frozen H(z) curves by direct
+    # Absolute comoving distances come from the fixed H(z) curves by direct
     # numerical integration (cumulative trapezoid on the dense source grid,
     # then resampled to the output grid).
     dm_r = resample(z_src, cumulative_trapezoid(z_src, h_r_src), z_out)
@@ -159,14 +159,14 @@ def main():
 
     payload = {
         "metadata": {
-            "title": "Redshift-dependent expansion: frozen publication numbers",
+            "title": "Redshift-dependent expansion: fixed publication numbers",
             "version": 1,
             "generated_utc": datetime.now(timezone.utc).isoformat(),
             "grid": {
                 "n": N_OUT,
                 "z_min": Z_MIN,
                 "z_max": Z_MAX,
-                "method": "piecewise-linear resampling of frozen curves",
+                "method": "piecewise-linear resampling of fixed curves",
             },
             "sources": [
                 {"path": p, "sha256": sha256_of(REPO_ROOT / p)}
@@ -182,12 +182,12 @@ def main():
                 ]
             ],
             "provenance_notes": [
-                "H_R/H_C1/H_C2 resampled from the frozen endpoint figure table.",
-                "Comoving distances integrated from frozen H(z) with c/H trapezoids.",
+                "H_R/H_C1/H_C2 resampled from the fixed endpoint figure table.",
+                "Comoving distances integrated from fixed H(z) with c/H trapezoids.",
                 "Difference fields recomputed from resampled H(z); see tests.",
-                "Order-3 map column resampled from the frozen triangulation table.",
+                "Order-3 map column resampled from the fixed reference-sensitivity table.",
                 "Projected Jacobian rank and condition number are the values "
-                "printed in the manuscript methods section for the frozen "
+                "printed in the manuscript methods section for the fixed "
                 "order-3 audit (rank 5 of 5 fitted coordinates).",
             ],
         },

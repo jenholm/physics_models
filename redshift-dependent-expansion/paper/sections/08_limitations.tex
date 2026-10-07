@@ -1,27 +1,7 @@
 \section{Limitations}
 \label{sec:limitations}
 
-R is a phenomenological distance-sector endpoint: it describes what
-the fitted low-redshift distance sector prefers and is not presented
-as a complete cosmological model (no viable recombination, BBN, or
-perturbation completion is claimed). R's $r_{d}=135.39$~Mpc is a
-phenomenological endpoint value, not validated early-universe
-physics: the compressed Planck distance prior \citep{Chen2019} was
-validated only against conventional late-time
-$\Lambda$CDM/$w$CDM/CPL models and cannot by itself establish the
-viability of nonstandard pre-recombination physics. The C1 and C2
-reference constructions are instead calibrated directly to the full
-Planck spectra, with recomputed CAMB rulers near $147.1$~Mpc.
-Acoustic rulers are branch-specific
-(Table~\ref{tab:calibration}). No calibrated significance attaches to
-the joint difference. All values
-are best fits; no posterior intervals are claimed, endpoint
-posterior uncertainty is not propagated, and C1/C2 are not
-statistically independent constructions (both use Planck
-information). Late--early degeneracies beyond
-the explored range are not covered. The calibrator result covers the
-declared contract only ($\Delta\mu_{\mathrm{cal}} = 0$, a qualitative
-assumption, not quantitatively established).
+All reported values are best fits; no posterior intervals are claimed. Endpoint posterior uncertainty is not propagated into the difference fields. C1 and C2 are not statistically independent constructions: both use Planck information. R carries $r_{d}=135.39$~Mpc while the C1/C2 references use recomputed CAMB rulers near $147.1$~Mpc (Table~\ref{tab:calibration}). The constrained reconstruction domain is $z\le1.8$; the order-3 continuation fails at the $z=2.33$ Ly$\alpha$ anchor. The calibrator result covers the declared contract only ($\Delta\mu_{\mathrm{cal}} = 0$, a qualitative assumption, not quantitatively established).
 
 \begin{table}[!htbp]
   \centering
@@ -31,28 +11,18 @@ assumption, not quantitatively established).
     \toprule
     Issue & Current status \\
     \midrule
-    R physical completion & Not established \\
-    R ruler BBN/recombination & Not validated \\
-    Endpoint posterior errors & Not propagated \\
-    C1/C2 statistical independence & No; both use Planck \\
-    m3 order significance & Not established, bootstrap $P=0.216$ \\
-    Ly$\alpha$ continuation & Failed \\
-    Physical origin & Not identified \\
+    Endpoint posterior uncertainty & Not propagated \\
+    C1/C2 statistical independence & Shared Planck information \\
+    Order-selection bootstrap & $P = 0.216$ \\
+    Constrained reconstruction range & $z \le 1.8$ \\
+    Ly$\alpha$ continuation test & Fails at $z = 2.33$ \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-The branch-separation result is bounded by what the frozen evidence
-supports. We claim no resolution of the Hubble tension: R is a
-phenomenological distance-sector endpoint with no viable
-recombination or BBN completion, and neither the distance nor the CMB
-reference fits every sector at once. We claim no modified
-gravity detection and no proof that $\Lambda$CDM fails: C1 is a
-Planck-compatible $\Lambda$CDM reference and fits Planck. What is
-established is only the
-separation: the distance-sector endpoint and the Planck-compatible
+The distance-sector endpoint and the Planck-compatible
 references prefer quantitatively different expansion histories
-($H_{0}$ \DistanceHZero{} vs \CmbOneHZero{}, with branch-specific
+($H_{0}$ \DistanceHZero{} vs \CmbOneHZero{}, with endpoint-specific
 acoustic rulers per Table~\ref{tab:calibration}).
 
 \subsection{Relation to neighbouring approaches}
@@ -61,7 +31,7 @@ acoustic rulers per Table~\ref{tab:calibration}).
 DESI DR2 BAO remain compatible with flat $\Lambda$CDM in isolation,
 while combinations with CMB and supernovae can favor evolving dark
 energy of the $w_{0}w_{a}$ form~\citep{DESIDR2,
-Chevallier2001,Linder2003}. Our bridge is not a dark-energy equation of
+Chevallier2001,Linder2003}. Our reconstruction is not a dark-energy equation of
 state: it is a reconstruction of the
 required observational transformation between two calibrated
 histories, with dimensionality selected through held-out data rather
@@ -71,7 +41,7 @@ unconstrained Gaussian-process or smoothing reconstructions of the
 expansion history~\cite{Shafieloo2006} and from generic
 cosmography~\cite{Cattoen2007}, which do not penalize flexibility by
 prediction. Early-dark-energy solutions modify the pre-recombination
-universe and its perturbations; the bridge assumes no recombination
+universe and its perturbations; the reconstruction assumes no recombination
 change and carries no perturbation sector. For the broader solution
 landscape we refer to the community review~\cite{DiValentino2021}.
 This work does not introduce another
@@ -82,6 +52,4 @@ constructions. This decomposition is complementary to the scale-vs-shape
 obstruction argument \citep{Zhou2026}: uniform sound-horizon rescaling
 changes scale but cannot remove the BAO--SN shape disagreement, and our
 R endpoint contains both a large ruler shift ($\sim8\%$) and a
-redshift-dependent shape difference. We do not claim the ruler
-rescaling alone solves the tension, nor anything beyond what was
-actually compared.
+redshift-dependent shape difference.

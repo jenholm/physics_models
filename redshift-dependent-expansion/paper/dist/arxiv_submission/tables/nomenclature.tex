@@ -6,23 +6,23 @@
     \toprule
     Symbol & Meaning & How obtained & Used for \\
     \midrule
-    $R$ & distance-compatible background &
-      frozen distance-sector endpoint & reference deformation \\
-    $C_{1}$ & Planck-compatible endpoint 1 &
+    $R$ & distance-sector endpoint &
+      fixed distance-sector endpoint & reference deformation \\
+    $C_{1}$ & Planck-calibrated reference &
       Planck TT/TE/EE calibrated CAMB reference & CMB reference \\
-    $C_{2}$ & Planck-compatible endpoint 2 &
-      secondary Planck/CAMB baseline & robustness reference \\
+    $C_{2}$ & secondary Planck-calibrated reference &
+      separately implemented Planck/CAMB reference & sensitivity reference \\
     $\Delta_{1}$ & $\ln H_{R}(z)-\ln H_{C_{1}}(z)$ &
       derived & comparison \\
     $\Delta_{2}$ & $\ln H_{R}(z)-\ln H_{C_{2}}(z)$ &
       derived & comparison \\
     $\Delta_{C}$ & $\ln H_{C_{1}}(z)-\ln H_{C_{2}}(z)$ &
       derived & reference spread \\
-    $K_{H}$ & overall amplitude of the bridge map &
-      fitted (bridge coordinate) & compact representation \\
+    $K_{H}$ & overall amplitude of the reconstruction map &
+      fitted (reconstruction coordinate) & compact representation \\
     $c_{j}$ & Legendre shape coefficients ($j=0,1,2$) &
-      fitted (bridge coordinates) & compact representation \\
-    m3 & Legendre order-3 reconstruction &
+      fitted (reconstruction coordinates) & compact representation \\
+    $m=3$ & order-3 reconstruction &
       CV-selected & compact representation \\
     $\epsilon$ & reciprocity parameter &
       profiled & diagnostic only \\

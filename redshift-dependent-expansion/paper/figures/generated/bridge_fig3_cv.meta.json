@@ -1,5 +1,3 @@
 {
- "source": "sn/desi_cv_by_order.csv (constrained z<=1.8)",
- "rule": "smallest m within 2.0 of constrained minimum",
- "csv_sha256": "559bc64bd1498148b1d659974ba6e62216e5f763a43e22baa55333602eef3aab"
+ "csv_sha256": "0713b485c7c048ed3dff4e267c3f30cb62fa1e561dae1baa6e6ae419efa8a08b"
 }

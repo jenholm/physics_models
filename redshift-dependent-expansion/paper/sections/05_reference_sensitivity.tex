@@ -1,0 +1,125 @@
+\section{Reference sensitivity}
+\label{sec:reference-sensitivity}
+
+The reconstruction above is
+measured against one particular CMB-compatible history~C1. This
+section repeats the comparison against a second, separately implemented
+CMB-compatible history~C2 and shows the deformation is
+shared. All headline metrics resolve from versioned publication evidence JSON through
+registry macros, never handwritten.
+
+\subsection{Endpoint invariance}
+
+Define the logarithmic difference fields on the common grid
+(Section~\ref{sec:endpoint-repr}):
+\begin{equation}
+  \Delta_{1}(z)=\ln H_{R}(z)-\ln H_{C1}(z),
+  \label{eq:delta1}
+\end{equation}
+\begin{equation}
+  \Delta_{2}(z)=\ln H_{R}(z)-\ln H_{C2}(z),
+  \label{eq:delta2}
+\end{equation}
+\begin{equation}
+  \Delta_{C}(z)=\ln H_{C1}(z)-\ln H_{C2}(z),
+  \label{eq:deltaC}
+\end{equation}
+with the common and disagreement combinations
+\begin{equation}
+  \Delta_{\rm common}(z) = \frac{\Delta_{1}(z)+\Delta_{2}(z)}{2},
+  \label{eq:common}
+\end{equation}
+\begin{equation}
+  \Delta_{\rm disagreement}(z) = \frac{\Delta_{1}(z)-\Delta_{2}(z)}{2}.
+  \label{eq:disagreement}
+\end{equation}
+The quoted common-mode fraction is
+\begin{equation}
+  f_{\rm common}
+  =
+  1-
+  [
+  \frac{\mathrm{RMS}(\Delta_{\rm disagreement})}
+       {\mathrm{RMS}(\Delta_{\rm common})}
+  ]^2,
+  \label{eq:fcommon}
+\end{equation}
+evaluated per redshift interval on the constrained domain.
+Changing the CMB reference history from C1 to C2 does not change the
+hypothesis: the same compact map must describe both separations.
+
+\subsection{Common-mode decomposition}
+
+On the constrained domain ($z\le1.8$), the difference between R and C1 and the difference between R and C2 lie
+substantially on top of one another. The common-mode fraction
+exceeds~\GeometryCommonFractionMin{} in every redshift interval, and
+the two-vector singular decomposition is dominated by a single
+shared direction (dominance ratio~\GeometrySvdDominance{}). The two
+fields peak at the same location, near
+$z\approx\GeometryPeakZ{}$, while across the constrained bins the
+RMS difference between C1 and C2 is approximately \ReferenceSensitivityRatioMinPct{}\% to \ReferenceSensitivityRatioMaxPct{}\% of the corresponding RMS difference between R and either Planck reference.
+
+\subsection{Peak location and data support}
+\label{sec:peak-support}
+
+The fitted endpoint difference reaches its maximum near
+$z\simeq0.65$. The peak does not coincide with the maximum Pantheon+ number density, supernova inverse-variance weight, or a simple DESI BAO information-density maximum. The order-3 reconstruction captures the broad low/intermediate-redshift structure but reaches its own maximum near $z\simeq0.39$.
+
+\subsection{Cross-reference transfer}
+
+The fixed order-3 basis transfers across references: shape amplitudes
+refit independently agree, and parameters learned on one CMB reference
+predict the other separation with residual degradation fraction
+\GeometryTransferDegradation{} ($\le 6.8\%$ cross-reference). One
+dominant shared direction carries the deformation; the residual
+endpoint-specific component is small.
+
+\subsection{Statistical status of the reference-sensitivity test}
+\label{sec:reference-sensitivity-stats}
+
+The order-selection bootstrap tests model complexity; it does not
+test reference-construction similarity. The reference-sensitivity metrics quantify robustness of fixed
+best-fit histories: how much the measured R-versus-CMB separation moves
+when the CMB reference construction changes. C1 and C2 are not
+statistically independent (both use Planck information;
+Section~\ref{sec:endpoint-c2}), and the two difference fields share
+the same R endpoint ($\Delta_{1}=R-C_{1}$,
+$\Delta_{2}=R-C_{2}$), so their similarity is mathematically
+correlated. Endpoint posterior uncertainty was not propagated.
+Therefore no frequentist p-value is assigned to the cosine or
+common-mode statistic. The reference-sensitivity test shows a
+shared low-dimensional deformation across the tested constructions.
+
+\subsection{Constrained domain and Ly\texorpdfstring{$\alpha$}{alpha} continuation}
+
+All reference-sensitivity metrics above are quoted on the constrained
+domain $z\le1.8$, covering every non-Ly$\alpha$ DESI block. The
+Ly$\alpha$ anchor at $z=2.33$ is a continuation test of the
+reconstruction law, not a measurement of the low-redshift
+deformation: flexible extrapolators generically fail there, under
+the null as on the data (Ly$\alpha$ continuation-failure fraction
+\CvConstrLyaProb{} in the matched constrained-domain bootstrap,
+recorded separately and never used in selection).
+
+\subsection{Comparison with the fit-improvement attribution}
+
+The deformation RMS (peak bin $0.4<z<0.8$) and the
+fit-improvement attribution (peak bin $0<z<0.4$) both concentrate
+below $z\sim0.8$, though their peak bins differ; high-redshift behavior
+is unconstrained in both. The reference-sensitivity check therefore supports, rather
+than replaces, the compact reconstruction: the same
+five-coordinate map describes a deformation that is
+reference-insensitive within the two tested Planck-compatible constructions.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/generated/bridge_fig5_triangulation}
+  \caption{Reference-sensitivity overlay: the difference between R and C1 and the difference between R and C2
+  lie on top of one another across the constrained domain (the difference between R and C1 and
+  the difference between R and C2 nearly coincide; the difference between C1 and C2 is much smaller), and the
+  fixed order-3 reconstruction captures the broad low/intermediate-redshift
+  trend but not the exact peak near $z\simeq0.65$. Shading marks the
+  constrained domain; the dotted line marks the Ly$\alpha$
+  extrapolation test.}
+  \label{fig:reference-sensitivity}
+\end{figure}

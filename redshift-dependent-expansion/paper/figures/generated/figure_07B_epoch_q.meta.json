@@ -1,9 +1,0 @@
-{
- "figure": "figure_07B_epoch_q",
- "generated_at": "2026-09-13T23:47:53.443682+00:00",
- "sources": {
-  "paper/evidence/m28_epoch_signatures/dynamical_markers.json": "35fb2958ca0056c24d12ba332402d27850dab3a0b58b9e9229070dff2f727407",
-  "paper/evidence/m28_epoch_signatures/epoch_curves.csv": "7e0fa4987cdf80045d42e9e4cf342cf0227d73927609971ec3da83a12e275d42",
-  "paper/evidence/m28_epoch_signatures/marker_summary.json": "b7b984fd933cf29891758abdae5524afd993977e7a3fdd1d5351d7e3031e3d26"
- }
-}

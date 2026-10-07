@@ -1,0 +1,40 @@
+{
+ "parameter_columns": [
+  "logK_H",
+  "epsilon",
+  "c0",
+  "c1",
+  "c2"
+ ],
+ "residual_rows_total": 1670,
+ "row_breakdown": {
+  "desi_bao_rows": 13,
+  "sn_rows": 1657
+ },
+ "covariance_whitening": "Cholesky factors of the full DESI and Pantheon+SH0ES covariances (lower-triangular solves, never inv(C))",
+ "nuisance_projection": "analytic SN absolute-magnitude projection P = I - w1 w1^T / ||w1||^2 removing the whitened-ones direction (same as profile_m_analytically)",
+ "finite_difference": {
+  "rel_step": 1e-06,
+  "step_rule": "h = rel_step * max(1, |p_j|); column j scaled by param_ranges[j]",
+  "param_ranges": [
+   0.4055,
+   0.2,
+   1.0,
+   1.0,
+   1.0
+  ]
+ },
+ "jacobian": "J[i,j] = d(r_whitened_projected)_i/dp_j, shape [1670, 5]",
+ "rank_rule": "rank = #{S > max(J.shape)*eps*S[0]}; effective uses S/S[0] > 1e-6",
+ "frozen_audit_source": "paper/evidence/reconstruction/jacobian_rank.json",
+ "note": "Fitted coordinates (reconstruction parameters), not measured observables. Never call these five observables.",
+ "singular_values": [
+  602.3765781514629,
+  157.31382890246925,
+  102.06996475760742,
+  32.03324959162922,
+  22.30849662630157
+ ],
+ "condition_number": 27.00211440699527,
+ "rank": 5
+}

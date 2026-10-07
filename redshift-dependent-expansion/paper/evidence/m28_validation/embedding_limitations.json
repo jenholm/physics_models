@@ -1,8 +1,0 @@
-{
- "FUNDAMENTAL_ACTION": "NOT_DEFINED",
- "GHOST": "NOT_DEFINED",
- "GRADIENT": "NOT_DEFINED",
- "FULL_CMB_PERT": "NOT_DEFINED",
- "S8": "NOT_DEFINED",
- "note": "background-level diagnostic; no CLASS/CAMB faking"
-}

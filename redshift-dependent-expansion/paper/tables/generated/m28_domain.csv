@@ -1,8 +1,0 @@
-block,treatment
-desi,published covariances
-sn,full-covariance joint; ladder split diagnostic-only
-cmb,compressed prior only
-omega_m,"[0.2, 0.45]"
-calibrators,invariant
-significance,descriptive only
-contract,chi2_DESI+chi2_CMB+chi2_joint Pantheon+SH0ES; r_d explicit; no H0 target

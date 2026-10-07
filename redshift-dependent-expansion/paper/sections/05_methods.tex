@@ -2,12 +2,12 @@
 \label{sec:methods}
 
 This paper fits no cosmological model. Its only fitted objects are
-the bridge coordinates mapping the frozen endpoint histories onto
+the reconstruction coordinates mapping the fixed endpoint histories onto
 each other over the constrained domain $z\le1.8$.
 
-\subsection{Bridge coordinates and difference fields}
+\subsection{Reconstruction coordinates and difference fields}
 
-The fitted bridge coordinates at order $m$ are the overall amplitude
+The fitted reconstruction coordinates at order $m$ are the overall amplitude
 $K_{H}$, the reciprocity parameter $\epsilon$, and the Legendre shape
 coefficients $c_{0},\ldots,c_{m-1}$ (at the selected $m=3$: five fitted
 coordinates). The compared fields are
@@ -20,7 +20,7 @@ $\Delta_{C}(z)\equiv\ln H_{C_{1}}(z)-\ln H_{C_{2}}(z)$
 
 The residual vector has $1670$ rows: DESI BAO rows plus $1657$
 Pantheon+SH0ES rows (row-selection contract,
-\path{paper/evidence/sn_selection_contract.json}). DESI rows are
+\path{paper/evidence/likelihood/sn_selection_contract.json}). DESI rows are
 whitened with the Cholesky factor of the full published covariance;
 SN rows are whitened with the full $1657\times1657$ covariance and
 projected to remove the whitened-ones direction, which analytically
@@ -32,11 +32,11 @@ or reweighting enters anywhere.
 
 Order selection uses held-out behavior on identical folds: five
 supernova conditional folds and six DESI leave-block-out folds at
-$z\le1.8$. The Ly$\alpha$ block at $z=2.33$ is scored separately as an
+$z\le1.8$. The Ly$\alpha$ block at $z=2.33$ \citep{DESIDR2Lya} is scored separately as an
 out-of-domain continuation test and never participates in selection.
 The predeclared rule selects the smallest $m$ within $2.0$ of the
 best combined held-out score
-(constrained re-score \texttt{constrained\_cv\_rescore.json} in paper
+(constrained re-score \texttt{constrained\_cv.json} in paper
 evidence).
 
 \subsection{Projected Jacobian rank}
@@ -59,14 +59,13 @@ These are fitted coordinates, not measured observables.
 \subsection{Bootstrap and information criteria}
 
 A parametric bootstrap of the entire selection pipeline under the
-bare null (null contract \texttt{null\_model\_contract.json} in paper
+null reconstruction (the undeformed $\Lambda$CDM reference, with zero fitted reconstruction coordinates and the common SN nuisance parameter profiled normally; null contract \texttt{null\_model\_contract.json} in paper
 evidence)
 calibrates order-selection frequency; it tests the complexity of the
 selected representation, not the existence of the numerical difference
-between frozen endpoint histories. Information criteria are reported
-descriptively (parsimony penalty only), never as detections.
+between fixed endpoint histories. Information criteria are reported only as descriptive fit-versus-complexity summaries and are not interpreted as detection significance.
 
-Figures and tables are generated exclusively from frozen evidence,
+Figures and tables are generated exclusively from versioned publication evidence,
 all SHA-pinned in the manifest \path{paper/evidence_manifest.yaml};
 generation fails if a source hash mismatches. All reported
 values are best fits; no credible or confidence intervals are claimed,

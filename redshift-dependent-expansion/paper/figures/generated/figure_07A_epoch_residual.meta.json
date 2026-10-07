@@ -1,9 +1,0 @@
-{
- "figure": "figure_07A_epoch_residual",
- "generated_at": "2026-09-13T23:47:52.990500+00:00",
- "sources": {
-  "paper/evidence/m28_epoch_signatures/epoch_curves.csv": "7e0fa4987cdf80045d42e9e4cf342cf0227d73927609971ec3da83a12e275d42",
-  "paper/evidence/m28_epoch_signatures/marker_stability.json": "2cc0cbce15d06c30c110b22434936c24b8fd4c7750a073418b0c0785e907fb4f",
-  "paper/evidence/m28_epoch_signatures/marker_summary.json": "b7b984fd933cf29891758abdae5524afd993977e7a3fdd1d5351d7e3031e3d26"
- }
-}

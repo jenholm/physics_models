@@ -1,13 +1,13 @@
 {
  "metadata": {
-  "title": "Redshift-dependent expansion: frozen publication numbers",
+  "title": "Redshift-dependent expansion: fixed publication numbers",
   "version": 1,
-  "generated_utc": "2026-10-06T21:25:05.725953+00:00",
+  "generated_utc": "2026-10-07T15:04:51.252471+00:00",
   "grid": {
    "n": 241,
    "z_min": 0.0,
    "z_max": 2.33,
-   "method": "piecewise-linear resampling of frozen curves"
+   "method": "piecewise-linear resampling of fixed curves"
   },
   "sources": [
    {
@@ -27,28 +27,28 @@
     "sha256": "fa90262d2847dae80115ceab315e1986b2d8abd72465a430780e0a22fd2e2f28"
    },
    {
-    "path": "paper/evidence/cmb_bridge_r8r2/selection_bootstrap_constrained.json",
-    "sha256": "0feab6a9927ad5c91c8ea613fb9645d8ec0deffbd3623e7534eba49967366c7d"
+    "path": "paper/evidence/model_selection/bootstrap.json",
+    "sha256": "1fc7784f902570a8a4859bbffee3de654058efde2868efd05911ee2109b04d45"
    },
    {
-    "path": "paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json",
-    "sha256": "b3fd1cc2d61738e7b1f52a81e64ca3213b73be003c713f2128f6d9c36f49df6d"
+    "path": "paper/evidence/model_selection/constrained_cv.json",
+    "sha256": "5a276eef8789bbc405d169e3b85ce8d551bc402cb349d0525bad1347ffdc71bb"
    },
    {
-    "path": "paper/evidence/endpoint_identity_contract.json",
-    "sha256": "06cfafcee189487a530ca9067bf75a2d90fced1192af193f3474d34a2fbe208a"
+    "path": "paper/evidence/endpoints/endpoint_identity.json",
+    "sha256": "1ae0864f00b14f085a839f4b6461a809271fffb7c2480e520026642473cd300f"
    },
    {
-    "path": "paper/evidence/branch_calibration_contract.json",
+    "path": "paper/evidence/endpoints/calibration_contract.json",
     "sha256": "e3af09f021e401366492e1f1e2b161dde91fd54e3ec2b385b04bbed62511f4ca"
    }
   ],
   "provenance_notes": [
-   "H_R/H_C1/H_C2 resampled from the frozen endpoint figure table.",
-   "Comoving distances integrated from frozen H(z) with c/H trapezoids.",
+   "H_R/H_C1/H_C2 resampled from the fixed endpoint figure table.",
+   "Comoving distances integrated from fixed H(z) with c/H trapezoids.",
    "Difference fields recomputed from resampled H(z); see tests.",
-   "Order-3 map column resampled from the frozen triangulation table.",
-   "Projected Jacobian rank and condition number are the values printed in the manuscript methods section for the frozen order-3 audit (rank 5 of 5 fitted coordinates)."
+   "Order-3 map column resampled from the fixed reference-sensitivity table.",
+   "Projected Jacobian rank and condition number are the values printed in the manuscript methods section for the fixed order-3 audit (rank 5 of 5 fitted coordinates)."
   ]
  },
  "domain": {

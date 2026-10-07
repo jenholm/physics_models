@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Assemble a portable single-file copy of the public visualization.
 
-Inlines styles.css, simulation.js and the frozen publication JSON into
+Inlines styles.css, simulation.js and the fixed publication JSON into
 simulation/dist/redshift_expansion_simulation.html so one file can be
 shared or hosted anywhere. The checked-in development source stays split
 and reviewable; this output is generated, not hand-edited.

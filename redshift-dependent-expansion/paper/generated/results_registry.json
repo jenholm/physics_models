@@ -1,229 +1,243 @@
 {
-  "generated_at": "2026-10-06T17:53:19.496980+00:00",
-  "macros": {
-    "BridgeAIC": {
-      "key": "rows.1.AIC",
-      "latex": "1469.96",
-      "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47",
-      "source": "paper/evidence/cmb_bridge_r4v/information_criteria.json",
-      "value": 1469.9605367378347
-    },
-    "BridgeAICCtrl": {
-      "key": "rows.5.AIC",
-      "latex": "1493.92",
-      "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47",
-      "source": "paper/evidence/cmb_bridge_r4v/information_criteria.json",
-      "value": 1493.9206203269846
-    },
-    "BridgeAICDeltaVsCtrl": {
-      "key": "AIC(legendre-m3)-AIC(control21)",
-      "latex": "-23.96",
-      "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47",
-      "source": "paper/evidence/cmb_bridge_r4v/information_criteria.json",
-      "value": -23.960083589149917
-    },
-    "BridgeChiTwo": {
-      "key": "full_data_chi2",
-      "latex": "1459.96",
-      "sha256": "700e2df24f5c533d22c0fb101a55237bda5bbb991fdf67c86b75b6acd3f156a7",
-      "source": "paper/evidence/cmb_bridge_r4v/frozen_visible_map.json",
-      "value": 1459.9605367378347
-    },
-    "BridgeDeltaCtrl": {
-      "key": "delta_vs_control",
-      "latex": "8.04",
-      "sha256": "700e2df24f5c533d22c0fb101a55237bda5bbb991fdf67c86b75b6acd3f156a7",
-      "source": "paper/evidence/cmb_bridge_r4v/frozen_visible_map.json",
-      "value": 8.039916410850083
-    },
-    "BridgeDesiBareConstr": {
-      "key": "sum(desi_folds, z<=1.8)",
-      "latex": "18.08",
-      "sha256": "44c89ac53408b8b67b121fcb4c8960029409426ff4f2b74a727d597a6df8197d",
-      "source": "paper/evidence/cmb_bridge_r4v/null_cv_summary.json",
-      "value": 18.07748130560101
-    },
-    "BridgeDesiMThreeConstr": {
-      "key": "sum(desi_folds, z<=1.8)",
-      "latex": "11.17",
-      "sha256": "44c89ac53408b8b67b121fcb4c8960029409426ff4f2b74a727d597a6df8197d",
-      "source": "paper/evidence/cmb_bridge_r4v/null_cv_summary.json",
-      "value": 11.17370311574086
-    },
-    "BridgeEpsDelta": {
-      "key": "delta_chi2_eps0",
-      "latex": "0.124",
-      "sha256": "700e2df24f5c533d22c0fb101a55237bda5bbb991fdf67c86b75b6acd3f156a7",
-      "source": "paper/evidence/cmb_bridge_r4v/frozen_visible_map.json",
-      "value": 0.12415095933215525
-    },
-    "BridgeKCtrl": {
-      "key": "k_late_map(control21)",
-      "latex": "21",
-      "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47",
-      "source": "paper/evidence/cmb_bridge_r4v/information_criteria.json",
-      "value": 21
-    },
-    "BridgeKmThree": {
-      "key": "k_late_map(legendre-m3)",
-      "latex": "5",
-      "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47",
-      "source": "paper/evidence/cmb_bridge_r4v/information_criteria.json",
-      "value": 5
-    },
-    "BridgeNullDesiConstr": {
-      "key": "sum(desi_folds, z<=1.8)",
-      "latex": "-6.90",
-      "sha256": "44c89ac53408b8b67b121fcb4c8960029409426ff4f2b74a727d597a6df8197d",
-      "source": "paper/evidence/cmb_bridge_r4v/null_cv_summary.json",
-      "value": -6.903778189860152
-    },
-    "BridgeNullSn": {
-      "key": "paired_m3_minus_bare.sn",
-      "latex": "-76.1",
-      "sha256": "44c89ac53408b8b67b121fcb4c8960029409426ff4f2b74a727d597a6df8197d",
-      "source": "paper/evidence/cmb_bridge_r4v/null_cv_summary.json",
-      "value": -76.14
-    },
-    "BridgeRank": {
-      "key": "effective_observable_rank",
-      "latex": "5",
-      "sha256": "700e2df24f5c533d22c0fb101a55237bda5bbb991fdf67c86b75b6acd3f156a7",
-      "source": "paper/evidence/cmb_bridge_r4v/frozen_visible_map.json",
-      "value": 5
-    },
-    "CmbOneHZero": {
-      "key": "background.H0",
-      "latex": "67.99",
-      "sha256": "3bb2bc27e921d1f7ecb7fb2cfaac523f575ce346700f49fc6cca04fbb64ebc43",
-      "source": "runs/cmb_reconstruction/frozen/MODEL_B2_FINAL.json",
-      "value": 67.98718829988229
-    },
-    "CmbTwoHZero": {
-      "key": "H0",
-      "latex": "67.4",
-      "sha256": "1d024635b61e642d6bf00aef0caab4ca919a4e0e6e5989ea23824445a2421a76",
-      "source": "paper/evidence/cmb_bridge_r6/endpoint_cmb_2.json",
-      "value": 67.4
-    },
-    "CvConstrBootProb": {
-      "key": "frac_select_ge_m3",
-      "latex": "0.216",
-      "sha256": "0feab6a9927ad5c91c8ea613fb9645d8ec0deffbd3623e7534eba49967366c7d",
-      "source": "paper/evidence/cmb_bridge_r8r2/selection_bootstrap_constrained.json",
-      "value": 0.216
-    },
-    "CvConstrLyaProb": {
-      "key": "frac_lya_catastrophe",
-      "latex": "0.788",
-      "sha256": "0feab6a9927ad5c91c8ea613fb9645d8ec0deffbd3623e7534eba49967366c7d",
-      "source": "paper/evidence/cmb_bridge_r8r2/selection_bootstrap_constrained.json",
-      "value": 0.788
-    },
-    "CvConstrMFive": {
-      "key": "per_order.5.combined_constrained",
-      "latex": "8186.77",
-      "sha256": "b3fd1cc2d61738e7b1f52a81e64ca3213b73be003c713f2128f6d9c36f49df6d",
-      "source": "paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json",
-      "value": 8186.77026003562
-    },
-    "CvConstrMFour": {
-      "key": "per_order.4.combined_constrained",
-      "latex": "8164.15",
-      "sha256": "b3fd1cc2d61738e7b1f52a81e64ca3213b73be003c713f2128f6d9c36f49df6d",
-      "source": "paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json",
-      "value": 8164.148817167932
-    },
-    "CvConstrMSix": {
-      "key": "per_order.6.combined_constrained",
-      "latex": "8184.01",
-      "sha256": "b3fd1cc2d61738e7b1f52a81e64ca3213b73be003c713f2128f6d9c36f49df6d",
-      "source": "paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json",
-      "value": 8184.005195669733
-    },
-    "CvConstrMThree": {
-      "key": "per_order.3.combined_constrained",
-      "latex": "8164.28",
-      "sha256": "b3fd1cc2d61738e7b1f52a81e64ca3213b73be003c713f2128f6d9c36f49df6d",
-      "source": "paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json",
-      "value": 8164.276375873014
-    },
-    "CvConstrMTwo": {
-      "key": "per_order.2.combined_constrained",
-      "latex": "8213.92",
-      "sha256": "b3fd1cc2d61738e7b1f52a81e64ca3213b73be003c713f2128f6d9c36f49df6d",
-      "source": "paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json",
-      "value": 8213.9203158802
-    },
-    "CvConstrSelected": {
-      "key": "selected_m",
-      "latex": "3",
-      "sha256": "b3fd1cc2d61738e7b1f52a81e64ca3213b73be003c713f2128f6d9c36f49df6d",
-      "source": "paper/evidence/cmb_bridge_r8r2/constrained_cv_rescore.json",
-      "value": 3
-    },
-    "DistanceHZero": {
-      "key": "H0",
-      "latex": "72.80",
-      "sha256": "3b40a159e79185378883a2d0861419733e83f7d3909dc0e86a167611a14f37e9",
-      "source": "paper/evidence/cmb_bridge_r6/endpoint_redshift.json",
-      "value": 72.7990663485722
-    },
-    "GeometryCmbRatioHigh": {
-      "key": "3.ratio_rms_DC_over_D1",
-      "latex": "0.013",
-      "sha256": "57fb19c3a9306496c5a1ee4206644713698a73e170393cf447e84bcf7833af64",
-      "source": "paper/evidence/cmb_bridge_r6/scale_comparison.json",
-      "value": 0.012835353579601569
-    },
-    "GeometryCmbRatioLow": {
-      "key": "1.ratio_rms_DC_over_D1",
-      "latex": "0.037",
-      "sha256": "57fb19c3a9306496c5a1ee4206644713698a73e170393cf447e84bcf7833af64",
-      "source": "paper/evidence/cmb_bridge_r6/scale_comparison.json",
-      "value": 0.036959499451471436
-    },
-    "GeometryCommonFractionMin": {
-      "key": "0.f_common",
-      "latex": "0.998",
-      "sha256": "409aa6416a93676cf170238696208ace086d9fda2db5583703674496776f8740",
-      "source": "paper/evidence/cmb_bridge_r6/common_mode.json",
-      "value": 0.9983825364249921
-    },
-    "GeometryCosineSimilarity": {
-      "key": "supported.cosine_D1_D2",
-      "latex": "0.9997",
-      "sha256": "b524cd2b2e37d2d6c513b135eb09a6d9c5219ac54a2d0a35acc0a349a3472905",
-      "source": "paper/evidence/cmb_bridge_r6/agreement_metrics.json",
-      "value": 0.9996555261956827
-    },
-    "GeometryPeakZ": {
-      "key": "supported.z_of_max_D1",
-      "latex": "0.65",
-      "sha256": "b524cd2b2e37d2d6c513b135eb09a6d9c5219ac54a2d0a35acc0a349a3472905",
-      "source": "paper/evidence/cmb_bridge_r6/agreement_metrics.json",
-      "value": 0.6538302643999933
-    },
-    "GeometryPrincipalAngle": {
-      "key": "supported.principal_angle_deg",
-      "latex": "1.5",
-      "sha256": "b524cd2b2e37d2d6c513b135eb09a6d9c5219ac54a2d0a35acc0a349a3472905",
-      "source": "paper/evidence/cmb_bridge_r6/agreement_metrics.json",
-      "value": 1.503931994713785
-    },
-    "GeometrySvdDominance": {
-      "key": "supported.svd_dominance_s1_over_s2",
-      "latex": "76.3",
-      "sha256": "b524cd2b2e37d2d6c513b135eb09a6d9c5219ac54a2d0a35acc0a349a3472905",
-      "source": "paper/evidence/cmb_bridge_r6/agreement_metrics.json",
-      "value": 76.26502522417921
-    },
-    "GeometryTransferDegradation": {
-      "key": "checks.c_transfer_degradation.C1_to_C2",
-      "latex": "0.068",
-      "sha256": "c0ffb7b06ec8d1a82412b3879d60f5f80322547dce29888efd9fa1401593ef00",
-      "source": "paper/evidence/cmb_bridge_r6/r6_disposition.json",
-      "value": 0.06793092645405707
-    }
+ "generated_at": "2026-10-07T16:05:38.410800+00:00",
+ "macros": {
+  "BridgeAIC": {
+   "value": 1469.9605367378347,
+   "latex": "1469.96",
+   "source": "paper/evidence/reconstruction/information_criteria.json",
+   "key": "rows.1.AIC",
+   "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47"
+  },
+  "BridgeAICCtrl": {
+   "value": 1493.9206203269846,
+   "latex": "1493.92",
+   "source": "paper/evidence/reconstruction/information_criteria.json",
+   "key": "rows.5.AIC",
+   "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47"
+  },
+  "BridgeAICDeltaVsCtrl": {
+   "value": -23.960083589149917,
+   "latex": "-23.96",
+   "source": "paper/evidence/reconstruction/information_criteria.json",
+   "key": "AIC(legendre-m3)-AIC(control21)",
+   "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47"
+  },
+  "BridgeKCtrl": {
+   "value": 21,
+   "latex": "21",
+   "source": "paper/evidence/reconstruction/information_criteria.json",
+   "key": "rows.5.k_late_map",
+   "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47"
+  },
+  "BridgeKmThree": {
+   "value": 5,
+   "latex": "5",
+   "source": "paper/evidence/reconstruction/information_criteria.json",
+   "key": "rows.1.k_late_map",
+   "sha256": "0edcf9dd1aa67eb8af97e21d3c783eab39a6ebbe8182c919f45eef5c65992a47"
+  },
+  "BridgeChiTwo": {
+   "value": 1459.9605367378347,
+   "latex": "1459.96",
+   "source": "paper/evidence/reconstruction/visible_map.json",
+   "key": "full_data_chi2",
+   "sha256": "700e2df24f5c533d22c0fb101a55237bda5bbb991fdf67c86b75b6acd3f156a7"
+  },
+  "BridgeDeltaCtrl": {
+   "value": 8.039916410850083,
+   "latex": "8.04",
+   "source": "paper/evidence/reconstruction/visible_map.json",
+   "key": "delta_vs_control",
+   "sha256": "700e2df24f5c533d22c0fb101a55237bda5bbb991fdf67c86b75b6acd3f156a7"
+  },
+  "BridgeEpsDelta": {
+   "value": 0.12415095933215525,
+   "latex": "0.124",
+   "source": "paper/evidence/reconstruction/visible_map.json",
+   "key": "delta_chi2_eps0",
+   "sha256": "700e2df24f5c533d22c0fb101a55237bda5bbb991fdf67c86b75b6acd3f156a7"
+  },
+  "BridgeRank": {
+   "value": 5,
+   "latex": "5",
+   "source": "paper/evidence/reconstruction/visible_map.json",
+   "key": "effective_observable_rank",
+   "sha256": "700e2df24f5c533d22c0fb101a55237bda5bbb991fdf67c86b75b6acd3f156a7"
+  },
+  "BridgeNullSn": {
+   "value": -76.14,
+   "latex": "-76.1",
+   "source": "paper/evidence/reconstruction/null_cv_summary.json",
+   "key": "paired_m3_minus_bare.sn",
+   "sha256": "44c89ac53408b8b67b121fcb4c8960029409426ff4f2b74a727d597a6df8197d"
+  },
+  "BridgeNullDesiConstr": {
+   "value": -6.903778189860153,
+   "latex": "-6.90",
+   "source": "paper/evidence/reconstruction/null_cv_summary.json",
+   "key": "sum(desi_folds, z<=1.8)",
+   "sha256": "44c89ac53408b8b67b121fcb4c8960029409426ff4f2b74a727d597a6df8197d"
+  },
+  "BridgeDesiBareConstr": {
+   "value": 18.07748130560101,
+   "latex": "18.08",
+   "source": "paper/evidence/reconstruction/null_cv_summary.json",
+   "key": "sum(desi_folds, z<=1.8)",
+   "sha256": "44c89ac53408b8b67b121fcb4c8960029409426ff4f2b74a727d597a6df8197d"
+  },
+  "BridgeDesiMThreeConstr": {
+   "value": 11.173703115740858,
+   "latex": "11.17",
+   "source": "paper/evidence/reconstruction/null_cv_summary.json",
+   "key": "sum(desi_folds, z<=1.8)",
+   "sha256": "44c89ac53408b8b67b121fcb4c8960029409426ff4f2b74a727d597a6df8197d"
+  },
+  "DistanceHZero": {
+   "value": 72.7990663485722,
+   "latex": "72.80",
+   "source": "paper/evidence/endpoints/endpoint_redshift.json",
+   "key": "H0",
+   "sha256": "fb44b238a6e69c750066dee38df9ace85a2397472450d68929c0b26a8f919fb5"
+  },
+  "CmbOneHZero": {
+   "value": 67.98718829988229,
+   "latex": "67.99",
+   "source": "paper/evidence/endpoints/endpoint_cmb_1.json",
+   "key": "H0",
+   "sha256": "154266db718f6c0aea808bab2e3340d3fe1e1d8bf271f5283f4cae2fb43b01dd"
+  },
+  "CmbTwoHZero": {
+   "value": 67.4,
+   "latex": "67.4",
+   "source": "paper/evidence/endpoints/endpoint_cmb_2.json",
+   "key": "H0",
+   "sha256": "43fd840abb45712bbbbffbf0721043dea1e19d9c32f167cfcd2fa82bc7d315c9"
+  },
+  "CvConstrMTwo": {
+   "value": 8213.9203158802,
+   "latex": "8213.92",
+   "source": "paper/evidence/model_selection/constrained_cv.json",
+   "key": "per_order.2.combined_constrained",
+   "sha256": "5a276eef8789bbc405d169e3b85ce8d551bc402cb349d0525bad1347ffdc71bb"
+  },
+  "CvConstrMThree": {
+   "value": 8164.276375873014,
+   "latex": "8164.28",
+   "source": "paper/evidence/model_selection/constrained_cv.json",
+   "key": "per_order.3.combined_constrained",
+   "sha256": "5a276eef8789bbc405d169e3b85ce8d551bc402cb349d0525bad1347ffdc71bb"
+  },
+  "CvConstrMFour": {
+   "value": 8164.148817167932,
+   "latex": "8164.15",
+   "source": "paper/evidence/model_selection/constrained_cv.json",
+   "key": "per_order.4.combined_constrained",
+   "sha256": "5a276eef8789bbc405d169e3b85ce8d551bc402cb349d0525bad1347ffdc71bb"
+  },
+  "CvConstrMFive": {
+   "value": 8186.77026003562,
+   "latex": "8186.77",
+   "source": "paper/evidence/model_selection/constrained_cv.json",
+   "key": "per_order.5.combined_constrained",
+   "sha256": "5a276eef8789bbc405d169e3b85ce8d551bc402cb349d0525bad1347ffdc71bb"
+  },
+  "CvConstrMSix": {
+   "value": 8184.005195669733,
+   "latex": "8184.01",
+   "source": "paper/evidence/model_selection/constrained_cv.json",
+   "key": "per_order.6.combined_constrained",
+   "sha256": "5a276eef8789bbc405d169e3b85ce8d551bc402cb349d0525bad1347ffdc71bb"
+  },
+  "CvConstrSelected": {
+   "value": 3,
+   "latex": "3",
+   "source": "paper/evidence/model_selection/constrained_cv.json",
+   "key": "selected_m",
+   "sha256": "5a276eef8789bbc405d169e3b85ce8d551bc402cb349d0525bad1347ffdc71bb"
+  },
+  "CvConstrBootProb": {
+   "value": 0.216,
+   "latex": "0.216",
+   "source": "paper/evidence/model_selection/bootstrap.json",
+   "key": "frac_select_ge_m3",
+   "sha256": "1fc7784f902570a8a4859bbffee3de654058efde2868efd05911ee2109b04d45"
+  },
+  "CvConstrLyaProb": {
+   "value": 0.788,
+   "latex": "0.788",
+   "source": "paper/evidence/model_selection/bootstrap.json",
+   "key": "frac_lya_catastrophe",
+   "sha256": "1fc7784f902570a8a4859bbffee3de654058efde2868efd05911ee2109b04d45"
+  },
+  "GeometryCosineSimilarity": {
+   "value": 0.9996555261956827,
+   "latex": "0.9997",
+   "source": "paper/evidence/reference_sensitivity/agreement_metrics.json",
+   "key": "supported.cosine_D1_D2",
+   "sha256": "b524cd2b2e37d2d6c513b135eb09a6d9c5219ac54a2d0a35acc0a349a3472905"
+  },
+  "GeometryPrincipalAngle": {
+   "value": 1.503931994713785,
+   "latex": "1.5",
+   "source": "paper/evidence/reference_sensitivity/agreement_metrics.json",
+   "key": "supported.principal_angle_deg",
+   "sha256": "b524cd2b2e37d2d6c513b135eb09a6d9c5219ac54a2d0a35acc0a349a3472905"
+  },
+  "GeometrySvdDominance": {
+   "value": 76.26502522417921,
+   "latex": "76.3",
+   "source": "paper/evidence/reference_sensitivity/agreement_metrics.json",
+   "key": "supported.svd_dominance_s1_over_s2",
+   "sha256": "b524cd2b2e37d2d6c513b135eb09a6d9c5219ac54a2d0a35acc0a349a3472905"
+  },
+  "GeometryPeakZ": {
+   "value": 0.6538302643999933,
+   "latex": "0.65",
+   "source": "paper/evidence/reference_sensitivity/agreement_metrics.json",
+   "key": "supported.z_of_max_D1",
+   "sha256": "b524cd2b2e37d2d6c513b135eb09a6d9c5219ac54a2d0a35acc0a349a3472905"
+  },
+  "GeometryCommonFractionMin": {
+   "value": 0.9983825364249921,
+   "latex": "0.998",
+   "source": "paper/evidence/reference_sensitivity/common_mode.json",
+   "key": "min f_common, z<=1.8",
+   "sha256": "409aa6416a93676cf170238696208ace086d9fda2db5583703674496776f8740"
+  },
+  "GeometryTransferDegradation": {
+   "value": 0.06793092645405707,
+   "latex": "0.068",
+   "source": "paper/evidence/reference_sensitivity/disposition.json",
+   "key": "checks.c_transfer_degradation.C1_to_C2",
+   "sha256": "c0ffb7b06ec8d1a82412b3879d60f5f80322547dce29888efd9fa1401593ef00"
+  },
+  "GeometryCmbRatioLow": {
+   "value": 0.036959499451471436,
+   "latex": "0.037",
+   "source": "paper/evidence/reference_sensitivity/scale_comparison.json",
+   "key": "interval[0.4,0.8].ratio_rms_DC_over_D1",
+   "sha256": "57fb19c3a9306496c5a1ee4206644713698a73e170393cf447e84bcf7833af64"
+  },
+  "GeometryCmbRatioHigh": {
+   "value": 0.012835353579601569,
+   "latex": "0.013",
+   "source": "paper/evidence/reference_sensitivity/scale_comparison.json",
+   "key": "interval[1.2,1.8].ratio_rms_DC_over_D1",
+   "sha256": "57fb19c3a9306496c5a1ee4206644713698a73e170393cf447e84bcf7833af64"
+  },
+  "ReferenceSensitivityRatioMinPct": {
+   "value": 1.3,
+   "latex": "1.3",
+   "source": "paper/evidence/reference_sensitivity/scale_comparison.json",
+   "key": "min DC/D1,DC/D2 over constrained bins, percent",
+   "sha256": "57fb19c3a9306496c5a1ee4206644713698a73e170393cf447e84bcf7833af64"
+  },
+  "ReferenceSensitivityRatioMaxPct": {
+   "value": 8.4,
+   "latex": "8.4",
+   "source": "paper/evidence/reference_sensitivity/scale_comparison.json",
+   "key": "max DC/D1,DC/D2 over constrained bins, percent",
+   "sha256": "57fb19c3a9306496c5a1ee4206644713698a73e170393cf447e84bcf7833af64"
   }
+ }
 }

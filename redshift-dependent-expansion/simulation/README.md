@@ -56,20 +56,21 @@ exaggeration, and the true fractional distance difference.
 
 ## What is constrained, and where
 
-- **z ≤ 1.8** (blue-tinted): the validated paper domain.
+- **z ≤ 1.8** (blue-tinted): the constrained reconstruction domain.
 - **1.8 < z ≤ 2.33** (amber): continuation-test region. The compact
   order-3 map fails through the z = 2.33 anchor — that point is excluded
   from order selection.
 - **z > 2.33**: illustration only; no paper inference.
 
 The bright shell marks the current redshift cursor; the same cursor moves
-on the graphs below. Near z ∼ 0.65 the spokes lengthen: that broad
-low/intermediate-redshift region is where the endpoint separation is
-largest. This page does not claim a physical transition or new physics.
+on the graphs below. Near z ∼ 0.65, the visualization highlights the region where the expansion-rate difference is largest. Spoke length represents an integrated comoving-distance difference, so its maximum need not occur at the same redshift. This page does not claim a physical transition or new physics.
 
 ## Data
 
 All numbers come from `data/publication_simulation_data.json`, built by
-`scripts/build_simulation_data.py` from frozen publication artifacts only
+`scripts/build_simulation_data.py` from fixed publication artifacts only
 (241-point resampling over 0 ≤ z ≤ 2.33). No observed-catalog rows are
 embedded. See [METHODOLOGY.md](METHODOLOGY.md) for the equations.
+
+Canonical project URL:
+`https://github.com/jenholm/physics_models/tree/main/redshift-dependent-expansion`

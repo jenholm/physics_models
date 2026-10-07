@@ -116,7 +116,7 @@
 
   // Redshift scan: decreases from an early illustrative state toward 0.
   // Scientific overlays become active at z = 2.33 (Ly-alpha anchor) and the
-  // validated domain covers z <= 1.8.
+  // constrained reconstruction domain covers z <= 1.8.
   function zScanOf(p) {
     if (p < 0.22) {
       var t = p / 0.22;
@@ -273,7 +273,7 @@
         'part of the validated reconstruction domain.';
     } else {
       scanEl.textContent = 'z = ' + fmt(z, 2) + ' · constrained domain';
-      regEl.textContent = 'validated paper domain';
+      regEl.textContent = 'constrained reconstruction domain';
       regEl.style.color = '#4da3ff';
       badge.textContent = 'z ≤ 1.8 constrained';
       interp.textContent =
@@ -412,7 +412,7 @@
       pp.text(
         state.loadError
           ? 'Could not load publication data (' + state.loadError + ').'
-          : 'Loading frozen publication numbers…',
+          : 'Loading fixed publication numbers…',
         cx,
         cy
       );

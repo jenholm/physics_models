@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: "Characterizing a Low-Dimensional Redshift-Dependent Difference Between CMB- and Distance-Compatible Expansion Histories"
+message: "If you use this work, please cite it as below."
+authors:
+  - family-names: Enholm
+    given-names: Jake
+repository-code: "https://github.com/jenholm/physics_models/tree/main/redshift-dependent-expansion"
+date-released: 2026

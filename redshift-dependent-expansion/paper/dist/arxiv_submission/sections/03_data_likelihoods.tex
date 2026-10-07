@@ -13,16 +13,16 @@ controls that keep the comparison honest.
 
 DESI DR2 BAO \citep{DESIDR2} enters through the collaboration
 distance ratios $D_{M}/r_{d}$, $D_{H}/r_{d}$, $D_{V}/r_{d}$ with the
-published covariances; DESI values are fixed and only the theory
-prediction changes between branches.
+published covariances, including the $z_{\mathrm{eff}}=2.33$ Ly$\alpha$ anchor \citep{DESIDR2Lya}; DESI values are fixed and only the theory
+prediction changes between references.
 
 The supernova block is the full Pantheon+SH0ES compilation
 \citep{Scolnic2022,Brout2022,Riess2022} as one 1657-row covariance likelihood
 with one common profiled absolute magnitude $M$ (row-selection contract,
-\path{paper/evidence/sn_selection_contract.json}: 1701 raw rows
+\path{paper/evidence/likelihood/sn_selection_contract.json}: 1701 raw rows
 selected by the exact mask \texttt{(zHD > 0.01) | IS\_CALIBRATOR} to
 1657 rows, of which 77 calibrators and 1580 Hubble-flow rows). With
-$\mu_{\mathrm{no}\,M}$ the branch distance modulus at $M=0$,
+$\mu_{\mathrm{no}\,M}$ the endpoint distance modulus at $M=0$,
 \begin{align}
   r_{0} &= m_{B}^{\mathrm{corr}} - \mu_{\mathrm{no}\,M},
   \label{eq:r0} \\
@@ -49,15 +49,8 @@ not additive contributions to the primary joint likelihood.
 
 Calibrator rows carry the published Cepheid host distance
 $\mu_{\mathrm{cal}}=\mathrm{CEPH\_DIST}$, on the SH0ES Cepheid
-period--luminosity calibration \citep{Riess2019,Riess2022}. Under the
-adopted
-calibration contract, no additional theory-side correction is applied
-to local calibrator distance moduli: $\Delta\mu_{\mathrm{cal}}=0$
-(validation disposition \textit{calibrator-invariance-assumption-only}). The early field is
-negligible locally ($|g_{E}(0)|\sim3.5\times10^{-11}$) and same-epoch factors
-cancel qualitatively, but the local-propagation bound $4.6\times10^{-4}$~mag
-exceeds the $10^{-4}$~mag target, so the assumption is supported qualitatively,
-not quantitatively established. The luminosity-distance construction
+period--luminosity calibration \citep{Riess2019,Riess2022}.
+Calibrator rows use the published Cepheid host distances. No additional theory-side correction is applied to calibrator distance moduli in the endpoint construction. This is part of the fixed likelihood definition used here and is not independently tested by the reconstruction analysis. The luminosity-distance construction
 $D_{L}=(1+z)D_{M}$ is Etherington's reciprocity result
 \citep{Etherington1933} and assumes massless photons, null geodesics, and
 photon-number conservation. Hubble-flow rows use
@@ -83,13 +76,13 @@ follow the standard baryon-loading treatment
 
 \subsection{Controls}
 
-Three controls keep the branch comparison honest. First, $\Lambda$CDM
+Three controls keep the endpoint comparison honest. First, $\Lambda$CDM
 parity: the Boltzmann pipeline reproduces reference $\Lambda$CDM
-spectra before either branch is evaluated, so pipeline error cannot
-masquerade as branch separation. Second, frozen endpoint artifacts
+spectra before either endpoint is evaluated, so pipeline error cannot
+masquerade as endpoint separation. Second, fixed endpoint artifacts
 are hash-bound: every number in
-Sections~\ref{sec:results}--\ref{sec:robustness} is generated from
-frozen machine-readable evidence with source-hash binding
+Sections~\ref{sec:results}--\ref{sec:reference-sensitivity} is generated from
+versioned machine-readable evidence with source-hash binding
 (\path{paper/evidence_manifest.yaml}); generation fails on hash
 mismatch. Headline numerical results are generated from or hash-bound
-to frozen evidence.
+to versioned publication evidence.

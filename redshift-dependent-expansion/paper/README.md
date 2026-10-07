@@ -1,41 +1,63 @@
-# M28 Early-Epoch Paper
+# Redshift-Dependent Expansion Paper
 
-Reader-facing manuscript: one early-epoch amplitude added to a
-late-time chronogeometric law, fit to the joint DESI DR2 BAO,
-Pantheon+SH0ES, and compressed-CMB likelihood.
+Manuscript: "Characterizing a Low-Dimensional Redshift-Dependent
+Difference Between CMB- and Distance-Compatible Expansion Histories"
+(Jake Enholm).
 
-## Workflow
+## Scientific scope
 
-- Frozen evidence: `paper/evidence/m28_final/` (17 files, hash-bound
-  via `provenance_manifest.json`). No frozen-vector, data, or
-  likelihood change in prose cycles.
-- Registry/macros: `scripts/paper/build_results_registry.py` owns
-  `paper/generated/results_macros.tex`,
-  `paper/generated/results_registry.json`, `paper/generated/provenance.json`.
-  Never hand-copy numbers; use the neutral publication macros in `paper/generated/results_macros.tex`.
-- Figures: `scripts/paper/generate_m28_figures.py` writes
-  `paper/figures/generated/figure_0{1,2,3,4,5,6}_*.pdf` with sidecar
-  CSV + meta.json (source hashes). Fig4 uses full-joint `M_hat_m28`
-  parity (every main residual uses one common `M`).
-- Tables: `scripts/paper/generate_m28_tables.py` writes
-  `paper/tables/generated/m28_*.tex` with CSV + meta.json. T2 uses
-  `h r_d [Mpc]` (never km/s/Mpc); T6 lists scientific scope only.
-- Driver: `scripts/paper/build_expansion_history_paper.py` replays evidence,
-  rebuilds registry/figures/tables, validates claims in release mode,
-  compiles with pdflatex+bibtex, builds and checks the arXiv bundle.
-- Bundle: `scripts/paper/build_arxiv_bundle.py` collects only the
-  dependency graph from `main.tex` (whitelist); legacy figures/tables
-  live under `figures/generated_legacy/` and `tables/generated_legacy/`
-  and are excluded. Historical evidence is never deleted.
+The paper characterizes the empirical difference between a
+distance-sector expansion history (R) and two Planck-compatible
+reference histories (C1, C2) over the constrained domain z <= 1.8,
+using a five-coordinate order-3 reconstruction selected by held-out
+prediction. No physical mechanism is claimed; the origin remains open.
+See [../docs/SCIENTIFIC_SCOPE.md](../docs/SCIENTIFIC_SCOPE.md).
 
-## PAPER-03 rules
+## Build instructions
 
-- Main sections (`00,01,02,03,05,06,07,08,09`) are reader-facing:
-  no `G10`, `M28R1`, `R131`, `M24B`, `M26A`, `rebase`, `winner`,
-  `gate`, `ceiling`, `frozen G10`, or `frozen late-time law` outside
-  appendices. Internal labels live in Appendix A/D only.
-- `PAPER_MODE=release` runs `validate_claims.py` release gates plus
-  wrong-`h_rd`-units failure.
-- History: `sections/04_history.tex` is a thin redirect to Appendix A;
-  full development history lives in `appendices/A_*`; 2025 draft
-  preserved under `legacy_2025_draft/`.
+Requirements: Python 3 with NumPy/Matplotlib/PyYAML/SciPy, pdflatex +
+bibtex (TeX Live 2023 or newer).
+
+From the repository root:
+
+```bash
+make -C paper registry tables figures validate   # rebuild registry, tables, figures, checks
+make -C paper build                              # full manuscript build (registry -> pdf)
+make -C paper bundle                             # build + arXiv bundle + bundle check
+```
+
+Or step by step with the neutral driver:
+
+```bash
+python3 scripts/paper/build_expansion_history_paper.py --release
+cd paper && pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex
+```
+
+## Evidence policy
+
+- `paper/evidence/` holds versioned publication evidence only, in
+  neutral directories (`endpoints/`, `reconstruction/`,
+  `model_selection/`, `reference_sensitivity/`, `likelihood/`).
+- `paper/generated/` holds the derived registry, LaTeX macros, and
+  provenance manifest. Never hand-copy numbers into the manuscript;
+  use the macros in `paper/generated/results_macros.tex`.
+- No raw catalog rows, no credentials, no local paths.
+
+## Figure/table regeneration
+
+```bash
+python3 scripts/paper/generate_figures.py   # PDFs from versioned CSV tables
+python3 scripts/paper/generate_tables.py    # .tex from versioned evidence JSON
+```
+
+## arXiv bundle
+
+```bash
+python3 scripts/paper/build_arxiv_bundle.py   # collect dependency graph
+python3 scripts/paper/check_arxiv_bundle.py   # completeness + hygiene check
+```
+
+## Repository URL
+
+Canonical project URL:
+`https://github.com/jenholm/physics_models/tree/main/redshift-dependent-expansion`
